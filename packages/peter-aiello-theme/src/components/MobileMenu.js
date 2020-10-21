@@ -60,7 +60,7 @@ const Toggle = styled.span`
 const Container = styled.div`
     width: 100%;
     position: absolute;
-    background: ${drkColor}80;
+    background: ${drkColor};
     top: 113px;
     display: block;
     ${mq[1]}{
@@ -69,7 +69,7 @@ const Container = styled.div`
 `
 
 const ContainerInner = styled.div`
-    padding: 5rem 2rem;
+    padding: 2rem;
     a {
         color: white;
         text-decoration: none;

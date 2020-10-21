@@ -27,7 +27,6 @@ const Tags = ({state, tags}) => {
 }
 
 const Wrapper = styled.div`
-    margin-bottom: 2rem;
 `;
 
 export default connect(Tags);

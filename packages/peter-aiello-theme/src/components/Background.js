@@ -3,7 +3,6 @@ import { connect, css, styled, keyframes } from "frontity";
 import Placeholder from "../assets/background-images/buildings-dark.jpg";
 import LogoBackground from "./Paths/LogoBackground";
 import ArrowIcon from "./ArrowIcon";
-import Footer from "./Footer/Footer";
 
 const breakpoints = [576, 768, 992, 1200];
 
@@ -83,7 +82,6 @@ const Background = ({ state, title, id, postContent, libraries }) => {
                 </ContainerInner>
             </Container>            
         </BackgroundImage>
-        <Footer />
         </>
     )
 }
@@ -262,7 +260,8 @@ const Content = styled.div`
     /* custom button */
     .wp-block-button__link {
         display: block;
-        width: 300px;
+        width: auto;
+        max-width: 250px;
         text-align: center;
         color: ${lightGrey};
         margin: 2rem 0;
@@ -278,12 +277,11 @@ const Content = styled.div`
         color: ${lightOrange};
         font-size: 2rem;
         text-decoration: none;
-        white-space: nowrap;
         ${mq[3]}{
             font-size: 3rem;
         }
     }
-
+ 
     /* 
     styles for gutenberg columns only
     copied from wordpress

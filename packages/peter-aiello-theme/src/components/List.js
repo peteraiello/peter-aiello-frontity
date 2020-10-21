@@ -47,23 +47,34 @@ const PostDate = styled.span`
     display: block;
     text-transform: uppercase;
     color: ${lightGrey};
-    font-size: 2rem;
+    font-size: 1.5rem;
+    ${mq[1]}{
+        font-size: 2rem;
+    }
 `
 
-const Title = styled.h2`
-    font-size: 3.75rem;
+const Title = styled.h1`
+    font-size: 1.75rem;
     font-weight: bold;
     text-transform: uppercase;
     color: ${lightGrey};
     margin: 2rem 0;
+    ${mq[1]}{
+        font-size: 3.75rem;
+    }
 `
 
 const Excerpt = styled.div`
     p {
         color: ${lightGrey};
-        font-size: 2.5rem;
-        line-height: 4rem;
+        font-size: 2rem;
+        line-height: 3rem;
+        ${mq[1]}{
+            font-size: 2.5rem;
+            line-height: 4rem;
+        }
     }    
+
 `
 
 const PostItem = styled.div`
@@ -76,16 +87,20 @@ const PostItem = styled.div`
 
 const Button = styled(Link)`
     display: block;
-    width: 300px;
+    width: auto;
+    max-width: 250px;
     text-align: center;
     color: ${lightGrey};
     margin: 2rem 0;
     border: 1px solid ${lightGrey};
     padding: 1rem;
     text-decoration: none;
-    font-size: 2.65rem;
+    font-size: 2rem;
     font-family: 'Open Sans', sans-serif;
     font-weight: Bold;
+    ${mq[1]}{
+        font-size: 2.65rem;
+    }
 `
 
 export default connect(List);

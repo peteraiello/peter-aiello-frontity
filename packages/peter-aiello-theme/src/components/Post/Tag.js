@@ -29,11 +29,12 @@ const Button = styled(Link)`
     border: 3px solid ${lightOrange};
     padding: 1rem 3rem;
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 1rem !important;
     font-family: 'Open Sans', sans-serif;
     font-weight: Bold;
     text-transform: uppercase;
     ${mq[1]}{
+        font-size: 2rem !important;
         margin-bottom: 0 1.75rem 0 0;
     }
 `

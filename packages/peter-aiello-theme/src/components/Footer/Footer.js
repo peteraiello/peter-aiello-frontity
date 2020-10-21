@@ -7,7 +7,6 @@ import FooterCopyright from "./FooterCopyright";
 const lightGrey = "#E0E0E0";
 const drkColor = "#212224";
 
-
 const breakpoints = [576, 768, 992, 1200];
 
 const mq = breakpoints.map(
@@ -31,7 +30,7 @@ const Footer = () => {
                     <SocialIcons />
                 </Column>
                 <Column>
-                    <Accreditations href="#">
+                    <Accreditations href="/accreditations">
                         accreditations
                     </Accreditations>
                  </Column>
@@ -55,7 +54,7 @@ const Column = styled.div`
     margin: 2rem 0;
 `
 
-const Anchor = styled.a`
+const Anchor = styled(Link)`
     color: ${drkColor};
     background-color: ${lightGrey};
     padding: 0.75rem;
@@ -70,7 +69,7 @@ const Container = styled.footer`
     align-items: center;
     flex-direction: column;
     backgrond: black;
-    margin: 1rem auto;
+    margin: 0 auto;
     padding: 0 2rem;
     width: 100%;
     box-sizing: border-box;

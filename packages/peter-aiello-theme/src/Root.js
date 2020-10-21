@@ -4,6 +4,8 @@ import Nav from "./components/Nav";
 import Archive from "./components/Archive";
 import Post from "./components/Post";
 import Page from "./components/Page";
+import Page404 from "./components/Page404";
+import Footer from "./components/Footer/Footer";
 import Header from "./components/Header";
 
 const drkColor = "#212224";
@@ -36,7 +38,9 @@ const Root = ({ state }) => {
                     {data.isArchive && <Archive />}
                     {data.isPost && <Post />}
                     {data.isPage && <Page />}
+                    {data.isError && <Page404 />}
                 </main>
+                <Footer />
         </>
     )
 }

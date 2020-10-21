@@ -3,7 +3,6 @@ import { styled, connect } from "frontity";
 import Placeholder from "../assets/background-images/buildings-dark.jpg";
 import BgClip from "./Paths/BlogCutout";
 import Tags from "./Post/Tags";
-import Footer from "./Footer/Footer";
 
 const breakpoints = [576, 768, 992, 1200];
 
@@ -69,8 +68,6 @@ const Post = ({ state, id }) => {
                     </ContentContainer>
                 </ContainerInner>
             </Container>
-            <Footer />
-
         </>
     )
 };
@@ -85,44 +82,58 @@ const BackgroundWrapper = styled.div`
 `
 
 const PostInfo = styled.div`
-    margin: 0 0 6rem 0; 
+    margin: 0 0 2rem 0; 
+    padding: 0 2rem;
+    ${mq[1]}{
+        padding: 0;
+    }
 `
 
 const PostDate = styled.span`
     display: block;
     text-transform: uppercase;
     color: ${lightGrey};
-    font-size: 2rem;
+    font-size: 1.5rem;
+    ${mq[1]}{
+        font-size: 2rem;
+    }
 `
 
 const Title = styled.h1`
-    font-size: 3.75rem;
+    font-size: 1.75rem;
     font-weight: bold;
     text-transform: uppercase;
     color: ${lightGrey};
     margin: 2rem 0;
+    ${mq[1]}{
+        font-size: 3.75rem;
+    }
 `;
 
 const Container = styled.div`
     width: 100%;
-    margin: 12rem 0;
+    margin: 12rem 0 2rem 0;
 `
 
 const ContainerInner = styled.div`
     position: relative;
     margin: 0 auto;
-    padding: 0 2rem;
+    padding: 0;
     width: 100%;
     box-sizing: border-box;  
     ${mq[1]} {
         max-width: 1200px;
+        padding: 0 2rem;
     }
 `
 
 const ContentContainer = styled.div`
     background-color: ${customWht};
     padding: 2rem;
-    border-radius: 2rem;
+    border-radius: 0;
+    ${mq[1]}{
+        border-radius: 0.5rem;
+    }
 `
 
 const Content = styled.div`
