@@ -27,6 +27,7 @@ const Container = styled.div`
     max-width: 1200px;
     margin: 1rem auto;
     padding: 0 2rem;
+    box-sizing: border-box;
 `
 
 export default FooterCopyright;
