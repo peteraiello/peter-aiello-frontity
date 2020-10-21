@@ -28,6 +28,7 @@ const Background = ({ state, title, id, postContent, libraries }) => {
     const BackgroundUrl = (!FeaturedMedia ? Placeholder : FeaturedMedia.source_url);
     
     const BackgroundImage = styled.div`
+        position: relative;
         background-image: url(${BackgroundUrl});
         background-size: cover;
         background-position: 50% 50%;
@@ -69,10 +70,10 @@ const Background = ({ state, title, id, postContent, libraries }) => {
                 <TitleWrapper>
                     <Title>{ title }</Title>
                 </TitleWrapper>
+                <ArrowWrapper>
+                    <ArrowIcon MyClass={ MyArrow } MyFill={ ArrowFill }></ArrowIcon>
+                </ArrowWrapper>
             </IconWrapper>
-            <ArrowWrapper>
-                <ArrowIcon MyClass={ MyArrow } MyFill={ ArrowFill }></ArrowIcon>
-            </ArrowWrapper>
             {/* the markup for page content */}
             <Container>
                 <ContainerInner>
@@ -132,6 +133,7 @@ const ArrowWrapper = styled.div`
 `
 
 const IconWrapper = styled.div`
+    position: relative;
     display: flex;
     justify-content: center;
     align-content: center;

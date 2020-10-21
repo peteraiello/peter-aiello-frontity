@@ -18,6 +18,7 @@ const BackgroundHome = ({ state, title, id }) => {
     const BackgroundUrl = (!FeaturedMedia ? BackgroundDefault : FeaturedMedia.source_url);
 
     const Background = styled.div`
+        position: relative;
         background-image: url(${BackgroundUrl});
         background-size: cover;
         background-position: 50% 50%;
