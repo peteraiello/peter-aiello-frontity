@@ -26,7 +26,7 @@ const Container = styled.div`
     width: 100%;
     max-width: 1200px;
     margin: 1rem auto;
-    padding: 0 2rem;
+    padding: 0 1.75rem;
     box-sizing: border-box;
 `
 
