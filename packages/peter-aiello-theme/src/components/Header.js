@@ -29,6 +29,10 @@ const Header = () => {
 
 const MenuBar = styled.div`
     display: flex;
+    background-color: #00000090;
+    @media (min-width: 768px){
+        background-color: transparent;
+    }
 `
 
 const Container = styled.div`
@@ -52,9 +56,8 @@ const LogoContainer = styled.div`
     position: relative;
     width: 100%;
     margin: 0 auto;
-    padding: 1rem;
+    padding: 2rem;
     @media (min-width: 1200px){
-        padding: 1rem 0;
         width: 1200px;
     }
 `
