@@ -5,7 +5,7 @@ import Link from "../Link";
 const Tags = ({link, name}) => {
     return (
         <>
-            <Button href={link}>{name}</Button>
+            <Button link={link}>{name}</Button>
         </>
     );
 }

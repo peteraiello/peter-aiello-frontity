@@ -11,7 +11,7 @@ const Footer = () => {
             <Container>
                 <Column>
                     <Anchor 
-                        href="https://frontity.org/" 
+                        link="https://frontity.org/" 
                         target="_blank"
                     >
                             made using Frontity
@@ -21,7 +21,7 @@ const Footer = () => {
                     <SocialIcons />
                 </Column>
                 <Column>
-                    <Accreditations href="/accreditations">
+                    <Accreditations link="/accreditations">
                         accreditations
                     </Accreditations>
                  </Column>

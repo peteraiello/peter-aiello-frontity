@@ -6,11 +6,11 @@ const Nav = () => {
     return (
         <>
             <Navigation>
-                <Anchor href="/">Home</Anchor>
-                <Anchor href="/about">About</Anchor>
-                <Anchor href="/blog">Blog</Anchor>
-                <Anchor href="/work">Work</Anchor>
-                <Anchor href="/contact">Contact</Anchor>
+                <Anchor link="/">Home</Anchor>
+                <Anchor link="/about">About</Anchor>
+                <Anchor link="/blog">Blog</Anchor>
+                <Anchor link="/work">Work</Anchor>
+                <Anchor link="/contact">Contact</Anchor>
             </Navigation>
         </>
     );

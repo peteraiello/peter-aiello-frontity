@@ -26,7 +26,7 @@ const List = ({ state, libraries }) => {
                             <Excerpt>  
                                 <Html2React html={ post.excerpt.rendered } />
                             </Excerpt>
-                            <Button href={post.link}>read now</Button>
+                            <Button link={post.link}>read now</Button>
                         </PostItem>
                     )
                 }) }

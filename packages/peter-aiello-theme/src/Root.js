@@ -7,8 +7,11 @@ import Page from "./components/Page";
 import Page404 from "./components/Page404";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header";
+import Loading from "./components/Loading";
 import colorsCss from "../src/library/colors.css";
 import globalCss from "../src/library/global.css";
+import Switch from "@frontity/components/switch";
+
 
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link);
@@ -26,10 +29,13 @@ const Root = ({ state }) => {
             <Header />
             <Nav />
             <main>
+            <Switch>
+                <Loading when={data.isFetching} />
                 {data.isArchive && <Archive />}
                 {data.isPost && <Post />}
                 {data.isPage && <Page />}
                 {data.isError && <Page404 />}
+            </Switch>
             </main>
             <Footer />
         </>

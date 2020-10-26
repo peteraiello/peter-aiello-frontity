@@ -12,7 +12,7 @@ const Header = () => {
             <Background>
                 <MenuBar>
                     <LogoContainer>
-                        <Link href="/">
+                        <Link link="/">
                             <LogoClass
                                 loading="lazy" 
                                 src={ Logo } 

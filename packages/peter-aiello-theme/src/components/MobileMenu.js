@@ -13,11 +13,11 @@ const MobileMenu = ({ state, actions }) => {
             <Container>
                 <ContainerInner>
                     <nav>
-                        <Link href="/">Home</Link>
-                        <Link href="/about">About</Link>
-                        <Link href="/blog">Blog</Link>
-                        <Link href="/work">Work</Link>
-                        <Link href="/contact">Contact</Link>
+                        <Link link="/">Home</Link>
+                        <Link link="/about">About</Link>
+                        <Link link="/blog">Blog</Link>
+                        <Link link="/work">Work</Link>
+                        <Link link="/contact">Contact</Link>
                     </nav>
                 </ContainerInner>
             </Container>

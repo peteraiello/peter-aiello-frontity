@@ -49,8 +49,8 @@ const BackgroundHome = ({ state, title, id }) => {
             <TitleWrapper>
                 <Title>{ title }</Title>
                 <ButtonWrapper>
-                    <Button href='/about'>about</Button>
-                    <Button href='/blog'>blog</Button>
+                    <Button link='/about'>about</Button>
+                    <Button link='/blog'>blog</Button>
                 </ButtonWrapper>
             </TitleWrapper>
         </ Background>

@@ -6,7 +6,7 @@ import Image from "@frontity/components/image";
 const SocialIcon = ({name, src, url}) => {
     return (
         <>  
-            <Link href={ url } target="_blank">
+            <Link link={ url } target="_blank">
                 <Icon src={ src } alt={ name.toLowerCase() + '-icon'} />
             </Link>
         </>

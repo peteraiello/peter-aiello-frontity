@@ -1,11 +1,11 @@
-import React from "react";
+import React, {useEffect} from "react";
 import { styled, connect } from "frontity";
 import Placeholder from "../assets/background-images/buildings-dark.jpg";
 import BgClip from "./Paths/BlogCutout";
 import Tags from "./Post/Tags";
 
 
-const Post = ({ state, id }) => {
+const Post = ({ actions, state, id }) => {
 
     const data = state.source.get(state.router.link);
     const post = state.source[data.type][data.id];
@@ -38,7 +38,7 @@ const Post = ({ state, id }) => {
         filter: blur(1px);
     `
 
-    return (
+    return data.isReady ? (
         <>  
             <BackgroundImage>
                 <BackgroundWrapper>
@@ -58,7 +58,7 @@ const Post = ({ state, id }) => {
                 </ContainerInner>
             </Container>
         </>
-    )
+    ) : null;
 };
 
 const BackgroundWrapper = styled.div`
