@@ -4,12 +4,6 @@ import BgImage from "../assets/background-images/buildings-dark.jpg";
 import BgClip from "./Paths/BlogCutout";
 import List from "./List";
 
-const breakpoints = [576, 768, 992, 1200];
-
-const mq = breakpoints.map(
-    bp => `@media (min-width: ${bp}px)`
-);
-
 const Archive = ({ state }) => {
     return (
         <>
@@ -18,9 +12,7 @@ const Archive = ({ state }) => {
             </BackgroundImage>
             <Container>
                 <ContainerInner>
-                    <Content>
-                        <List />
-                    </Content>
+                    <List />
                 </ContainerInner>
             </Container>
         </>
@@ -54,13 +46,9 @@ const ContainerInner = styled.div`
     padding: 0 2rem;
     width: 100%;
     box-sizing: border-box;  
-    ${mq[1]} {
+    @media (min-width: 768px) {
         max-width: 1200px;
     }
-`
-
-const Content = styled.div`
-
 `
 
 export default connect(Archive);

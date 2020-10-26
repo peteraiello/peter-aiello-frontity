@@ -3,14 +3,6 @@ import { styled, connect } from "frontity";
 import Link from "./Link";
 import MenuIcon from "../assets/mobile-menu.svg";
 
-const drkColor = "#212224";
-
-const breakpoints = [576, 768, 992, 1200];
-
-const mq = breakpoints.map(
-    bp => `@media (min-width: ${bp}px)`
-);
-
 const MobileMenu = ({ state, actions }) => {
     return (
         state.theme.isMenuOpen ? (
@@ -43,7 +35,7 @@ const Button = styled.button`
     border: none;
     padding: .75rem;
     margin-right: 2rem;
-    ${mq[1]}{
+    @media (min-width: 768px) {
         display: none;
     }
 `
@@ -60,10 +52,10 @@ const Toggle = styled.span`
 const Container = styled.div`
     width: 100%;
     position: absolute;
-    background: ${drkColor};
+    background: var(--dark-grey);
     top: 113px;
     display: block;
-    ${mq[1]}{
+    @media (min-width: 768px) {
         display: none;
     }
 `

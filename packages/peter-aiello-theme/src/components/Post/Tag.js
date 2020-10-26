@@ -2,15 +2,6 @@ import React from "react";
 import { styled, connect} from "frontity";
 import Link from "../Link";
 
-const lightGrey = "#E0E0E0";
-const lightOrange = "#DFBD85";
-
-const breakpoints = [576, 768, 992, 1200];
-
-const mq = breakpoints.map(
-    bp => `@media (min-width: ${bp}px)`
-);
-
 const Tags = ({link, name}) => {
     return (
         <>
@@ -24,16 +15,16 @@ const Button = styled(Link)`
     display: inline-block;
     width: auto;
     text-align: center;
-    color: ${lightOrange};
+    color: var(--orange-highlight);
     margin: 0 2rem 2rem 0;
-    border: 3px solid ${lightOrange};
+    border: 3px solid var(--orange-highlight);
     padding: 1rem 3rem;
     text-decoration: none;
     font-size: 1rem !important;
     font-family: 'Open Sans', sans-serif;
     font-weight: Bold;
     text-transform: uppercase;
-    ${mq[1]}{
+    @media (min-width: 768px){
         font-size: 2rem !important;
         margin-bottom: 0 1.75rem 0 0;
     }

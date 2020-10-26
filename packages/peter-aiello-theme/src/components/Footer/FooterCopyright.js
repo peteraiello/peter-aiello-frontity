@@ -1,13 +1,10 @@
 import React from "react";
 import { styled } from "frontity";
 
-const lightGrey = "#E0E0E0";
-
 const FooterCopyright = () => {
 
     const Year = new Date().getFullYear();
     // console.log(Year);
-    
     return (
         <>
             <Container>
@@ -18,7 +15,7 @@ const FooterCopyright = () => {
 }
 
 const Text = styled.p`
-    color: ${lightGrey};
+    color: var(--light-grey);
     text-align: center;
 `
 

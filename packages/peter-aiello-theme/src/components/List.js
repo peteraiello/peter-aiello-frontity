@@ -3,15 +3,6 @@ import { styled, connect } from "frontity";
 import Link from "./Link";
 import Tags from "./Post/Tags";
 
-const lightGrey = "#E0E0E0";
-const lightOrange = "#DFBD85";
-
-const breakpoints = [576, 768, 992, 1200];
-
-const mq = breakpoints.map(
-    bp => `@media (min-width: ${bp}px)`
-);
-
 const List = ({ state, libraries }) => {
     const data = state.source.get(state.router.link);
     return (
@@ -46,9 +37,9 @@ const List = ({ state, libraries }) => {
 const PostDate = styled.span`
     display: block;
     text-transform: uppercase;
-    color: ${lightGrey};
+    color: var(--light-grey);
     font-size: 1.5rem;
-    ${mq[1]}{
+    @media (min-width: 768px) {
         font-size: 2rem;
     }
 `
@@ -57,19 +48,19 @@ const Title = styled.h1`
     font-size: 1.75rem;
     font-weight: bold;
     text-transform: uppercase;
-    color: ${lightGrey};
+    color: var(--light-grey);
     margin: 2rem 0;
-    ${mq[1]}{
+    @media (min-width: 768px) {
         font-size: 3.75rem;
     }
 `
 
 const Excerpt = styled.div`
     p {
-        color: ${lightGrey};
+        color: var(--light-grey);
         font-size: 2rem;
         line-height: 3rem;
-        ${mq[1]}{
+        @media (min-width: 768px) {
             font-size: 2.5rem;
             line-height: 4rem;
         }
@@ -78,7 +69,7 @@ const Excerpt = styled.div`
 `
 
 const PostItem = styled.div`
-    border-bottom: 2px solid ${lightOrange};
+    border-bottom: 2px solid var(--orange-highlight);
     padding-bottom: 2rem;
     &:last-of-type {
         border: none;
@@ -90,15 +81,15 @@ const Button = styled(Link)`
     width: auto;
     max-width: 250px;
     text-align: center;
-    color: ${lightGrey};
+    color: var(--light-grey);
     margin: 2rem 0;
-    border: 1px solid ${lightGrey};
+    border: 1px solid var(--light-grey);
     padding: 1rem;
     text-decoration: none;
     font-size: 2rem;
     font-family: 'Open Sans', sans-serif;
     font-weight: Bold;
-    ${mq[1]}{
+    @media (min-width: 768px) {
         font-size: 2.65rem;
     }
 `

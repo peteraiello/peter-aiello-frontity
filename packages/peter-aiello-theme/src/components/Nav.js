@@ -2,14 +2,6 @@ import React from "react";
 import Link from "./Link";
 import { styled } from "frontity";
 
-const breakpoints = [576, 768, 992, 1200];
-
-const mq = breakpoints.map(
-    bp => `@media (min-width: ${bp}px)`
-);
-
-const drkColor = "#212224";
-
 const Nav = () => {
     return (
         <>
@@ -33,7 +25,7 @@ const Navigation = styled.nav`
     transform: translate(-50%, -50%);
     z-index: 9999;
     display: none;
-    ${mq[1]}{
+    @media (min-width: 768px) {
         display: flex;
     }
 `
@@ -45,7 +37,7 @@ const Anchor = styled(Link)`
     width: 100%;
     padding: 0.25rem 1rem;
     margin-bottom: 2rem;
-    background: ${drkColor}90;
+    background: #21222490;
     border-radius: 0.25rem;
     text-transform: lowercase; 
 `

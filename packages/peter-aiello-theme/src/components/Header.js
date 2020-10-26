@@ -6,14 +6,6 @@ import MobileMenu from "./MobileMenu";
 import { styled } from "frontity";
 import Image from "@frontity/components/image";
 
-const drkColor = "#212224";
-
-const breakpoints = [576, 768, 992, 1200];
-
-const mq = breakpoints.map(
-    bp => `@media (min-width: ${bp}px)`
-);
-
 const Header = () => {
     return (
         <Container>
@@ -49,9 +41,9 @@ const Container = styled.div`
 const Background = styled.div`
     position: relative;
     height: auto;
-    background: ${drkColor}80;
+    background: var(--dark-grey)80;
     z-index: 9999;
-    ${mq[1]} {
+    @media (min-width: 768px){
         background: transparent;
     }
 `
@@ -61,7 +53,7 @@ const LogoContainer = styled.div`
     width: 100%;
     margin: 0 auto;
     padding: 1rem;
-    ${mq[3]} {
+    @media (min-width: 1200px){
         padding: 1rem 0;
         width: 1200px;
     }
@@ -69,7 +61,7 @@ const LogoContainer = styled.div`
 
 const LogoClass = styled(Image)`
     height: 76px;
-    ${mq[1]} {
+    @media (min-width: 768px) {
         height: 121px; 
     }
 `

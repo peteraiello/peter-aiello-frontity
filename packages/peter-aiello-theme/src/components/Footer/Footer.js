@@ -4,15 +4,6 @@ import SocialIcons from "../Social/SocialIcons";
 import { styled, connect } from "frontity";
 import FooterCopyright from "./FooterCopyright";
 
-const lightGrey = "#E0E0E0";
-const drkColor = "#212224";
-
-const breakpoints = [576, 768, 992, 1200];
-
-const mq = breakpoints.map(
-    bp => `@media (min-width: ${bp}px)`
-);
-
 const Footer = () => {
 
     return (
@@ -44,7 +35,7 @@ const Accreditations = styled(Link) `
     display: block;
     text-align: right;
     text-decoration: none;
-    color: ${lightGrey};
+    color: var(--orange-highlight);
     font-size: 1.25rem;
     font-weight: bold;
 `
@@ -55,8 +46,8 @@ const Column = styled.div`
 `
 
 const Anchor = styled(Link)`
-    color: ${drkColor};
-    background-color: ${lightGrey};
+    color: var(--dark-grey);
+    background-color: var(--light-grey);
     padding: 0.75rem;
     border-radius: 0.5rem;
     text-decoration: none;
@@ -73,10 +64,10 @@ const Container = styled.footer`
     padding: 0 2rem;
     width: 100%;
     box-sizing: border-box;
-    ${mq[1]}{
+    @media (min-width: 768px) {
         flex-direction: row;
     }
-    ${mq[3]}{
+    @media (min-width: 1200px) {
         max-width: 1200px;
     }
 `

@@ -10,7 +10,7 @@ const myTheme = {
   },
   state: {
     theme: {
-      isMenuOpen: false
+      isMenuOpen: false,
     }
   },
   actions: {

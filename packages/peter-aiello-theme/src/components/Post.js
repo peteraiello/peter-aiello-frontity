@@ -4,17 +4,6 @@ import Placeholder from "../assets/background-images/buildings-dark.jpg";
 import BgClip from "./Paths/BlogCutout";
 import Tags from "./Post/Tags";
 
-const breakpoints = [576, 768, 992, 1200];
-
-const mq = breakpoints.map(
-    bp => `@media (min-width: ${bp}px)`
-);
-
-/* the css */
-const customWht = "#ffffff";
-const drkColor = "#212224";
-const lightGrey = "#E0E0E0";
-const lightOrange = "#DFBD85";
 
 const Post = ({ state, id }) => {
 
@@ -73,7 +62,7 @@ const Post = ({ state, id }) => {
 };
 
 const BackgroundWrapper = styled.div`
-    background-color: ${drkColor}E6;
+    background-color: #00000080;
     position: absolute;
     top: 0;
     width: 100%;
@@ -84,7 +73,7 @@ const BackgroundWrapper = styled.div`
 const PostInfo = styled.div`
     margin: 0 0 2rem 0; 
     padding: 0 2rem;
-    ${mq[1]}{
+    @media (min-width: 768px) {
         padding: 0;
     }
 `
@@ -92,9 +81,9 @@ const PostInfo = styled.div`
 const PostDate = styled.span`
     display: block;
     text-transform: uppercase;
-    color: ${lightGrey};
+    color: var(--light-grey);
     font-size: 1.5rem;
-    ${mq[1]}{
+    @media (min-width: 768px) {
         font-size: 2rem;
     }
 `
@@ -103,9 +92,9 @@ const Title = styled.h1`
     font-size: 1.75rem;
     font-weight: bold;
     text-transform: uppercase;
-    color: ${lightGrey};
+    color: var(--light-grey);
     margin: 2rem 0;
-    ${mq[1]}{
+    @media (min-width: 768px) {
         font-size: 3.75rem;
     }
 `;
@@ -121,17 +110,17 @@ const ContainerInner = styled.div`
     padding: 0;
     width: 100%;
     box-sizing: border-box;  
-    ${mq[1]} {
+    @media (min-width: 768px) {
         max-width: 1200px;
         padding: 0 2rem;
     }
 `
 
 const ContentContainer = styled.div`
-    background-color: ${customWht};
+    background-color: var(--custom-white);
     padding: 2rem;
     border-radius: 0;
-    ${mq[1]}{
+    @media (min-width: 768px) {
         border-radius: 0.5rem;
     }
 `
@@ -139,7 +128,7 @@ const ContentContainer = styled.div`
 const Content = styled.div`
     code {
         font-family: 'Open Sans', sans-serif;
-        background-color: ${drkColor}20;
+        background-color: #CCCCCC80;
         padding: 2rem;
         box-sizing: border-box;
         display: block;

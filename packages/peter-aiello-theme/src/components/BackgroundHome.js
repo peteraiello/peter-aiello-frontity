@@ -4,14 +4,6 @@ import BackgroundDefault from "../assets/background-images/buildings-dark.jpg";
 import BuildingsBackground from "./Paths/BuildingsBackground";
 import Link from "./Link";
 
-const breakpoints = [576, 768, 992, 1200];
-
-const lightGrey = "#E0E0E0";
-
-const mq = breakpoints.map(
-    bp => `@media (min-width: ${bp}px)`
-);
-
 const BackgroundHome = ({ state, title, id }) => {
 
     const FeaturedMedia = state.source.attachment[id];
@@ -47,7 +39,7 @@ const BackgroundHome = ({ state, title, id }) => {
         animation-timing-function: linear;
         animation-delay: 0s;
         animation-iteration-count: infinite;
-        ${mq[1]} {
+        @media (min-width: 768px) {
             -webkit-clip-path: url(#path-1);
             clip-path: url(#path-1); 
             transform: scale(1.25);
@@ -75,7 +67,7 @@ const ButtonWrapper = styled.div`
     justify-content: center;
     display: flex;
     flex-direction: column;
-    ${mq[1]}{
+    @media (min-width: 768px) {
         flex-direction: row;
     }
 `
@@ -83,15 +75,15 @@ const ButtonWrapper = styled.div`
 const Button = styled(Link)`
     min-width: 200px;
     text-align: center;
-    color: ${lightGrey};
+    color: var(--light-grey);
     margin: 0.5rem 0;
-    border: 1px solid ${lightGrey};
+    border: 1px solid var(--light-grey);
     padding: 1rem;
     text-decoration: none;
     font-size: 1.5rem;
     font-family: 'Open Sans', sans-serif;
     font-weight: Bold;
-    ${mq[1]}{
+    @media (min-width: 768px){
         margin: 0 0.5rem;
     }
 `
@@ -119,7 +111,7 @@ const Title = styled.h1`
     text-transform: uppercase;
     position: relative;
     font-size: 4rem;
-    color: ${lightGrey};
+    color: var(--light-grey);
     text-align: center;
     line-height: 50px;
 `;

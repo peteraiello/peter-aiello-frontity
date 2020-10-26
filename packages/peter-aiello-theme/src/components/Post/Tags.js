@@ -11,22 +11,19 @@ const Tags = ({state, tags}) => {
 
     return (
         <>
-            <Wrapper>
-                { tags.map(
-                    tag => 
-                        <Tag 
-                            key={tag} 
-                            name={state.source.tag[tag].name} 
-                            link={state.source.tag[tag].link}
-                        />
-                    )
-                }
-            </Wrapper>
+            { tags.map(
+                tag => 
+                    <Tag 
+                        key={tag} 
+                        name={state.source.tag[tag].name} 
+                        link={state.source.tag[tag].link}
+                    />
+                )
+            }
         </>
     )
 }
 
-const Wrapper = styled.div`
-`;
+
 
 export default connect(Tags);

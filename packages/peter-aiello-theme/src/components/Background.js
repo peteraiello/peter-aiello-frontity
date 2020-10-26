@@ -4,16 +4,6 @@ import Placeholder from "../assets/background-images/buildings-dark.jpg";
 import LogoBackground from "./Paths/LogoBackground";
 import ArrowIcon from "./ArrowIcon";
 
-const breakpoints = [576, 768, 992, 1200];
-
-const drkColor = "#212224";
-const lightGrey = "#E0E0E0";
-const lightOrange = "#DFBD85";
-
-const mq = breakpoints.map(
-    bp => `@media (min-width: ${bp}px)`
-);
-
 const Background = ({ state, title, id, postContent, libraries }) => {
 
     const Html2React = libraries.html2react.Component;
@@ -53,7 +43,7 @@ const Background = ({ state, title, id, postContent, libraries }) => {
         animation-delay: 0s;
         animation-iteration-count: infinite;
         transform: scale(0.5);
-        ${mq[1]} {
+        @media (min-width: 768px){
             transform: scale(0.75);
         }
     `
@@ -92,7 +82,7 @@ const ArrowFill = 'white';
 
 const ArrowAnimation = keyframes`
     0% {
-        fill: ${lightGrey};
+        fill: var(--light-grey);
         transform: translate(0px, 0px);
     }
     10% {
@@ -108,7 +98,7 @@ const ArrowAnimation = keyframes`
         transform: translate(0px, 0px);
     }
     50% {
-        fill: ${lightGrey};
+        fill: var(--light-grey);
     }
 `;
 
@@ -185,7 +175,7 @@ const Title = styled.h1`
     text-transform: uppercase;
     position: relative;
     font-size: 4rem;
-    color: ${lightGrey};
+    color: var(--light-grey);
     text-align: center;
     line-height: 50px;
 `;
@@ -204,7 +194,7 @@ const ContainerInner = styled.div`
     padding: 2rem 2rem;
     width: 100%;
     box-sizing: border-box;
-    ${mq[1]} {
+    @media (min-width: 768px){
         max-width: 1200px;
     }
 `
@@ -219,7 +209,7 @@ const Content = styled.div`
     ul,
     li,
     p {
-        color: ${lightGrey}
+        color: var(--light-grey)
     }
 
     p,
@@ -254,7 +244,7 @@ const Content = styled.div`
     }
 
     a {
-        color: ${lightOrange}
+        color: var(--orange-highlight)
     }
 
     /* custom button */
@@ -263,9 +253,9 @@ const Content = styled.div`
         width: auto;
         max-width: 250px;
         text-align: center;
-        color: ${lightGrey};
+        color: var(--light-grey);
         margin: 2rem 0;
-        border: 1px solid ${lightGrey};
+        border: 1px solid var(--light-grey);
         padding: 1rem;
         text-decoration: none;
         font-size: 2.65rem;
@@ -274,10 +264,10 @@ const Content = styled.div`
     }
 
     a.mailto-link {
-        color: ${lightOrange};
+        color: var(--orange-highlight);
         font-size: 2rem;
         text-decoration: none;
-        ${mq[3]}{
+        @media (min-width: 1200px) {
             font-size: 3rem;
         }
     }
