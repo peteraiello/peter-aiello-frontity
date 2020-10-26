@@ -20,6 +20,7 @@ const Archive = ({ state }) => {
 };
 
 const BackgroundImage = styled.div`
+    -webkit-clip-path: url(#path-1);
     min-height: 100vh;
     height: 1250px;
     width: 100%;
@@ -27,7 +28,6 @@ const BackgroundImage = styled.div`
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 50%;
-    -webkit-clip-path: url(#path-1);
     clip-path: url(#path-1);
     overflow: hidden;
     position: absolute;

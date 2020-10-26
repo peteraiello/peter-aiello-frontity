@@ -1,7 +1,6 @@
 import React from "react";
 import { connect, styled, keyframes } from "frontity";
 import BackgroundDefault from "../assets/background-images/buildings-dark.jpg";
-import BuildingsBackground from "./Paths/BuildingsBackground";
 import Link from "./Link";
 
 const BackgroundHome = ({ state, title, id }) => {
@@ -19,37 +18,33 @@ const BackgroundHome = ({ state, title, id }) => {
         width: 100%;
         height: 100vh;
         overflow: hidden;
+        @media (min-width: 1200px) {
+            background-size: 110%;
+        }
     `
 
     const BackgroundClip = styled.div`
-        -webkit-clip-path: url(#path-2);
-        clip-path: url(#path-2);
+        clip-path: polygon(70% 0, 100% 0, 30% 100%, 0 100%);
         background-image: url(${BackgroundUrl});
         background-size: cover;
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: 50% -150%;
-        margin: 12rem 0;
         width: 100%;
         height: 100%;
-        transform: scale(2) translate(20%, 0);
         overflow: hidden;
         animation: ${myTransition};
         animation-duration: 8s;
         animation-timing-function: linear;
         animation-delay: 0s;
         animation-iteration-count: infinite;
-        @media (min-width: 768px) {
-            -webkit-clip-path: url(#path-1);
-            clip-path: url(#path-1); 
-            transform: scale(1.25);
+        @media (min-width: 1200px) {
             background-size: 110%;
         }
-        `
+    `
 
     return (
         <Background>
-            <BuildingsBackground />
             <BackgroundClip />
             <TitleWrapper>
                 <Title>{ title }</Title>
@@ -75,9 +70,9 @@ const ButtonWrapper = styled.div`
 const Button = styled(Link)`
     min-width: 200px;
     text-align: center;
-    color: var(--light-grey);
+    color: var(--dark-grey);
     margin: 0.5rem 0;
-    border: 1px solid var(--light-grey);
+    border: 1px solid var(--dark-grey);
     padding: 1rem;
     text-decoration: none;
     font-size: 1.5rem;
@@ -98,20 +93,27 @@ const myTransition = keyframes`
 `;
 
 const TitleWrapper = styled.div`
-    height: 200px;
-    width: 500px;
+    width: 100%;
     position: absolute;
-    left: 50%;
-    margin-left: -250px;
+    margin-left: 0;
+    left: 0;
     top: 50%;
     margin-top: -100px;
+    padding: 0 0 3rem 0;
+    background-color: rgba(255,255,255,0.75);
+    @media (min-width: 768px) {
+        left: 50%;
+        margin-left: -250px;
+        width: 500px;
+        background-color: rgba(255,255,255,0);
+    }
 `
 
 const Title = styled.h1`
     text-transform: uppercase;
     position: relative;
     font-size: 4rem;
-    color: var(--light-grey);
+    color: var(--dark-grey);
     text-align: center;
     line-height: 50px;
 `;

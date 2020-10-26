@@ -17,7 +17,7 @@ const Button = styled(Link)`
     text-align: center;
     color: var(--orange-highlight);
     margin: 0 2rem 2rem 0;
-    border: 3px solid var(--orange-highlight);
+    border: 1px solid var(--orange-highlight);
     padding: 1rem 3rem;
     text-decoration: none;
     font-size: 1rem !important;
