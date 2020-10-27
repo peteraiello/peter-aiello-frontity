@@ -18,13 +18,32 @@ const BackgroundHome = ({ state, title, id }) => {
         width: 100%;
         height: 100vh;
         overflow: hidden;
+    `
+
+    const BackgroundClip = styled.div`
+        clip-path: polygon(100% 0, 100% 25%, 0 45%, 0 20%);
+        position: absolute;
+        background-image: url(${BackgroundUrl});
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position: 50% -150%;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        animation: ${myTransition};
+        animation-duration: 8s;
+        animation-timing-function: linear;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
         @media (min-width: 1200px) {
             background-size: 110%;
         }
     `
 
-    const BackgroundClip = styled.div`
-        clip-path: polygon(70% 0, 100% 0, 30% 100%, 0 100%);
+    const BackgroundClip2 = styled.div`
+        clip-path: polygon(100% 50%, 100% 75%, 0 100%, 0 75%);
+        position: absolute;
         background-image: url(${BackgroundUrl});
         background-size: cover;
         background-repeat: no-repeat;
@@ -46,6 +65,7 @@ const BackgroundHome = ({ state, title, id }) => {
     return (
         <Background>
             <BackgroundClip />
+            <BackgroundClip2 />
             <TitleWrapper>
                 <Title>{ title }</Title>
                 <ButtonWrapper>
@@ -100,12 +120,10 @@ const TitleWrapper = styled.div`
     top: 50%;
     margin-top: -100px;
     padding: 0 0 3rem 0;
-    background-color: rgba(255,255,255,0.75);
     @media (min-width: 768px) {
         left: 50%;
         margin-left: -250px;
         width: 500px;
-        background-color: rgba(255,255,255,0);
     }
 `
 

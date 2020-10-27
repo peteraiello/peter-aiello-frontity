@@ -25,7 +25,7 @@ const Loading = () => {
 }
 
 const Container = styled.div`
-    margin-top: 190px;
+    margin-top: 12rem;
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -56,7 +56,7 @@ const bar = index => css`
   border-radius: 0;
   display: inline-block;
   animation: ${scale} 1s ${index * 0.1}s infinite
-    cubic-bezier(0.2, 0.68, 0.18, 1.08);
+  cubic-bezier(0.2, 0.68, 0.18, 1.08);
   animation-fill-mode: both;
 `;
 
