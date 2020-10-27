@@ -1,27 +1,37 @@
 import React from "react";
 import Link from "./Link";
-import { connect } from "frontity";
+import { Global, css, connect } from "frontity";
 import Logo from "../assets/logo-light-vers.svg";
 import MobileMenu from "./MobileMenu";
 import { styled } from "frontity";
 import Image from "@frontity/components/image";
 
-const Header = () => {
+const Header = ({ state }) => {
+    const data = state.source.get(state.router.link);
+    console.log(data.isHome);
+
+
+
     return (
         <Container>
             <Background>
-                <MenuBar>
-                    <LogoContainer>
-                        <Link link="/">
-                            <LogoClass
-                                loading="lazy" 
-                                src={ Logo } 
-                                alt="Peter Aiello - Coding Experience"
-                            />
-                        </Link>
-                    </LogoContainer>
-                    <MobileMenu />
-                </MenuBar>
+                { /* is homepage ? then background else no background */}
+                { data.isHome ? (<Global styles={css`.menu-bar { background: #00000090}`} />) 
+                : <Global styles={css`.menu-bar {background: transparent}`} /> }
+                <div className="menu-bar">
+                    <MenuBar>
+                        <LogoContainer>
+                            <Link link="/">
+                                <LogoClass
+                                    loading="lazy" 
+                                    src={ Logo } 
+                                    alt="Peter Aiello - Coding Experience"
+                                />
+                            </Link>
+                        </LogoContainer>
+                        <MobileMenu />
+                    </MenuBar>
+                </div>
             </Background>
         </Container>
     )
@@ -29,10 +39,6 @@ const Header = () => {
 
 const MenuBar = styled.div`
     display: flex;
-    background-color: #00000090;
-    @media (min-width: 768px){
-        background-color: transparent;
-    }
 `
 
 const Container = styled.div`
@@ -45,18 +51,14 @@ const Container = styled.div`
 const Background = styled.div`
     position: relative;
     height: auto;
-    background: var(--dark-grey)80;
     z-index: 9999;
-    @media (min-width: 768px){
-        background: transparent;
-    }
 `
 
 const LogoContainer = styled.div`
     position: relative;
     width: 100%;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 1rem 2rem;
     @media (min-width: 1200px){
         width: 1200px;
     }
