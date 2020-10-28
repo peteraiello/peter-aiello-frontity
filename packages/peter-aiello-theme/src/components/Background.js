@@ -31,10 +31,13 @@ const Background = ({ state, title, id, postContent, libraries }) => {
 
     const BackgroundClip = styled.div`
         -webkit-clip-path: url(#path-2);
+        position: fixed;
+        top: 50%;
         clip-path: url(#path-2);
         background-image: url(${BackgroundUrl});
-        width: 796px;
-        height: 796px;
+        width: 800px;
+        height: 800px;
+        margin-top: -400px;
         background-size: cover;
         background-position: 50% 50%;
         animation: ${myTransition};
@@ -103,7 +106,7 @@ const ArrowAnimation = keyframes`
 `;
 
 const ArrowWrapper = styled.div`
-    position: absolute;
+    position: fixed;
     height: 75px;
     width: 32px;
     left: 50%;
@@ -163,7 +166,7 @@ const ClipIcon = styled.img`
 const TitleWrapper = styled.div`
     height: 100px;
     width: 500px;
-    position: absolute;
+    position: fixed;
     left: 50%;
     margin-left: -250px;
     top: 50%;
@@ -185,17 +188,23 @@ const Container = styled.div`
     height: 100%;
     min-height: 100vh;
     background: transparent;
-    background-image: linear-gradient(to bottom,#21222400,#212224 50%)
+    background-image: linear-gradient(to bottom,#21222400,#212224 150px);
+    position: relative;
+    z-index: 1;
 `
 
 const ContainerInner = styled.div`
     position: relative;
     margin: 0 auto;
-    padding: 2rem 2rem;
+    padding-top: 12rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
     width: 100%;
     box-sizing: border-box;
     @media (min-width: 768px){
         max-width: 1200px;
+        width: calc(100% - 120px);
     }
 `
 
@@ -268,7 +277,7 @@ const Content = styled.div`
         font-size: 2rem;
         text-decoration: none;
         @media (min-width: 1200px) {
-            font-size: 3rem;
+            font-size: 2rem;
         }
     }
  
@@ -278,7 +287,7 @@ const Content = styled.div`
     */
     .wp-block-columns {
         display:flex;
-        margin-bottom:28px;
+        margin: 50px 0;
         flex-wrap:wrap
        }
 

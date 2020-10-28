@@ -3,18 +3,11 @@ import { connect } from "frontity";
 import Background from "./Background";
 import BackgroundHome from "./BackgroundHome";
 
-const Page = ({ state, actions }) => {
+const Page = ({ state }) => {
 
     const data = state.source.get(state.router.link);
     const post = state.source[data.type][data.id];
     const FeaturedMediaID = post.featured_media; 
-
-    useEffect(() => {
-        actions.source.fetch('/');
-        actions.source.fetch('/about');
-        actions.source.fetch('/work');
-        actions.source.fetch('/contact');
-    }, []);
 
     return data.isReady ? (
             <>

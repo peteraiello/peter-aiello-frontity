@@ -23,6 +23,8 @@
     "@frontity/tiny-router": "^1.2.2",
     "@frontity/wp-source": "^1.9.1",
     "frontity": "^1.12.0",
-    "peter-aiello-theme": "file:packages/peter-aiello-theme"
+    "frontity-contact-form-7": "^0.1.7",
+    "peter-aiello-theme": "file:packages/peter-aiello-theme",
+    "react-intersection-observer": "^8.29.1"
   }
 }

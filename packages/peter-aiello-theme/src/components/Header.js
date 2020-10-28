@@ -5,20 +5,13 @@ import Logo from "../assets/logo-light-vers.svg";
 import MobileMenu from "./MobileMenu";
 import { styled } from "frontity";
 import Image from "@frontity/components/image";
+import { useInView } from 'react-intersection-observer';
+
 
 const Header = ({ state }) => {
-    const data = state.source.get(state.router.link);
-    console.log(data.isHome);
-
-
-
     return (
         <Container>
             <Background>
-                { /* is homepage ? then background else no background */}
-                { data.isHome ? (<Global styles={css`.menu-bar { background: #00000090}`} />) 
-                : <Global styles={css`.menu-bar {background: transparent}`} /> }
-                <div className="menu-bar">
                     <MenuBar>
                         <LogoContainer>
                             <Link link="/">
@@ -31,7 +24,6 @@ const Header = ({ state }) => {
                         </LogoContainer>
                         <MobileMenu />
                     </MenuBar>
-                </div>
             </Background>
         </Container>
     )
@@ -42,10 +34,13 @@ const MenuBar = styled.div`
 `
 
 const Container = styled.div`
-    position: absolute;
-    top: 0px;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
     width: 100%;
-    height: 100%;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+    background-color: #00000080;
 `
 
 const Background = styled.div`
@@ -55,10 +50,8 @@ const Background = styled.div`
 `
 
 const LogoContainer = styled.div`
-    position: relative;
-    width: 100%;
+    width: 1200px;
     margin: 0 auto;
-    padding: 1rem 2rem;
     @media (min-width: 1200px){
         width: 1200px;
     }

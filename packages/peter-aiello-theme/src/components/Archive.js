@@ -37,7 +37,7 @@ const BackgroundImage = styled.div`
 
 const Container = styled.div`
     width: 100%;
-    margin: 12rem auto;
+    margin: 12rem auto 0;
 `
 
 const ContainerInner = styled.div`

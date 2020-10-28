@@ -19,7 +19,7 @@ const Nav = () => {
 const Navigation = styled.nav`
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     top: 50%;
     right: 0;
     transform: translate(-50%, -50%);

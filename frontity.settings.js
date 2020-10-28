@@ -8,7 +8,7 @@ const settings = {
     }
   },
   "packages": [
-    {
+    { 
       "name": "peter-aiello-theme"
     },
     {

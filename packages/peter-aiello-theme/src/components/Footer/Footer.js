@@ -8,6 +8,7 @@ const Footer = () => {
 
     return (
         <>
+        <Background>
             <Container>
                 <Column>
                     <Anchor 
@@ -27,9 +28,15 @@ const Footer = () => {
                  </Column>
             </Container>
             <FooterCopyright />
+        </Background>
         </>
     );
 }
+
+const Background = styled.div`
+    background: var(--dark-grey);
+    position: relative;
+`
 
 const Accreditations = styled(Link) `
     display: block;
