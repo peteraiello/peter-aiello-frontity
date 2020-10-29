@@ -11,6 +11,7 @@ const myTheme = {
   state: {
     theme: {
       isMenuOpen: false,
+      headerIsScrolling: false
     }
   },
   actions: {
@@ -20,7 +21,13 @@ const myTheme = {
       },
       closeMenu: ({ state }) => {
         state.theme.isMenuOpen = false;
-      }
+      },
+      headerDefault: ({ state }) => {
+        state.theme.headerIsScrolling = false;
+      },
+      headerScroll: ({ state }) => {
+        state.theme.headerIsScrolling = true;
+      },
     }
   },
   libraries: {

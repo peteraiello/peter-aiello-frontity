@@ -1,66 +1,78 @@
-import React from "react";
+import React, {useRef} from "react";
 import Link from "./Link";
-import { Global, css, connect } from "frontity";
+import { Global, css, connect, keyframes } from "frontity";
 import Logo from "../assets/logo-light-vers.svg";
 import MobileMenu from "./MobileMenu";
+import MainMenu from "./MainMenu";
+
 import { styled } from "frontity";
 import Image from "@frontity/components/image";
 import { useInView } from 'react-intersection-observer';
 
+const Header = ({ state, actions }) => {
 
-const Header = ({ state }) => {
-    return (
-        <Container>
-            <Background>
-                    <MenuBar>
-                        <LogoContainer>
-                            <Link link="/">
-                                <LogoClass
-                                    loading="lazy" 
-                                    src={ Logo } 
-                                    alt="Peter Aiello - Coding Experience"
-                                />
-                            </Link>
-                        </LogoContainer>
-                        <MobileMenu />
-                    </MenuBar>
-            </Background>
-        </Container>
-    )
+    const [ref, inView] = useInView({threshold: 0,});
+
+        // menu in view? update the state for 
+        // 'headerIsScrolling' to false using an action' 
+        // menu not in view? then update 
+        // the state for 'headerIsScrolling' to true
+        inView ? ( actions.theme.headerDefault()
+        ) : ( actions.theme.headerScroll()
+        );
+
+        return(
+            <>
+                    <MenuDefault ref={ref}>
+                        <MainMenu logoSize="120px" />
+                    </MenuDefault>
+                {
+                    state.theme.headerIsScrolling &&
+                    <MenuScroll>
+                        <MainMenu logoSize="80px" />
+                    </MenuScroll>
+                }
+            </>
+        )
 }
 
-const MenuBar = styled.div`
-    display: flex;
-`
+const myTransition = keyframes`
+    from {
+        opacity: 0; 
+    }
+    to {
+        opacity: 1;  
+    }
+`;
 
-const Container = styled.div`
-    position: fixed;
+const MenuDefault = styled.div`
+    background: transparent;
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
     z-index: 9999;
-    top: 0;
-    width: 100%;
-    padding: 1rem 2rem;
+    animation: ${myTransition};
+    animation-duration: 1s;
     box-sizing: border-box;
-    background-color: #00000080;
-`
-
-const Background = styled.div`
-    position: relative;
-    height: auto;
-    z-index: 9999;
-`
-
-const LogoContainer = styled.div`
-    width: 1200px;
-    margin: 0 auto;
-    @media (min-width: 1200px){
-        width: 1200px;
+    @media (min-width: 768px){
+        padding: 1rem 0;
+        position: absolute;
     }
 `
 
-const LogoClass = styled(Image)`
-    height: 76px;
-    @media (min-width: 768px) {
-        height: 121px; 
+const MenuScroll = styled.div`
+    display: none;
+    background: #00000080; 
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 9999;
+    animation: ${myTransition};
+    animation-duration: 1s;
+    box-sizing: border-box;
+    @media (min-width: 768px){
+        padding: 1rem 0;
+        display: block;
     }
 `
 
