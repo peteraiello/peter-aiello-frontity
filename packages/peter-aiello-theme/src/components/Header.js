@@ -46,7 +46,7 @@ const myTransition = keyframes`
 `;
 
 const MenuDefault = styled.div`
-    background: transparent;
+    background: #00000080; 
     position: fixed; 
     width: 100%; 
     top: 0; 
@@ -55,6 +55,7 @@ const MenuDefault = styled.div`
     animation-duration: 1s;
     box-sizing: border-box;
     @media (min-width: 768px){
+        background: transparent;
         padding: 1rem 0;
         position: absolute;
     }

@@ -53,7 +53,7 @@ const MenuBar = styled.div`
 `
 
 const LogoContainer = styled.div`
-    padding: 2rem;
+    padding: 1rem 2rem;
     width: 1200px;
     box-sizing: border-box;
     margin: 0 auto;
