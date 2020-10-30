@@ -1,22 +1,26 @@
 import React from "react";
 import { connect } from "frontity";
-import Background from "./Background";
-import BackgroundHome from "./BackgroundHome";
+import Home from "./HomePage";
+import About from "./AboutPage";
+import Contact from "./ContactPage";
 
 
 const Page = ({ state }) => {
 
-
     const data = state.source.get(state.router.link);
     const post = state.source[data.type][data.id];
     const FeaturedMediaID = post.featured_media; 
-
+    const postID = post.id;
+    //    console.log(postID);
 
     return data.isReady ? (
             <>
-                {/* page is home ? do this, else do that */}
-                { data.isHome ? <BackgroundHome title={post.title.rendered} id={ FeaturedMediaID }/> : 
-                <Background title={post.title.rendered} id={ FeaturedMediaID } postContent={ post.content.rendered } />  }
+                {/* page is home? */}
+                { data.isHome && <Home title={post.title.rendered} id={ FeaturedMediaID }/>}
+                {/* post id equal to about */}
+                { postID === 10 && <About title={post.title.rendered} id={ FeaturedMediaID } postContent={ post.content.rendered } /> }
+                {/* post id equal to contact */}
+                { postID === 12 && <Contact title={post.title.rendered} id={ FeaturedMediaID } postContent={ post.content.rendered } /> }
             </>
         ) : null;
 

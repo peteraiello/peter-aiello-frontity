@@ -59,20 +59,12 @@ const Background = ({ state, title, id, postContent, libraries }) => {
                     <LogoBackground />
                     <ClipIcon src={ BackgroundUrl } alt="branding-icon"/>
                 </BackgroundClip>
-                <TitleWrapper>
-                    <Title>{ title }</Title>
-                </TitleWrapper>
-                <ArrowWrapper>
-                    <ArrowIcon MyClass={ MyArrow } MyFill={ ArrowFill }></ArrowIcon>
-                </ArrowWrapper>
             </IconWrapper>
             {/* the markup for page content */}
             <Container>
-                <ContainerInner>
                     <Content>
                         <Html2React html={ postContent } />
                     </Content>
-                </ContainerInner>
             </Container>            
         </BackgroundImage>
         </>
@@ -188,9 +180,12 @@ const Container = styled.div`
     height: 100%;
     min-height: 100vh;
     background: transparent;
-    background-image: linear-gradient(to bottom,#21222400,#212224 150px);
-    position: relative;
+    position: absolute;
+    top: 0;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 `
 
 const ContainerInner = styled.div`
@@ -281,6 +276,10 @@ const Content = styled.div`
     styles for gutenberg columns only
     copied from wordpress
     */
+
+    .has-text-align-center {
+        text-align: center;
+    }
     .wp-block-columns {
         display:flex;
         margin: 50px 0;
