@@ -65,7 +65,8 @@ const MenuBar = styled.div`
 
 const LogoContainer = styled.div`
     padding: 1rem;
-    width: 1200px;
+    max-width: 1200px;
+    width: 100%;
     box-sizing: border-box;
     margin: 0 auto;
     display: flex;
