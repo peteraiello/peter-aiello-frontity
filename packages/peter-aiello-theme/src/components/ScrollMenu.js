@@ -2,9 +2,10 @@ import React from "react";
 import MobileMenu from "./MobileMenu";
 import Link from "./Link";
 import { connect, styled } from "frontity";
-import Logo from "../assets/logo-light-vers.svg";
+import ScrollLogo from "../assets/A-logo-lt.svg";
 import Image from "@frontity/components/image";
 import MenuIcon from "../assets/mobile-menu.svg";
+import Nav from "./Nav";
 
 const MainMenu = ({ logoSize, state, actions }) => {
 
@@ -22,32 +23,18 @@ const MainMenu = ({ logoSize, state, actions }) => {
                 <Link link="/">
                     <LogoClass
                         loading="lazy" 
-                        src={ Logo } 
+                        src={ ScrollLogo } 
                         alt="Peter Aiello - Coding Experience"
                     />
                 </Link>
 
                 {   
                     state.theme.headerIsScrolling &&
-                    <div>
-                        <Anchor link="/about">About</Anchor>
-                        <Anchor link="/blog">Blog</Anchor>
-                        <Anchor link="/contact">Contact</Anchor>
-                    </div>
+                    <NavWrapper>
+                        <Nav />
+                    </NavWrapper>
                 }
         
-                {
-                    state.theme.isMenuOpen &&
-                    <Button onClick={actions.theme.closeMenu}>
-                        <Toggle/>
-                    </Button>
-                }
-                {
-                    !state.theme.isMenuOpen &&
-                    <Button onClick={actions.theme.openMenu}>
-                        <Toggle/>
-                    </Button>
-                }
             </LogoContainer>
         </MenuBar>
             {
@@ -57,6 +44,8 @@ const MainMenu = ({ logoSize, state, actions }) => {
         </>
     )
 }
+
+
 
 const MenuBar = styled.div`
     display: flex;
@@ -76,33 +65,15 @@ const LogoContainer = styled.div`
     }
 `
 
-const Button = styled.button`
-    background-color: transparent;
-    border: none;
-    display: block;
-    @media (min-width: 1024px) {
-        display: none;
+const NavWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    a {
+        margin-right: 2rem;
+        &:last-of-type {
+            margin-right: 0;
+        }
     }
-`
-
-const Toggle = styled.span`
-    background-image: url(${MenuIcon});
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    background-size: 100% 100%;
-    border: none;
-`
-
-const Anchor = styled(Link)`
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    width: 100%;
-    padding: 0.25rem 1rem;
-    margin-bottom: 2rem;
-    border-radius: 0.25rem;
-    text-transform: lowercase; 
 `
 
 export default connect(MainMenu);

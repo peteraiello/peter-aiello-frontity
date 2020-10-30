@@ -1,22 +1,18 @@
-import React, {useRef} from "react";
-import Link from "./Link";
-import { Global, css, connect, keyframes } from "frontity";
-import Logo from "../assets/logo-light-vers.svg";
-import MobileMenu from "./MobileMenu";
+import React from "react";
+import { connect, keyframes } from "frontity";
 import MainMenu from "./MainMenu";
-
+import ScrollMenu from "./ScrollMenu";
 import { styled } from "frontity";
-import Image from "@frontity/components/image";
 import { useInView } from 'react-intersection-observer';
 
 const Header = ({ state, actions }) => {
 
     const [ref, inView] = useInView({threshold: 0,});
 
-        // menu in view? update the state for 
-        // 'headerIsScrolling' to false using an action' 
-        // menu not in view? then update 
-        // the state for 'headerIsScrolling' to true
+        // menu in view? update the 'headerIsScrolling'
+        // state to false using an action' 
+        // menu not in view?  update 'headerIsScrolling'
+        // state to true
         inView ? ( 
             actions.theme.headerDefault()
         ) : ( 
@@ -32,7 +28,7 @@ const Header = ({ state, actions }) => {
                 {
                     state.theme.headerIsScrolling &&
                     <MenuScroll>
-                        <MainMenu logoSize="80px" />
+                        <ScrollMenu logoSize="80px" />
                     </MenuScroll>
                 }
             </>

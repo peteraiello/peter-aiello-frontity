@@ -1,5 +1,5 @@
 import React from "react";
-import { Global, css, connect, Head } from "frontity";
+import { Global, css, connect, Head, styled } from "frontity";
 import Nav from "./components/Nav";
 import Archive from "./components/Archive";
 import Post from "./components/Post";
@@ -27,7 +27,11 @@ const Root = ({ state }) => {
             {/* global style variables */}
             <Global styles={css(globalCss)} />
             <Header />
-            <Nav />
+            { !state.theme.headerIsScrolling &&
+                <NavWrapper>
+                    <Nav />
+                </NavWrapper>
+            }
             <main>
             <Switch>
                 <Loading when={data.isFetching} />
@@ -41,5 +45,31 @@ const Root = ({ state }) => {
         </>
     )
 }
+
+const NavWrapper = styled.nav`
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    display: none;
+    @media (min-width: 1024px) {
+        display: flex;
+    }
+    a {
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        width: 100%;
+        border-radius: 0.25rem;
+        text-transform: lowercase; 
+        margin-bottom: 2rem;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+`
 
 export default connect(Root);
