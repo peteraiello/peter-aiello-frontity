@@ -1,10 +1,8 @@
 import React from "react";
-import MobileMenu from "./MobileMenu";
-import Link from "./Link";
+import Link from "../Link";
 import { connect, styled } from "frontity";
-import ScrollLogo from "../assets/A-logo-lt.svg";
+import ScrollLogo from "../../assets/A-logo-lt.svg";
 import Image from "@frontity/components/image";
-import MenuIcon from "../assets/mobile-menu.svg";
 import Nav from "./Nav";
 
 const MainMenu = ({ logoSize, state, actions }) => {
@@ -15,7 +13,6 @@ const MainMenu = ({ logoSize, state, actions }) => {
             height: ${logoSize}; 
         }
     `
-
     return (
         <>
         <MenuBar>
@@ -27,20 +24,11 @@ const MainMenu = ({ logoSize, state, actions }) => {
                         alt="Peter Aiello - Coding Experience"
                     />
                 </Link>
-
-                {   
-                    state.theme.headerIsScrolling &&
-                    <NavWrapper>
-                        <Nav />
-                    </NavWrapper>
-                }
-        
+                <NavWrapper>
+                    <Nav />
+                </NavWrapper>
             </LogoContainer>
-        </MenuBar>
-            {
-            state.theme.isMenuOpen &&
-                <MobileMenu />
-            }            
+        </MenuBar>        
         </>
     )
 }
@@ -65,10 +53,17 @@ const LogoContainer = styled.div`
     }
 `
 
+
 const NavWrapper = styled.div`
     display: flex;
     align-items: center;
     a {
+        color: white;
+        text-decoration: none;
+        text-align: center;
+        width: 100%;
+        border-radius: 0.25rem;
+        text-transform: lowercase; 
         margin-right: 2rem;
         &:last-of-type {
             margin-right: 0;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Global, css, connect, Head, styled } from "frontity";
-import Nav from "./components/Nav";
+import Nav from "./components/Menu/Nav";
 import Archive from "./components/Archive";
 import Post from "./components/Post";
 import Page from "./components/Page";
@@ -11,9 +11,24 @@ import Loading from "./components/Loading";
 import colorsCss from "../src/library/colors.css";
 import globalCss from "../src/library/global.css";
 import Switch from "@frontity/components/switch";
+import { useInView } from 'react-intersection-observer';
 
 
-const Root = ({ state }) => {
+const Root = ({ state, actions }) => {
+
+    const [ref, inView] = useInView({threshold: 0,});
+
+    // create a prop for the menu view to 
+    // pass down to components
+    let menuView = false;
+    inView ? ( 
+         menuView = false
+         // actions.theme.menuShow = false
+    ) : ( 
+        menuView = true
+        // actions.theme.menuShow = true
+    );
+
     const data = state.source.get(state.router.link);
     return (
         <>
@@ -26,12 +41,14 @@ const Root = ({ state }) => {
             <Global styles={css(colorsCss)} />
             {/* global style variables */}
             <Global styles={css(globalCss)} />
-            <Header />
-            { !state.theme.headerIsScrolling &&
-                <NavWrapper>
-                    <Nav />
-                </NavWrapper>
-            }
+            {/* console.log(menuInView) */}
+            <Header menuView={menuView} />
+
+                        
+            <NavWrapper ref={ref}>
+                <Nav />
+            </NavWrapper>
+            
             <main>
             <Switch>
                 <Loading when={data.isFetching} />
@@ -41,7 +58,9 @@ const Root = ({ state }) => {
                 {data.isError && <Page404 />}
             </Switch>
             </main>
+
             <Footer />
+
         </>
     )
 }
@@ -49,7 +68,7 @@ const Root = ({ state }) => {
 const NavWrapper = styled.nav`
     display: flex;
     flex-direction: column;
-    position: fixed;
+    position: absolute;
     top: 50%;
     right: 0;
     transform: translate(-50%, -50%);

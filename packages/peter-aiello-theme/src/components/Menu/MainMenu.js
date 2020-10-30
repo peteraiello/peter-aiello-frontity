@@ -1,11 +1,11 @@
 import React from "react";
-import MobileMenu from "./MobileMenu";
-import Link from "./Link";
+import Nav from "./Nav";
+import Link from "../Link";
 import { connect, styled } from "frontity";
-import Logo from "../assets/logo-light-vers.svg";
+import Logo from "../../assets/logo-light-vers.svg";
 import Image from "@frontity/components/image";
-import MenuIcon from "../assets/mobile-menu.svg";
-
+import MenuIcon from "../../assets/mobile-menu.svg";
+ 
 const MainMenu = ({ logoSize, state, actions }) => {
 
     const LogoClass = styled(Image)`
@@ -26,15 +26,6 @@ const MainMenu = ({ logoSize, state, actions }) => {
                         alt="Peter Aiello - Coding Experience"
                     />
                 </Link>
-
-                {   
-                    state.theme.headerIsScrolling &&
-                    <div>
-                        <Anchor link="/about">About</Anchor>
-                        <Anchor link="/blog">Blog</Anchor>
-                        <Anchor link="/contact">Contact</Anchor>
-                    </div>
-                }
         
                 {
                     state.theme.isMenuOpen &&
@@ -52,11 +43,39 @@ const MainMenu = ({ logoSize, state, actions }) => {
         </MenuBar>
             {
             state.theme.isMenuOpen &&
-                <MobileMenu />
+                <MobileWrapper>
+                    <Nav />
+                </MobileWrapper>
             }            
         </>
     )
 }
+
+const MobileWrapper = styled.div`
+    width: 100%;
+    /* height is 100 version height minus height of the header */
+    height: calc(100vh - 113px);
+    position: relative;
+    background: #212224E6;
+    padding: 2rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    a {
+        color: white;
+        text-decoration: none;
+        text-transform: lowercase;
+        text-align: right;
+        font-size: 1.85rem;
+        padding: 1rem 0;
+        display: block;
+    }
+    @media (min-width: 1024px) {
+        display: none;
+    }
+`
 
 const MenuBar = styled.div`
     display: flex;
@@ -92,17 +111,6 @@ const Toggle = styled.span`
     height: 2rem;
     background-size: 100% 100%;
     border: none;
-`
-
-const Anchor = styled(Link)`
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    width: 100%;
-    padding: 0.25rem 1rem;
-    margin-bottom: 2rem;
-    border-radius: 0.25rem;
-    text-transform: lowercase; 
 `
 
 export default connect(MainMenu);

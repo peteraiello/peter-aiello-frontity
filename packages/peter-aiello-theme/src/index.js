@@ -11,7 +11,8 @@ const myTheme = {
   state: {
     theme: {
       isMenuOpen: false,
-      headerIsScrolling: false
+      headerIsScrolling: false,
+      menuIsHidden: false
     }
   },
   actions: {
@@ -28,6 +29,12 @@ const myTheme = {
       headerScroll: ({ state }) => {
         state.theme.headerIsScrolling = true;
       },
+      menuShown: ({ state }) => {
+        state.theme.menuIsHidden = false;
+      },
+      menuHidden: ({ state }) => {
+        state.theme.menuIsHidden = true;
+      }
     }
   },
   libraries: {
