@@ -17,8 +17,10 @@ const Header = ({ state, actions }) => {
         // 'headerIsScrolling' to false using an action' 
         // menu not in view? then update 
         // the state for 'headerIsScrolling' to true
-        inView ? ( actions.theme.headerDefault()
-        ) : ( actions.theme.headerScroll()
+        inView ? ( 
+            actions.theme.headerDefault()
+        ) : ( 
+            actions.theme.headerScroll()
         );
 
         return(
@@ -26,6 +28,7 @@ const Header = ({ state, actions }) => {
                     <MenuDefault ref={ref}>
                         <MainMenu logoSize="120px" />
                     </MenuDefault>
+                
                 {
                     state.theme.headerIsScrolling &&
                     <MenuScroll>
@@ -54,9 +57,8 @@ const MenuDefault = styled.div`
     animation: ${myTransition};
     animation-duration: 1s;
     box-sizing: border-box;
-    @media (min-width: 768px){
+    @media (min-width: 1024px){
         background: transparent;
-        padding: 1rem 0;
         position: absolute;
     }
 `
@@ -71,8 +73,7 @@ const MenuScroll = styled.div`
     animation: ${myTransition};
     animation-duration: 1s;
     box-sizing: border-box;
-    @media (min-width: 768px){
-        padding: 1rem 0;
+    @media (min-width: 1024px){
         display: block;
     }
 `

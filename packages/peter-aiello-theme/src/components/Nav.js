@@ -1,20 +1,31 @@
 import React from "react";
 import Link from "./Link";
-import { styled } from "frontity";
+import { connect, styled, keyframes } from "frontity";
 
-const Nav = () => {
+const Nav = ({ state }) => {
     return (
         <>
+        {
+        !state.theme.headerIsScrolling &&
+
             <Navigation>
-                <Anchor link="/">Home</Anchor>
                 <Anchor link="/about">About</Anchor>
                 <Anchor link="/blog">Blog</Anchor>
-                <Anchor link="/work">Work</Anchor>
                 <Anchor link="/contact">Contact</Anchor>
             </Navigation>
+            }
         </>
     );
 }
+
+const myTransition = keyframes`
+    from {
+        opacity: 0; 
+    }
+    to {
+        opacity: 1;  
+    }
+`;
 
 const Navigation = styled.nav`
     display: flex;
@@ -25,7 +36,9 @@ const Navigation = styled.nav`
     transform: translate(-50%, -50%);
     z-index: 9999;
     display: none;
-    @media (min-width: 768px) {
+    animation: ${myTransition};
+    animation-duration: 1s;
+    @media (min-width: 1024px) {
         display: flex;
     }
 `
@@ -42,4 +55,4 @@ const Anchor = styled(Link)`
     text-transform: lowercase; 
 `
 
-export default Nav;
+export default connect(Nav);

@@ -196,15 +196,12 @@ const Container = styled.div`
 const ContainerInner = styled.div`
     position: relative;
     margin: 0 auto;
-    padding-top: 12rem;
-    padding-bottom: 2rem;
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding: 12rem 2rem 2rem 2rem;
     width: 100%;
     box-sizing: border-box;
-    @media (min-width: 768px){
+    @media (min-width: 1200px){
         max-width: 1200px;
-        width: calc(100% - 120px);
+        padding: 12rem 0 2rem 0;
     }
 `
 
@@ -260,7 +257,6 @@ const Content = styled.div`
     .wp-block-button__link {
         display: block;
         width: auto;
-        max-width: 250px;
         text-align: center;
         color: var(--light-grey);
         margin: 2rem 0;

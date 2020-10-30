@@ -43,10 +43,9 @@ const Container = styled.div`
 const ContainerInner = styled.div`
     position: relative;
     margin: 0 auto;
-    padding: 0 2rem;
     width: 100%;
     box-sizing: border-box;  
-    @media (min-width: 768px) {
+    @media (min-width: 1200px) {
         max-width: 1200px;
     }
 `
