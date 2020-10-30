@@ -65,7 +65,6 @@ const MenuBar = styled.div`
 
 const LogoContainer = styled.div`
     padding: 1rem;
-    max-width: 1200px;
     width: 100%;
     box-sizing: border-box;
     margin: 0 auto;
@@ -74,7 +73,7 @@ const LogoContainer = styled.div`
     align-items: center;
     @media (min-width: 1200px){
         padding: 1rem 0;
-        width: 1200px;
+        max-width: 1200px;
     }
 `
 
