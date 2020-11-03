@@ -19,14 +19,19 @@ const Background = ({ state, title, id, postContent, libraries }) => {
     const BackgroundImage = styled.div`
         position: relative;
         background-image: url(${BackgroundUrl});
-        background-size: cover;
-        background-position: 50% 50%;
-        background-attachment: fixed;
+        background-size: auto;
+        background-position: top center;
+        background-attachment: scroll;
         background-repeat: no-repeat;
         width: 100%;
         height: 100%;
         min-height: 100vh;
         overflow: hidden;
+        @media (min-width: 768px ) {
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: 50% 50%;
+        }
     `
 
     const BackgroundClip = styled.div`
@@ -206,23 +211,64 @@ const Content = styled.div`
         min-height: 100vh;
     }
 
-    .background-dark {
-        background-color: var(--dark-grey);
+    .section-padding {
+        padding: 10rem 30px;
     }
 
-    .section-1,
-    .section-2,
-    .section-3 {
-        padding: 10rem 30px;
+    .background-dark {
+        background-color: var(--dark-grey);
+        color: var(--light-grey);
+    }
+
+    .background-blue {
+        background-color: var(--light-blue);
+        color: var(--dark-grey);
+    }
+
+    .background-blue h3, 
+    .background-blue p {
+        color: var(--dark-grey);
     }
 
     .section-1 img.portrait {
         border-radius: 50%;
     }
 
-    .section-2 h3, 
-    .section-2 p {
+    .section-3 p.skill-name {
+        text-align: left;
+        @media (min-width: 768px) {
+            text-align: right;
+        } 
+    }
+
+    .button-primary a {
+        display: block;
+        width: auto;
+        text-align: center;
+        color: var(--orange-highlight);
+        border: 1px solid var(--orange-highlight);
+        padding: 1rem 3rem;
+        -webkit-text-decoration: none;
+        text-decoration: none;
+        font-family: 'Open Sans',sans-serif;
+        font-weight: Bold;
+        border-radius: 0;
+        background-color: transparent;
+    }
+
+    .button-dark a {
+        display: block;
+        width: auto;
+        text-align: center;
         color: var(--dark-grey);
+        border: 1px solid var(--dark-grey);
+        padding: 1rem 3rem;
+        -webkit-text-decoration: none;
+        text-decoration: none;
+        font-family: 'Open Sans',sans-serif;
+        font-weight: Bold;
+        border-radius: 0;
+        background-color: transparent;
     }
 `
 
