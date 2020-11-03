@@ -49,7 +49,6 @@ const Root = ({ state, actions }) => {
             <Global styles={css(StylesCss)} />
             {/* console.log(menuInView) */}
             <Header menuView={menuView} />
-
                         
             <NavWrapper ref={ref}>
                 <Nav />

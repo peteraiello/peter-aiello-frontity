@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "frontity";
 import Home from "./HomePage";
-import About from "./AboutPage";
+import InternalPage from "./InternalPage";
 import Contact from "./ContactPage";
 
 
@@ -18,9 +18,9 @@ const Page = ({ state }) => {
                 {/* page is home? */}
                 { data.isHome && <Home title={post.title.rendered} id={ FeaturedMediaID }/>}
                 {/* post id equal to about */}
-                { postID === 10 && <About title={post.title.rendered} id={ FeaturedMediaID } postContent={ post.content.rendered } /> }
+                { postID === 10 && <InternalPage title={post.title.rendered} id={ FeaturedMediaID } postContent={ post.content.rendered } /> }
                 {/* post id equal to contact */}
-                { postID === 12 && <Contact title={post.title.rendered} id={ FeaturedMediaID } postContent={ post.content.rendered } /> }
+                { postID === 12 && <InternalPage title={post.title.rendered} id={ FeaturedMediaID } postContent={ post.content.rendered } /> }
             </>
         ) : null;
 

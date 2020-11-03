@@ -9,7 +9,7 @@ const settings = {
   },
   "packages": [
     { 
-      "name": "peter-aiello-theme"
+      "name": "peter-aiello-theme",
     },
     {
       "name": "@frontity/wp-source",
@@ -22,7 +22,8 @@ const settings = {
       }
     },
     "@frontity/tiny-router",
-    "@frontity/html2react"
+    "@frontity/html2react",
+    "frontity-contact-form-7"
   ]
 };
 

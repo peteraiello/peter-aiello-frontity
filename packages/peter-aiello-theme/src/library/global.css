@@ -5,7 +5,6 @@ body {
     background-color: var(--dark-grey);
 }
 
-
 h1,
 h2,
 h3,
@@ -31,12 +30,10 @@ ul {
     padding: 0px;
 }
 
-li {
-    &:before {
-        content: '>';
-        margin-right: 1rem;
-        font-weight: bold;
-    }
+li :before {
+    content: '>';
+    margin-right: 1rem;
+    font-weight: bold;
 }
 
 .lead {
@@ -51,4 +48,22 @@ h3 {
 
 a {
     color: var(--orange-highlight)
+}
+
+input[type="text"],
+input[type="email"] {
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+textarea {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 1.25rem;
 }
