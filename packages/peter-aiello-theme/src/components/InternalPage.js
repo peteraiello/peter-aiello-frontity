@@ -270,6 +270,37 @@ const Content = styled.div`
         border-radius: 0;
         background-color: transparent;
     }
+
+    /* contact form 7 */
+    input[type="text"],
+    input[type="email"] {
+        font-size: 1.25rem;
+        padding: 0.5rem;
+        box-sizing: border-box;
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    input[type="submit"] {
+        background: transparent;
+        border: 1px solid var(--orange-highlight);
+        font-size: 1.25rem;
+        padding: 1rem 2rem;
+        color: var(--orange-highlight);
+    }
+
+    textarea {
+        width: 100%;
+        margin-top: 1rem;
+        padding: 0.5rem;
+        box-sizing: border-box;
+        font-family: 'Open Sans',sans-serif;
+        font-size: 1.25rem;
+    }
+
+    div.error-message {
+        color: var(--light-grey);
+    }
 `
 
 export default connect(Background);
