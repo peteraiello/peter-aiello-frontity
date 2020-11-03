@@ -67,7 +67,8 @@ const BackgroundHome = ({ state, title, id }) => {
             <BackgroundClip />
             <BackgroundClip2 />
             <TitleWrapper>
-                <Title>{ title }</Title>
+                <Title>Peter Aiello</Title>
+                <SubTitle>Front-end Developer</SubTitle>
                 <ButtonWrapper>
                     <Button link='/about'>about</Button>
                     <Button link='/blog'>blog</Button>
@@ -91,15 +92,15 @@ const Button = styled(Link)`
     min-width: 200px;
     text-align: center;
     color: var(--dark-grey);
-    margin: 0.5rem 0;
+    margin: 0 0.5rem;
     border: 1px solid var(--dark-grey);
     padding: 1rem;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     font-family: 'Open Sans', sans-serif;
     font-weight: Bold;
     @media (min-width: 768px){
-        margin: 0 0.5rem;
+        font-size: 1.5rem;
     }
 `
 
@@ -113,27 +114,45 @@ const myTransition = keyframes`
 `;
 
 const TitleWrapper = styled.div`
-    width: 100%;
-    position: absolute;
-    margin-left: 0;
-    left: 0;
-    top: 50%;
-    margin-top: -100px;
-    padding: 0 0 3rem 0;
-    @media (min-width: 768px) {
-        left: 50%;
-        margin-left: -250px;
-        width: 500px;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    position: relative;
 `
 
 const Title = styled.h1`
     text-transform: uppercase;
     position: relative;
-    font-size: 4rem;
+    font-size: 2rem;
+    line-height: 2rem;
+    color: var(--dark-grey);
+    text-align: center;
+    margin: 0;
+    @media (min-width: 768px) {
+        font-size: 4rem;
+        line-height: 4rem;
+    }
+`;
+
+
+const SubTitle = styled.h3`
+    text-transform: capitlize;
+    position: relative;
+    font-size: 1.75rem;
+    line-height: 1.75rem;
+    margin: 1.25rem 0 0.75rem 0;
     color: var(--dark-grey);
     text-align: center;
     line-height: 50px;
+    @media (min-width: 768px) {
+        font-size: 2rem;
+        line-height: 2rem;
+        margin: 1.25rem 0 2.75rem 0;
+    }
+
 `;
+
 
 export default connect(BackgroundHome);

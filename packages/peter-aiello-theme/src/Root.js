@@ -10,6 +10,8 @@ import Header from "./components/Header";
 import Loading from "./components/Loading";
 import colorsCss from "../src/library/colors.css";
 import globalCss from "../src/library/global.css";
+import StylesCss from "../src/library/style.css";
+import ThemeCSS from "../src/library/theme.css";
 import Switch from "@frontity/components/switch";
 import { useInView } from 'react-intersection-observer';
 
@@ -33,7 +35,7 @@ const Root = ({ state, actions }) => {
     return (
         <>
             <Head>
-                <title>Coding Experience</title>
+                <title>Peter Aiello - Coding Experience</title>
                 <html lang="en" />
                 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
             </Head>
@@ -41,6 +43,10 @@ const Root = ({ state, actions }) => {
             <Global styles={css(colorsCss)} />
             {/* global style variables */}
             <Global styles={css(globalCss)} />
+            {/* theme style variables */}
+            <Global styles={css(ThemeCSS)} />
+            {/* theme style variables */}
+            <Global styles={css(StylesCss)} />
             {/* console.log(menuInView) */}
             <Header menuView={menuView} />
 

@@ -67,13 +67,11 @@ const Background = ({ state, title, id, postContent, libraries }) => {
                 </ArrowWrapper>
             </IconWrapper>
             {/* the markup for page content */}
-            <Container>
-                <ContainerInner>
-                    <Content>
-                        <Html2React html={ postContent } />
-                    </Content>
-                </ContainerInner>
-            </Container>            
+            <ContentWrapper>
+                <Content>
+                    <Html2React html={ postContent } />
+                </Content>
+            </ContentWrapper>
         </BackgroundImage>
         </>
     )
@@ -181,177 +179,51 @@ const Title = styled.h1`
     text-transform: uppercase;
     position: relative;
     font-size: 4rem;
-    color: var(--light-grey);
+    color: var(--dark-grey);
     text-align: center;
     margin: 0;
 `;
 
-const Container = styled.div`
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    background: transparent;
-    background-image: linear-gradient(to bottom,#21222400,#212224 150px);
+const ContentWrapper = styled.div`
+    background: var(--dark-grey);
     position: relative;
-    z-index: 1;
-`
-
-const ContainerInner = styled.div`
-    position: relative;
-    margin: 0 auto;
-    padding: 12rem 2rem 2rem 2rem;
-    width: 100%;
-    box-sizing: border-box;
-    @media (min-width: 1200px){
-        max-width: 1200px;
-        padding: 12rem 0 2rem 0;
-    }
 `
 
 const Content = styled.div`    
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    ul,
-    li,
-    p {
-        color: var(--light-grey)
+    /* gutenberg overrides */
+    .wp-block-group__inner-container {
+        max-width: 1200px;
+        margin: 0 auto;   
     }
 
-    p,
-    ul,
-    li
-    {
-        font-size: 1.25rem;
-        line-height: 2rem;
+    .is-sticky {
+        position: sticky;
+        top: 0;
     }
 
-    ul {
-        list-style: none;
-        padding: 0px;
+    .full-height {
+        width: 100%;
+        min-height: 100vh;
     }
 
-    li {
-        &:before {
-            content: '>';
-            margin-right: 1rem;
-            font-weight: bold;
-        }
+    .background-dark {
+        background-color: var(--dark-grey);
     }
 
-    .lead {
-        font-size: 120%;
+    .section-1,
+    .section-2,
+    .section-3 {
+        padding: 10rem 30px;
     }
 
-    h3 {
-        font-size: 3.7rem;
-        margin: 0;
-        line-height: 5rem;
+    .section-1 img.portrait {
+        border-radius: 50%;
     }
 
-    a {
-        color: var(--orange-highlight)
+    .section-2 h3, 
+    .section-2 p {
+        color: var(--dark-grey);
     }
-
-    /* custom button */
-    .wp-block-button__link {
-        display: block;
-        width: auto;
-        text-align: center;
-        color: var(--light-grey);
-        margin: 2rem 0;
-        border: 1px solid var(--light-grey);
-        padding: 1rem;
-        text-decoration: none;
-        font-size: 2.65rem;
-        font-family: 'Open Sans', sans-serif;
-        font-weight: Bold;
-    }
-
-    a.mailto-link {
-        color: var(--orange-highlight);
-        font-size: 2rem;
-        text-decoration: none;
-        @media (min-width: 1200px) {
-            font-size: 2rem;
-        }
-    }
- 
-    /* 
-    styles for gutenberg columns only
-    copied from wordpress
-    */
-    .wp-block-columns {
-        display:flex;
-        margin: 50px 0;
-        flex-wrap:wrap
-       }
-
-       @media (min-width:782px) {
-        .wp-block-columns {
-         flex-wrap:nowrap
-        }
-       }
-
-       .wp-block-column {
-        flex-grow:1;
-        min-width:0;
-        word-break:break-word;
-        overflow-wrap:break-word
-       }
-       @media (max-width:599px) {
-        .wp-block-column {
-         flex-basis:100%!important
-        }
-       }
-       @media (min-width:600px) and (max-width:781px) {
-        .wp-block-column {
-         flex-basis:calc(100% - 16px)!important;
-         flex-grow:0
-        }
-        .wp-block-column:nth-of-type(2n) {
-         margin-left:0
-        }
-       }
-       @media (min-width:782px) {
-        .wp-block-column {
-         flex-basis:0;
-         flex-grow:1
-        }
-        .wp-block-column[style*=flex-basis] {
-         flex-grow:0
-        }
-        .wp-block-column:not(:first-of-type) {
-         margin-left:32px
-        }
-       }
-       .wp-block-columns.are-vertically-aligned-top {
-        align-items:flex-start
-       }
-       .wp-block-columns.are-vertically-aligned-center {
-        align-items:center
-       }
-       .wp-block-columns.are-vertically-aligned-bottom {
-        align-items:flex-end
-       }
-       .wp-block-column.is-vertically-aligned-top {
-        align-self:flex-start
-       }
-       .wp-block-column.is-vertically-aligned-center {
-        -ms-grid-row-align:center;
-        align-self:center
-       }
-       .wp-block-column.is-vertically-aligned-bottom {
-        align-self:flex-end
-       }
-       .wp-block-column.is-vertically-aligned-bottom,
-       .wp-block-column.is-vertically-aligned-center,
-       .wp-block-column.is-vertically-aligned-top {
-        width:100%
-       }
 `
 
 export default connect(Background);
