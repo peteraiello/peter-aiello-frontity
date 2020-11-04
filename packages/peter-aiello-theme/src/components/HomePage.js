@@ -68,7 +68,9 @@ const BackgroundHome = ({ state, title, id }) => {
             <BackgroundClip2 />
             <TitleWrapper>
                 <Title>Peter Aiello</Title>
-                <SubTitle>Front-end Developer</SubTitle>
+                <section>
+                    <SubTitle>Front-End Developer</SubTitle>
+                </section>
                 <ButtonWrapper>
                     <Button link='/about'>about</Button>
                     <Button link='/blog'>blog</Button>
@@ -138,7 +140,7 @@ const Title = styled.h1`
 
 
 const SubTitle = styled.h3`
-    text-transform: capitlize;
+    text-transform: uppercase;
     position: relative;
     font-size: 1.75rem;
     line-height: 1.75rem;
