@@ -46,7 +46,7 @@ const Background = ({ state, title, id, postContent, libraries }) => {
         background-size: cover;
         background-position: 50% 50%;
         animation: ${myTransition};
-        animation-duration: 8s;
+        animation-duration: 12s;
         animation-timing-function: linear;
         animation-delay: 0s;
         animation-iteration-count: infinite;
@@ -140,10 +140,10 @@ const IconWrapper = styled.div`
 `
 
 const myTransition = keyframes`
-    from {
+    0% {
         background-position: 50% 50%;
     }
-    to {
+    100% {
         background-position: 100% 50%;
     }
 `;
@@ -154,6 +154,15 @@ const Rotate = keyframes`
     }
     to {
         transform: rotate(360deg);
+    }
+`;
+
+const RotateAlt = keyframes`
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
     }
 `;
 

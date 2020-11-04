@@ -6,12 +6,20 @@ import Image from "@frontity/components/image";
 const SocialIcon = ({name, src, url}) => {
     return (
         <>  
-            <Link link={ url } target="_blank">
-                <Icon src={ src } alt={ name.toLowerCase() + '-icon'} />
-            </Link>
+            <Anchor link={ url } target="_blank"> { name }
+                <Icon src={ src } alt={ name.toLowerCase() + '-icon'} /> 
+            </Anchor>
         </>
     )
 }
+
+const Anchor = styled(Link)`
+
+    color: transparent;
+    font-size: 0;
+    line-height: 0;
+
+`
 
 const Icon = styled(Image)`
     width: 50px;

@@ -32,7 +32,7 @@ const BackgroundHome = ({ state, title, id }) => {
         height: 100%;
         overflow: hidden;
         animation: ${myTransition};
-        animation-duration: 8s;
+        animation-duration: 12s;
         animation-timing-function: linear;
         animation-delay: 0s;
         animation-iteration-count: infinite;
@@ -52,8 +52,8 @@ const BackgroundHome = ({ state, title, id }) => {
         width: 100%;
         height: 100%;
         overflow: hidden;
-        animation: ${myTransition};
-        animation-duration: 8s;
+        animation: ${myTransitionAlt};
+        animation-duration: 12s;
         animation-timing-function: linear;
         animation-delay: 0s;
         animation-iteration-count: infinite;
@@ -107,13 +107,29 @@ const Button = styled(Link)`
 `
 
 const myTransition = keyframes`
-    from {
+    0% {
         background-position: 50% 50%;
     }
-    to {
+    50% {
         background-position: 100% 50%;
     }
+    100% {
+        background-position: 50% 50%;
+    }
 `;
+
+const myTransitionAlt = keyframes`
+    0% {
+        background-position: 50% 50%;
+    }
+    50% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 50% 50%;
+    }
+`;
+
 
 const TitleWrapper = styled.div`
     display: flex;
@@ -138,7 +154,6 @@ const Title = styled.h1`
     }
 `;
 
-
 const SubTitle = styled.h3`
     text-transform: uppercase;
     position: relative;
@@ -153,7 +168,6 @@ const SubTitle = styled.h3`
         line-height: 2rem;
         margin: 1.25rem 0 2.75rem 0;
     }
-
 `;
 
 
