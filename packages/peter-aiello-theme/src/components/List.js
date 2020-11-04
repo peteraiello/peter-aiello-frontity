@@ -3,6 +3,8 @@ import { styled, connect } from "frontity";
 import Link from "./Link";
 import Tags from "./Post/Tags";
 
+const MyMargin = "0 0 1rem 0";
+
 const List = ({ state, libraries }) => {
     const data = state.source.get(state.router.link);
     return (
@@ -21,12 +23,14 @@ const List = ({ state, libraries }) => {
                             <Title>
                                 <Html2React html={ post.title.rendered } />
                             </Title>
-                                <Tags tags={PostTags} />
+                                { PostTags ? <Tags tags={PostTags}/> : null }
                                 <PostDate>{date.toDateString()}</PostDate>
                             <Excerpt>  
-                                <Html2React html={ post.excerpt.rendered } />
+                                <Html2React html={ post.excerpt.rendered} />
                             </Excerpt>
-                            <Button link={post.link}>read now</Button>
+                            <ButtonWrapper>
+                                <Button link={post.link}>read now</Button>
+                            </ButtonWrapper>
                         </PostItem>
                     )
                 }) }
@@ -39,38 +43,38 @@ const PostDate = styled.span`
     text-transform: uppercase;
     color: var(--light-grey);
     font-size: 1.5rem;
+    margin: ${MyMargin};
     @media (min-width: 768px) {
         font-size: 2rem;
     }
 `
 
 const Title = styled.h1`
-    font-size: 1.75rem;
     font-weight: bold;
     text-transform: uppercase;
     color: var(--light-grey);
-    margin: 2rem 0;
-    @media (min-width: 768px) {
-        font-size: 3.75rem;
-    }
+    margin: ${MyMargin};
 `
 
 const Excerpt = styled.div`
+    margin: ${MyMargin};
     p {
         color: var(--light-grey);
-        font-size: 2rem;
-        line-height: 3rem;
-        @media (min-width: 768px) {
-            font-size: 2.5rem;
-            line-height: 4rem;
-        }
+        font-size: 1.25rem;
+        line-height: 2rem;
+        display: inline;
     }    
-
+    span.read-more {
+        color: var(--light-grey);
+        display: inline-block;
+        margin-left: 0.33rem;
+        font-size: inherit;
+    }
 `
 
 const PostItem = styled.div`
     border-bottom: 2px solid var(--orange-highlight);
-    padding-bottom: 2rem;
+    padding: 3rem 0;
     &:last-of-type {
         border: none;
     }
@@ -79,18 +83,24 @@ const PostItem = styled.div`
 const Button = styled(Link)`
     display: block;
     width: auto;
-    max-width: 250px;
     text-align: center;
-    color: var(--light-grey);
-    margin: 2rem 0;
-    border: 1px solid var(--light-grey);
-    padding: 1rem;
+    color: var(--orange-highlight);
+    border: 1px solid var(--orange-highlight);
+    padding: 1rem 3rem;
+    -webkit-text-decoration: none;
+    -webkit-text-decoration: none;
     text-decoration: none;
-    font-size: 2rem;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Open Sans',sans-serif;
     font-weight: Bold;
-    @media (min-width: 768px) {
-        font-size: 2.65rem;
+    border-radius: 0;
+    background-color: transparent;
+`
+
+const ButtonWrapper = styled.div`
+    display: inline-block;
+    margin-bottom: 8px;
+    :last-of-type {
+        margin-bottom: 0px;
     }
 `
 

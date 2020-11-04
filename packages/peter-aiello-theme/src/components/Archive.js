@@ -41,8 +41,9 @@ const Container = styled.div`
 `
 
 const ContainerInner = styled.div`
-    position: relative;
     margin: 0 auto;
+    position: relative;
+    padding: 0 30px;
     width: 100%;
     box-sizing: border-box;  
     @media (min-width: 1200px) {

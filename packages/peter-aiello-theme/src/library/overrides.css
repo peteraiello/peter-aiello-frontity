@@ -1,0 +1,24 @@
+/* overrides for wordpress elements */
+.wp-block-separator {
+    max-width: 100% !important;
+}
+
+.wp-block-quote {
+    border-left: 4px solid var(--orange-highlight) !important;
+}
+
+.wp-block-quote cite {
+    color: var(--dark-grey);
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.wp-block-code {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+}
+
+.wp-block-image img {
+    height: auto;
+}

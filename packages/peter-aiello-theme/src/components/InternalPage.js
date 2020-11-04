@@ -50,7 +50,7 @@ const Background = ({ state, title, id, postContent, libraries }) => {
         animation-timing-function: linear;
         animation-delay: 0s;
         animation-iteration-count: infinite;
-        transform: scale(0.5);
+        transform: scale(0.375);
         @media (min-width: 768px){
             transform: scale(0.75);
         }
@@ -84,7 +84,7 @@ const Background = ({ state, title, id, postContent, libraries }) => {
 
 const MyArrow = "my-arrow";
 
-const ArrowFill = 'white';
+const ArrowFill = 'var(--dark-grey)';
 
 const ArrowAnimation = keyframes`
     0% {
@@ -104,6 +104,9 @@ const ArrowAnimation = keyframes`
         transform: translate(0px, 0px);
     }
     50% {
+        fill: var(--dark-grey);
+    }
+    100% {
         fill: var(--light-grey);
     }
 `;
@@ -167,26 +170,18 @@ const ClipIcon = styled.img`
 `
 
 const TitleWrapper = styled.div`
-    height: 100px;
-    width: 500px;
-    position: fixed;
-    left: 50%;
-    margin-left: -250px;
-    top: 50%;
-    overflow: hidden;
-    margin-top: -50px;
     display: flex;
     flex-direction: column;
-    justify-cotent: center;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
 `
 
 const Title = styled.h1`
     text-transform: uppercase;
     position: relative;
-    font-size: 4rem;
     color: var(--dark-grey);
     text-align: center;
-    margin: 0;
 `;
 
 const ContentWrapper = styled.div`
@@ -212,7 +207,10 @@ const Content = styled.div`
     }
 
     .section-padding {
-        padding: 10rem 30px;
+        padding: 3.75rem 30px;
+        @media (min-width: 768px) {
+            padding: 10rem 30px;
+        }
     }
 
     .background-dark {
@@ -230,15 +228,13 @@ const Content = styled.div`
         color: var(--dark-grey);
     }
 
-    .section-1 img.portrait {
-        border-radius: 50%;
+    .background-dark h3,
+    .background-dark p {
+        color: var(--light-grey);
     }
 
-    .section-3 p.skill-name {
-        text-align: left;
-        @media (min-width: 768px) {
-            text-align: right;
-        } 
+    .section-1 img.portrait {
+        border-radius: 50%;
     }
 
     .button-primary a {

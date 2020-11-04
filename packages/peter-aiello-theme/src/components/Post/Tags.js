@@ -1,6 +1,5 @@
 import React from "react";
 import Tag from "./Tag";
-
 import { styled, connect} from "frontity";
 
 const Tags = ({state, tags}) => {
@@ -10,7 +9,7 @@ const Tags = ({state, tags}) => {
     // console.log(tags);
 
     return (
-        <>
+        <MarginWrapper>
             { tags.map(
                 tag => 
                     <Tag 
@@ -20,10 +19,12 @@ const Tags = ({state, tags}) => {
                     />
                 )
             }
-        </>
+        </MarginWrapper>
     )
 }
 
-
+const MarginWrapper = styled.div`
+    margin:0 0 1rem 0;
+`
 
 export default connect(Tags);

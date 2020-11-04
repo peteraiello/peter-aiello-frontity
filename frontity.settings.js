@@ -4,12 +4,23 @@ const settings = {
     "frontity": {
       "url": "https://peteraiello.co.uk",
       "title": "Coding Experience",
-      "description": "Personal portfolio"
+      "description": "UK Based Front-End Developer"
     }
   },
   "packages": [
     { 
       "name": "peter-aiello-theme",
+    },
+    {
+      "name": "@frontity/google-analytics",
+      "state": {
+        "googleAnalytics": {
+          "trackingId": "UA-XXXXXXXXX-X",
+        },
+        "analytics": {
+          "pageview": { "googleAnalytics": true},
+        },
+      },
     },
     {
       "name": "@frontity/wp-source",
