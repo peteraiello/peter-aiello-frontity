@@ -172,11 +172,11 @@ const Content = styled.div`
         margin: 2rem 0px;
     }
 
-    .wp-block-table table tbody tr:nth-child(odd) {
+    .wp-block-table table tbody tr:nth-of-type(odd) {
         background: var(--dark-grey);
     }
 
-    .wp-block-table table tbody tr:nth-child(odd) td {
+    .wp-block-table table tbody tr:nth-of-type(odd) td {
         color: var(--light-grey);
     }
 

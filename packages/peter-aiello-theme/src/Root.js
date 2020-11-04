@@ -12,6 +12,7 @@ import colorsCss from "../src/library/colors.css";
 import globalCss from "../src/library/global.css";
 import StylesCss from "../src/library/style.css";
 import ThemeCSS from "../src/library/theme.css";
+import FontCSS from "../src/library/fonts.js";
 import TypographyCSS from "../src/library/typography.css";
 import OverridesCSS from "../src/library/overrides.css";
 import Switch from "@frontity/components/switch";
@@ -37,7 +38,8 @@ const Root = ({ state, actions }) => {
     return (
         <>
             <Head>
-                <title>Peter Aiello - Coding Experience</title>
+                <title>{ state.frontity.title }</title>
+                <meta description={ state.frontity.description }/>
                 <html lang="en" />
                 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet" />
             </Head>

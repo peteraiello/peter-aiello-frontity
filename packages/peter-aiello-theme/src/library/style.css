@@ -128,7 +128,7 @@
     margin-right: 0;
     /*rtl:ignore*/
     margin-left: 8px; }
-    .wp-block-buttons.alignright .wp-block-button:first-child {
+    .wp-block-buttons.alignright .wp-block-button:first-of-type {
       margin-left: 0; }
   
   .wp-block-buttons.alignleft .wp-block-button {
@@ -197,7 +197,7 @@
       .wp-block-column {
         flex-basis: calc(50% - 16px) !important;
         flex-grow: 0; }
-        .wp-block-column:nth-child(even) {
+        .wp-block-column:nth-of-type(even) {
           margin-left: 32px; } }
     @media (min-width: 782px) {
       .wp-block-column {
@@ -205,7 +205,7 @@
         flex-grow: 1; }
         .wp-block-column[style*="flex-basis"] {
           flex-grow: 0; }
-        .wp-block-column:not(:first-child) {
+        .wp-block-column:not(:first-of-type) {
           margin-left: 32px; } }
   
   /**
@@ -1674,15 +1674,15 @@
       border-collapse: inherit;
       background-color: transparent;
       border-bottom: 1px solid #f0f0f0; }
-      .wp-block-table.is-style-stripes tbody tr:nth-child(odd) {
+      .wp-block-table.is-style-stripes tbody tr:nth-of-type(odd) {
         background-color: #f0f0f0; }
-      .wp-block-table.is-style-stripes.has-subtle-light-gray-background-color tbody tr:nth-child(odd) {
+      .wp-block-table.is-style-stripes.has-subtle-light-gray-background-color tbody tr:nth-of-type(odd) {
         background-color: #f3f4f5; }
-      .wp-block-table.is-style-stripes.has-subtle-pale-green-background-color tbody tr:nth-child(odd) {
+      .wp-block-table.is-style-stripes.has-subtle-pale-green-background-color tbody tr:nth-of-type(odd) {
         background-color: #e9fbe5; }
-      .wp-block-table.is-style-stripes.has-subtle-pale-blue-background-color tbody tr:nth-child(odd) {
+      .wp-block-table.is-style-stripes.has-subtle-pale-blue-background-color tbody tr:nth-of-type(odd) {
         background-color: #e7f5fe; }
-      .wp-block-table.is-style-stripes.has-subtle-pale-pink-background-color tbody tr:nth-child(odd) {
+      .wp-block-table.is-style-stripes.has-subtle-pale-pink-background-color tbody tr:nth-of-type(odd) {
         background-color: #fcf0ef; }
       .wp-block-table.is-style-stripes th,
       .wp-block-table.is-style-stripes td {
@@ -1695,7 +1695,7 @@
     .wp-block-text-columns .wp-block-column {
       margin: 0 16px;
       padding: 0; }
-      .wp-block-text-columns .wp-block-column:first-child {
+      .wp-block-text-columns .wp-block-column:first-of-type {
         margin-left: 0; }
       .wp-block-text-columns .wp-block-column:last-child {
         margin-right: 0; }
