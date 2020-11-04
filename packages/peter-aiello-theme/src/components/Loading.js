@@ -1,9 +1,12 @@
 import React from "react";
-import { styled, keyframes, css } from "frontity";
+import { styled, keyframes, css} from "frontity";
+import Logo from "../assets/A-logo-lt.svg";
+import Image from "@frontity/components/image";
+
 
 const scale = keyframes`
   0% {transform: scaley(1.0)}
-  50% {transform: scaley(0.4)}
+50% {transform: scaley(0.4)}
   100% {transform: scaley(1.0)}
 `;
 
@@ -11,18 +14,46 @@ const scale = keyframes`
 const Loading = () => {
   return (
     <>
-      <Container>
-        <ContainerInner>
-            <div css={bar(1)} />
-            <div css={bar(2)} />
-            <div css={bar(3)} />
-            <div css={bar(4)} />
-            <div css={bar(5)} />
-        </ContainerInner>
-      </Container>
+      <LogoWrapper>
+        <AnimatedLogo
+            loading="lazy" 
+            src={ Logo } 
+            alt="Peter Aiello - Coding Experience"
+        />
+      </LogoWrapper>
     </>
   )
 }
+
+const Animation = keyframes`
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+`
+
+const AnimatedLogo = styled(Image)`
+  height: 76px;
+  animation: ${Animation};
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  @media (min-width: 768px) {
+      height: 120px; 
+  }
+`
+
+const LogoWrapper = styled.div`
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
 
 const Container = styled.div`
     margin-top: 12rem;

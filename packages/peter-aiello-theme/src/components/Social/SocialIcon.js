@@ -14,11 +14,9 @@ const SocialIcon = ({name, src, url}) => {
 }
 
 const Anchor = styled(Link)`
-
     color: transparent;
     font-size: 0;
     line-height: 0;
-
 `
 
 const Icon = styled(Image)`
