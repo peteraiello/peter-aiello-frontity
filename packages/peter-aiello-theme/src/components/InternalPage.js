@@ -232,12 +232,22 @@ const Content = styled.div`
         color: var(--dark-grey);
     }
 
-    .background-blue h3, 
+    .background-blue h1, 
+    .background-blue h2, 
+    .background-blue h3,
+    .background-blue h4,
+    .background-blue h5,
+    .background-blue h6,
     .background-blue p {
         color: var(--dark-grey);
     }
 
+    .background-dark h1, 
+    .background-dark h2, 
     .background-dark h3,
+    .background-dark h4,
+    .background-dark h5,
+    .background-dark h6,
     .background-dark p {
         color: var(--light-grey);
     }
