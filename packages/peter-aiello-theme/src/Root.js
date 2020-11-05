@@ -33,10 +33,7 @@ const Root = ({ state }) => {
         menuView = true
         // actions.theme.menuShow = true
     );
-
     const data = state.source.get(state.router.link);
-
-    console.log(state.router.link);
 
     return (
         <>
@@ -44,7 +41,7 @@ const Root = ({ state }) => {
                 <title>{ state.frontity.title }</title>
                 <meta name="description" content={ state.frontity.description }/>
                 <html lang="en" />
-                <link rel="canonical" href={ state.router.link } />
+                <link rel="canonical" href='/' />
             </Head>
             {/* color style variables */}
             <Global styles={css(colorsCss)} />
