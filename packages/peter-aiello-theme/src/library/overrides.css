@@ -1,4 +1,9 @@
 /* overrides for wordpress elements */
+.wp-block-group__inner-container {
+    max-width: 1200px;
+    margin: 0 auto;   
+}
+
 .wp-block-separator {
     max-width: 100% !important;
 }

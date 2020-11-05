@@ -1,8 +1,9 @@
 import React, {useEffect} from "react";
-import { styled, connect } from "frontity";
+import { styled, connect, Head } from "frontity";
 import Placeholder from "../assets/background-images/buildings-dark.jpg";
 import BgClip from "./Paths/BlogCutout";
 import Tags from "./Post/Tags";
+import List from "./List";
 
 
 const Post = ({ actions, state, id }) => {
@@ -20,6 +21,7 @@ const Post = ({ actions, state, id }) => {
 
     /* post id */
     const date = new Date(post.date);
+
 
     const BackgroundImage = styled.div`
         min-height: 100vh;
@@ -40,6 +42,11 @@ const Post = ({ actions, state, id }) => {
 
     return data.isReady ? (
         <>  
+
+            <Head>
+                <title>{ post.title.rendered }</title>
+            </Head>
+
             <BackgroundImage>
                 <BackgroundWrapper>
                     <BgClip />

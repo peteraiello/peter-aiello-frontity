@@ -126,23 +126,17 @@ const ClipIcon = styled.img`
 `
 
 const TitleWrapper = styled.div`
-    height: 100px;
-    width: 500px;
-    position: fixed;
-    left: 50%;
-    margin-left: -250px;
-    top: 50%;
-    overflow: hidden;
-    margin-top: -50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `
 
 const Title = styled.h1`
     text-transform: uppercase;
-    position: relative;
-    font-size: 4rem;
     color: var(--light-grey);
     text-align: center;
-    line-height: 50px;
+    position: fixed;
 `;
 
 

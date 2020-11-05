@@ -1,8 +1,10 @@
 import React from "react";
-import { connect, css, styled, keyframes } from "frontity";
-import Placeholder from "../assets/background-images/buildings-dark.jpg";
-import LogoBackground from "./Paths/LogoBackground";
-import ArrowIcon from "./ArrowIcon";
+import { connect, css, styled, keyframes, Global } from "frontity";
+import Placeholder from "../../assets/background-images/buildings-dark.jpg";
+import LogoBackground from "../Paths/LogoBackground";
+import ArrowIcon from "../ArrowIcon";
+import ContentCss from "../../library/content.css";
+
 
 const Background = ({ state, title, id, postContent, libraries }) => {
 
@@ -18,7 +20,7 @@ const Background = ({ state, title, id, postContent, libraries }) => {
     
     const BackgroundImage = styled.div`
         position: relative;
-        background-image: url(${BackgroundUrl});
+        background: var(--light-blue);
         background-size: auto;
         background-position: top center;
         background-attachment: scroll;
@@ -58,11 +60,11 @@ const Background = ({ state, title, id, postContent, libraries }) => {
 
     return (
         <>
+        <Global styles={css(ContentCss)} />
         <BackgroundImage>
             <IconWrapper>
                 <BackgroundClip>
                     <LogoBackground />
-                    <ClipIcon src={ BackgroundUrl } alt="branding-icon"/>
                 </BackgroundClip>
                 <TitleWrapper>
                     <Title>{ title }</Title>
@@ -73,7 +75,7 @@ const Background = ({ state, title, id, postContent, libraries }) => {
             </IconWrapper>
             {/* the markup for page content */}
             <ContentWrapper>
-                <Content>
+                <Content className="main-content">
                     <Html2React html={ postContent } />
                 </Content>
             </ContentWrapper>
@@ -157,27 +159,6 @@ const Rotate = keyframes`
     }
 `;
 
-const RotateAlt = keyframes`
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(-360deg);
-    }
-`;
-
-const ClipIcon = styled.img`
-    -webkit-clip-path: url(#path-1);
-    clip-path: url(#path-1);
-    width: 796px;
-    height: 796px;
-    animation: ${Rotate};
-    animation-duration: 8s;
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-`
-
 const TitleWrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -189,7 +170,7 @@ const TitleWrapper = styled.div`
 const Title = styled.h1`
     text-transform: uppercase;
     position: relative;
-    color: var(--dark-grey);
+    color: var(--custom-white);
     text-align: center;
 `;
 
@@ -199,123 +180,7 @@ const ContentWrapper = styled.div`
 `
 
 const Content = styled.div`    
-    /* gutenberg overrides */
-    .wp-block-group__inner-container {
-        max-width: 1200px;
-        margin: 0 auto;   
-    }
-
-    .is-sticky {
-        position: sticky;
-        top: 0;
-    }
-
-    .full-height {
-        width: 100%;
-        min-height: 100vh;
-    }
-
-    .section-padding {
-        padding: 3.75rem 30px;
-        @media (min-width: 768px) {
-            padding: 10rem 30px;
-        }
-    }
-
-    .background-dark {
-        background-color: var(--dark-grey);
-        color: var(--light-grey);
-    }
-
-    .background-blue {
-        background-color: var(--light-blue);
-        color: var(--dark-grey);
-    }
-
-    .background-blue h1, 
-    .background-blue h2, 
-    .background-blue h3,
-    .background-blue h4,
-    .background-blue h5,
-    .background-blue h6,
-    .background-blue p {
-        color: var(--dark-grey);
-    }
-
-    .background-dark h1, 
-    .background-dark h2, 
-    .background-dark h3,
-    .background-dark h4,
-    .background-dark h5,
-    .background-dark h6,
-    .background-dark p {
-        color: var(--light-grey);
-    }
-
-    .section-1 img.portrait {
-        border-radius: 50%;
-    }
-
-    .button-primary a {
-        display: block;
-        width: auto;
-        text-align: center;
-        color: var(--orange-highlight);
-        border: 1px solid var(--orange-highlight);
-        padding: 1rem 3rem;
-        -webkit-text-decoration: none;
-        text-decoration: none;
-        font-family: 'Open Sans',sans-serif;
-        font-weight: Bold;
-        border-radius: 0;
-        background-color: transparent;
-    }
-
-    .button-dark a {
-        display: block;
-        width: auto;
-        text-align: center;
-        color: var(--dark-grey);
-        border: 1px solid var(--dark-grey);
-        padding: 1rem 3rem;
-        -webkit-text-decoration: none;
-        text-decoration: none;
-        font-family: 'Open Sans',sans-serif;
-        font-weight: Bold;
-        border-radius: 0;
-        background-color: transparent;
-    }
-
-    /* contact form 7 */
-    input[type="text"],
-    input[type="email"] {
-        font-size: 1.25rem;
-        padding: 0.5rem;
-        box-sizing: border-box;
-        margin-top: 1rem;
-        width: 100%;
-    }
-
-    input[type="submit"] {
-        background: transparent;
-        border: 1px solid var(--orange-highlight);
-        font-size: 1.25rem;
-        padding: 1rem 2rem;
-        color: var(--orange-highlight);
-    }
-
-    textarea {
-        width: 100%;
-        margin-top: 1rem;
-        padding: 0.5rem;
-        box-sizing: border-box;
-        font-family: 'Open Sans',sans-serif;
-        font-size: 1.25rem;
-    }
-
-    div.error-message {
-        color: var(--light-grey);
-    }
+   
 `
 
 export default connect(Background);

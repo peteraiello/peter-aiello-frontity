@@ -33,8 +33,6 @@ const MainMenu = ({ logoSize, state, actions }) => {
     )
 }
 
-
-
 const MenuBar = styled.div`
     display: flex;
 `
@@ -52,7 +50,6 @@ const LogoContainer = styled.div`
         max-width: 1200px;
     }
 `
-
 
 const NavWrapper = styled.div`
     display: flex;

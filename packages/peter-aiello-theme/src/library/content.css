@@ -1,0 +1,108 @@
+/* gutenberg overrides */
+.main-content a {
+    color: var(--orange-highlight);
+    text-decoration: none;
+}
+
+.main-content .section-padding {
+    padding: 3.75rem 30px;
+    @media (min-width: 768px) {
+        padding: 10rem 30px;
+    }
+}
+
+.main-content .background-dark {
+    background-color: var(--dark-grey);
+    color: var(--light-grey);
+}
+
+.main-content .background-blue {
+    background-color: var(--light-blue);
+    color: var(--dark-grey);
+}
+
+.main-content .background-blue h1, 
+.main-content .background-blue h2, 
+.main-content .background-blue h3,
+.main-content .background-blue h4,
+.main-content .background-blue h5,
+.main-content .background-blue h6,
+.main-content .background-blue p {
+    color: var(--dark-grey);
+}
+
+.main-content .background-dark h1, 
+.main-content .background-dark h2, 
+.main-content .background-dark h3,
+.main-content .background-dark h4,
+.main-content .background-dark h5,
+.main-content .background-dark h6,
+.main-content .background-dark p {
+    color: var(--light-grey);
+}
+
+
+.main-content .section-1 img.portrait {
+    border-radius: 50%;
+}
+
+.main-content .button-primary a {
+    display: block;
+    width: auto;
+    text-align: center;
+    color: var(--orange-highlight);
+    border: 1px solid var(--orange-highlight);
+    padding: 1rem 3rem;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    font-family: 'Open Sans',sans-serif;
+    font-weight: Bold;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+.main-content .button-dark a {
+    display: block;
+    width: auto;
+    text-align: center;
+    color: var(--dark-grey);
+    border: 1px solid var(--dark-grey);
+    padding: 1rem 3rem;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    font-family: 'Open Sans',sans-serif;
+    font-weight: Bold;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+/* contact form 7 */
+.main-content input[type="text"],
+.main-content input[type="email"] {
+    font-size: 1.25rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.main-content input[type="submit"] {
+    background: transparent;
+    border: 1px solid var(--orange-highlight);
+    font-size: 1.25rem;
+    padding: 1rem 2rem;
+    color: var(--orange-highlight);
+}
+
+.main-content textarea {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 1.25rem;
+}
+
+.main-content div.error-message {
+    color: var(--light-grey);
+}

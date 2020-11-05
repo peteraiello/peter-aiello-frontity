@@ -1,9 +1,9 @@
 import React from "react";
 import { connect } from "frontity";
-import Home from "./HomePage";
-import InternalPage from "./InternalPage";
-import Contact from "./ContactPage";
-
+import Home from "./Page/HomePage";
+import InternalPage from "./Page/InternalPage";
+import Contact from "./Page/ContactPage";
+import NoHeader from "./Page/NoHeader";
 
 const Page = ({ state }) => {
 
@@ -20,7 +20,9 @@ const Page = ({ state }) => {
                 {/* post id equal to about */}
                 { postID === 10 && <InternalPage title={post.title.rendered} id={ FeaturedMediaID } postContent={ post.content.rendered } /> }
                 {/* post id equal to contact */}
-                { postID === 12 && <InternalPage title={post.title.rendered} id={ FeaturedMediaID } postContent={ post.content.rendered } /> }
+                { postID === 12 && <Contact title={post.title.rendered} id={ FeaturedMediaID } postContent={ post.content.rendered } /> }
+                 {/* post id equal to accreditations */}
+                 { postID === 190 && <NoHeader title={post.title.rendered} id={ FeaturedMediaID } postContent={ post.content.rendered } /> }
             </>
         ) : null;
 

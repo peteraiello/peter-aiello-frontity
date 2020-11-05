@@ -1,7 +1,7 @@
 import React from "react";
 import { connect, keyframes } from "frontity";
 import MainMenu from "./Menu/MainMenu";
-import ScrollMenu from "./Menu/ScrollMenu";
+import StickyMenu from "./Menu/StickyMenu";
 import { styled } from "frontity";
 
 const Header = ({ state, actions, menuView }) => {
@@ -25,7 +25,7 @@ const Header = ({ state, actions, menuView }) => {
                 {
                     !state.theme.menuIsHidden &&
                     <MenuScroll>
-                        <ScrollMenu logoSize="80px" />
+                        <StickyMenu logoSize="80px" />
                     </MenuScroll>
                 }
             </>

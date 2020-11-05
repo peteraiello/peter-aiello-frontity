@@ -1,7 +1,7 @@
 import React from "react";
 import { connect, styled, keyframes } from "frontity";
-import BackgroundDefault from "../assets/background-images/buildings-dark.jpg";
-import Link from "./Link";
+import BackgroundDefault from "../../assets/background-images/buildings-dark.jpg";
+import Link from "../Link";
 
 const BackgroundHome = ({ state, title, id }) => {
 
@@ -32,7 +32,7 @@ const BackgroundHome = ({ state, title, id }) => {
         height: 100%;
         overflow: hidden;
         animation: ${myTransition};
-        animation-duration: 12s;
+        animation-duration: 15s;
         animation-timing-function: linear;
         animation-delay: 0s;
         animation-iteration-count: infinite;
@@ -53,7 +53,7 @@ const BackgroundHome = ({ state, title, id }) => {
         height: 100%;
         overflow: hidden;
         animation: ${myTransitionAlt};
-        animation-duration: 12s;
+        animation-duration: 15s;
         animation-timing-function: linear;
         animation-delay: 0s;
         animation-iteration-count: infinite;
@@ -71,7 +71,7 @@ const BackgroundHome = ({ state, title, id }) => {
                     <SubTitle>Front-End Developer</SubTitle>
                 <ButtonWrapper>
                     <Button link='/about'>about</Button>
-                    <Button link='/blog'>blog</Button>
+                    <Button link='/contact'>contact</Button>
                 </ButtonWrapper>
             </TitleWrapper>
         </ Background>
@@ -108,11 +108,8 @@ const myTransition = keyframes`
     0% {
         background-position: 50% 50%;
     }
-    50% {
+    80%, 100% {
         background-position: 100% 50%;
-    }
-    100% {
-        background-position: 50% 50%;
     }
 `;
 
@@ -120,14 +117,10 @@ const myTransitionAlt = keyframes`
     0% {
         background-position: 50% 50%;
     }
-    50% {
+    80%, 100% {
         background-position: 0% 50%;
     }
-    100% {
-        background-position: 50% 50%;
-    }
 `;
-
 
 const TitleWrapper = styled.div`
     display: flex;
