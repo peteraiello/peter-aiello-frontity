@@ -11,8 +11,9 @@ import Loading from "./components/Loading";
 import colorsCss from "../src/library/colors.css";
 import globalCss from "../src/library/global.css";
 import StylesCss from "../src/library/style.css";
-import ThemeCSS from "../src/library/theme.css";
-import TypographyCSS from "../src/library/typography.css";
+import ThemeCss from "../src/library/theme.css";
+import FontCss from "../src/library/fonts.css";
+import TypographyCss from "../src/library/typography.css";
 import OverridesCSS from "../src/library/overrides.css";
 import Switch from "@frontity/components/switch";
 import { useInView } from 'react-intersection-observer';
@@ -46,15 +47,17 @@ const Root = ({ state }) => {
             {/* color style variables */}
             <Global styles={css(colorsCss)} />
             {/* typography defaults for css */}
-            <Global styles={css(TypographyCSS)} />
+            <Global styles={css(TypographyCss)} />
             {/* global style variables (body etc)*/}
             <Global styles={css(globalCss)} />
             {/* theme style variables (styles for gutenberg blocks) */}
-            <Global styles={css(ThemeCSS)} />
+            <Global styles={css(ThemeCss)} />
             {/* theme style variables  (styles for gutenberg blocks )*/}
             <Global styles={css(StylesCss)} />
             {/* overrides for default wordpress css */}
             <Global styles={css(OverridesCSS)} />
+            {/* font css */}
+            <Global styles={css(FontCss)} />
             {
                 // console.log(menuInView); 
             }

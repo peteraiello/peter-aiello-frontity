@@ -1,12 +1,12 @@
 import React from "react";
 import SocialIcon from './SocialIcon';
+import {connect} from "frontity";
 import {styled} from "frontity";
 import Medium from '../../assets/social/medium.svg';
 import GitHub from '../../assets/social/github.svg';
 import LinkedIn from '../../assets/social/linkedin.svg';
 
-const SocialIcons = () => {
-    
+const SocialIcons = ({ state }) => {
     const Icons = [
         {name: 'Medium', src: Medium, url: 'https://medium.com/@peter_aiello'},
         {name: 'GitHub', src: GitHub, url: 'https://github.com/peteraiello'},
@@ -37,4 +37,4 @@ const IconWrapper = styled.div`
     justify-content: center;
 `
 
-export default SocialIcons;
+export default connect(SocialIcons);

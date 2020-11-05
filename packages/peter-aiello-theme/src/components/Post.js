@@ -190,7 +190,6 @@ const Content = styled.div`
     .wp-block-table table tbody tr td {
         border: 0;
     }
-
 `
 
 export default connect(Post);
