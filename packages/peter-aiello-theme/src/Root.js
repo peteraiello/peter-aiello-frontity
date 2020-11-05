@@ -40,7 +40,7 @@ const Root = ({ state }) => {
         <>
             <Head>
                 <title>{ state.frontity.title }</title>
-                <meta description={ state.frontity.description }/>
+                <meta name="description" content={ state.frontity.description }/>
                 <html lang="en" />
                 <link rel="canonical" href={ state.router.link } />
             </Head>
