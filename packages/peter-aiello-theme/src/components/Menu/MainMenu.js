@@ -29,13 +29,13 @@ const MainMenu = ({ logoSize, state, actions }) => {
         
                 {
                     state.theme.isMenuOpen &&
-                    <Button onClick={actions.theme.closeMenu}>
+                    <Button onClick={actions.theme.closeMenu} aria-label="close-menu">
                         <Toggle/>
                     </Button>
                 }
                 {
                     !state.theme.isMenuOpen &&
-                    <Button onClick={actions.theme.openMenu}>
+                    <Button onClick={actions.theme.openMenu} aria-label="open-menu">
                         <Toggle/>
                     </Button>
                 }
