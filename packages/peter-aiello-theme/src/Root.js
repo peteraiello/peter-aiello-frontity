@@ -36,6 +36,8 @@ const Root = ({ state }) => {
 
     const data = state.source.get(state.router.link);
 
+    console.log(state.router.link);
+
     return (
         <>
             <Head>

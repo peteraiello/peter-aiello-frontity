@@ -7,6 +7,9 @@ import List from "./List";
 const Archive = ({ state }) => {
     return (
         <>
+            <Head>
+                <title>Blog</title>
+            </Head>
             <BackgroundImage>
                 <BgClip />        
             </BackgroundImage>
