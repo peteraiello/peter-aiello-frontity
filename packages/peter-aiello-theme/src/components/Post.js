@@ -20,6 +20,11 @@ const Post = ({ state }) => {
     /* post id */
     const date = new Date(post.date);
 
+    /* get the head tags object */
+    const headTags = state.headTags.get(post.link);
+    /* get the canonical link */
+    const canonicalRef = headTags[6].attributes.content;
+
     const BackgroundImage = styled.div`
         min-height: 100vh;
         height: 1250px;
@@ -42,6 +47,7 @@ const Post = ({ state }) => {
 
             <Head>
                 <title>{ post.title.rendered }</title>
+                <link rel="canonical" href={canonicalRef} />
             </Head>
 
             <BackgroundImage>
