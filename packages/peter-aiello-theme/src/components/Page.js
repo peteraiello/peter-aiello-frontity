@@ -25,8 +25,10 @@ const Page = ({ state }) => {
                 { postID === 10 && <InternalPage title={post.title.rendered} id={ FeaturedMediaID } postContent={ post.content.rendered } /> }
                 {/* post id equal to contact */}
                 { postID === 12 && <Contact title={post.title.rendered} id={ FeaturedMediaID } postContent={ post.content.rendered } /> }
-                 {/* post id equal to accreditations */}
-                 { postID === 190 && <NoHeader title={post.title.rendered} id={ FeaturedMediaID } postContent={ post.content.rendered } /> }
+                {/* post id equal to accreditations */}
+                { postID === 190 && <NoHeader title={post.title.rendered} id={ FeaturedMediaID } postContent={ post.content.rendered } /> }
+                {/* post id equal to privacy */}
+                { postID === 3 && <NoHeader title={post.title.rendered} id={ FeaturedMediaID } postContent={ post.content.rendered } /> }
             </>
         ) : null;
 

@@ -1,12 +1,10 @@
-import React, {useEffect} from "react";
+import React from "react";
 import { styled, connect, Head } from "frontity";
 import Placeholder from "../assets/background-images/buildings-dark.jpg";
 import BgClip from "./Paths/BlogCutout";
 import Tags from "./Post/Tags";
-import List from "./List";
 
-
-const Post = ({ actions, state, id }) => {
+const Post = ({ state }) => {
 
     const data = state.source.get(state.router.link);
     const post = state.source[data.type][data.id];
@@ -21,7 +19,6 @@ const Post = ({ actions, state, id }) => {
 
     /* post id */
     const date = new Date(post.date);
-
 
     const BackgroundImage = styled.div`
         min-height: 100vh;

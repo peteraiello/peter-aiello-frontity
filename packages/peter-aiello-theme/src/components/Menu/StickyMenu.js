@@ -62,9 +62,7 @@ const NavWrapper = styled.div`
         border-radius: 0.25rem;
         text-transform: lowercase; 
         margin-right: 2rem;
-        &:last-of-type {
-            margin-right: 0;
-        }
+        display: block;
     }
 `
 

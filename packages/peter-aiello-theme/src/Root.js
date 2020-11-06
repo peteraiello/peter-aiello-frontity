@@ -63,7 +63,7 @@ const Root = ({ state }) => {
             <Header menuView={menuView} />
                         
             <NavWrapper ref={ref}>
-                <Nav />
+                <Nav />  
             </NavWrapper>
             
             <main>
@@ -102,9 +102,7 @@ const NavWrapper = styled.nav`
         border-radius: 0.25rem;
         text-transform: lowercase; 
         margin-bottom: 2rem;
-        &:last-of-type {
-            margin-bottom: 0;
-        }
+        display: block;
     }
 `
 

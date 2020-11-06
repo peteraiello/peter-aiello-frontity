@@ -3,6 +3,8 @@ import Link from "../Link";
 import SocialIcons from "../Social/SocialIcons";
 import { styled, connect } from "frontity";
 import FooterCopyright from "./FooterCopyright";
+import FooterNav from "./FooterNav";
+import PrivacyPolicy from "./PrivacyPolicy";
 
 const Footer = () => {
 
@@ -15,16 +17,17 @@ const Footer = () => {
                         link="https://frontity.org/" 
                         target="_blank"
                     >
-                            made using Frontity
+                        made using Frontity
                     </Anchor>
                 </Column>
                 <Column>
                     <SocialIcons />
                 </Column>
                 <Column>
-                    <Accreditations link="/accreditations">
-                        accreditations
-                    </Accreditations>
+                    <NavWrapper>
+                        <FooterNav />
+                        <PrivacyPolicy />
+                    </NavWrapper>
                  </Column>
             </Container>
             <FooterCopyright />
@@ -33,18 +36,25 @@ const Footer = () => {
     );
 }
 
+const NavWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    @media (min-width: 768px) {
+        justify-content: end;
+    }
+    a {
+        margin-right: 1rem;
+        color: var(--orange-highlight);
+        text-decoration: none;
+        font-weight: bold;
+        display: block;
+        text-transform: lowercase;
+    }
+`
+
 const Background = styled.div`
     background: var(--dark-grey);
     position: relative;
-`
-
-const Accreditations = styled(Link) `
-    display: block;
-    text-align: right;
-    text-decoration: none;
-    color: var(--orange-highlight);
-    font-size: 1.25rem;
-    font-weight: bold;
 `
 
 const Column = styled.div`

@@ -12,17 +12,6 @@ const settings = {
       "name": "peter-aiello-theme",
     },
     {
-      "name": "@frontity/google-analytics",
-      "state": {
-        "googleAnalytics": {
-          "trackingId": "UA-XXXXXXXXX-X",
-        },
-        "analytics": {
-          "pageview": { "googleAnalytics": true},
-        },
-      },
-    },
-    {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
@@ -34,6 +23,7 @@ const settings = {
     },
     "@frontity/tiny-router",
     "@frontity/html2react",
+    "@frontity/head-tags",
     "frontity-contact-form-7"
   ]
 };

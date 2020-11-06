@@ -10,6 +10,8 @@ const myTheme = {
   },
   state: {
     theme: {
+      menu: [["About", "/about/"], ["Blog", "/blog/"],["Contact", "/contact/"]],
+      footerMenu: [["Accreditations", "/accreditations/"]],
       isMenuOpen: false,
       headerIsScrolling: false,
       menuIsHidden: false
