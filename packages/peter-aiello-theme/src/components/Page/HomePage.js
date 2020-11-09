@@ -18,6 +18,9 @@ const BackgroundHome = ({ state, title, id }) => {
         width: 100%;
         height: 100vh;
         overflow: hidden;
+        @media (min-width: 1200px) {
+            background-size: 110%;
+        }
     `
 
     const BackgroundClip = styled.div`
@@ -33,7 +36,7 @@ const BackgroundHome = ({ state, title, id }) => {
         overflow: hidden;
         animation: ${myTransition};
         animation-duration: 15s;
-        animation-timing-function: linear;
+        animation-timing-function: ease-in-out;
         animation-delay: 0s;
         animation-iteration-count: infinite;
         @media (min-width: 1200px) {
@@ -54,7 +57,7 @@ const BackgroundHome = ({ state, title, id }) => {
         overflow: hidden;
         animation: ${myTransitionAlt};
         animation-duration: 15s;
-        animation-timing-function: linear;
+        animation-timing-function: ease-in-out;
         animation-delay: 0s;
         animation-iteration-count: infinite;
         @media (min-width: 1200px) {
@@ -99,7 +102,7 @@ const Button = styled(Link)`
     font-size: 1.25rem;
     font-family: 'Open Sans', sans-serif;
     font-weight: Bold;
-    @media (min-width: 768px){
+    @media (min-width: 1024px){
         font-size: 1.5rem;
         color: var(--dark-grey);
         border: 1px solid var(--dark-grey);
@@ -111,8 +114,11 @@ const myTransition = keyframes`
     0% {
         background-position: 50% 50%;
     }
-    80%, 100% {
+    40%, 60% {
         background-position: 100% 50%;
+    }
+    80%, 100% {
+        background-position: 50% 50%;
     }
 `;
 
@@ -120,8 +126,11 @@ const myTransitionAlt = keyframes`
     0% {
         background-position: 50% 50%;
     }
-    80%, 100% {
+    40%, 60% {
         background-position: 0% 50%;
+    }
+    80%, 100% {
+        background-position: 50% 50%;
     }
 `;
 
@@ -133,7 +142,7 @@ const TitleWrapper = styled.div`
     flex-direction: column;
     position: relative;
     background: #00000090;
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
         background: transparent;
     }
 `
@@ -144,7 +153,7 @@ const Title = styled.h1`
     text-align: center;
     margin: 0;
     color: var(--custom-white);
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
         color: var(--dark-grey);
     }
 `;
@@ -159,7 +168,7 @@ const SubTitle = styled.h2`
     text-align: center;
     line-height: 50px;
     color: var(--custom-white);
-    @media (min-width: 768px) {
+    @media (min-width: 1024px) {
         font-size: 2rem;
         line-height: 2rem;
         margin: 1.25rem 0 2.75rem 0;
