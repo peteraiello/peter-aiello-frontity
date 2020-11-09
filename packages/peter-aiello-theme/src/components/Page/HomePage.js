@@ -91,9 +91,9 @@ const ButtonWrapper = styled.div`
 const Button = styled(Link)`
     min-width: 200px;
     text-align: center;
-    color: var(--dark-grey);
-    margin: 0 0.5rem;
-    border: 1px solid var(--dark-grey);
+    color: var(--custom-white);
+    margin: 0.25rem;
+    border: 1px solid var(--custom-white);
     padding: 1rem;
     text-decoration: none;
     font-size: 1.25rem;
@@ -101,6 +101,9 @@ const Button = styled(Link)`
     font-weight: Bold;
     @media (min-width: 768px){
         font-size: 1.5rem;
+        color: var(--dark-grey);
+        border: 1px solid var(--dark-grey);
+        margin: 0 0.5rem;
     }
 `
 
@@ -129,14 +132,21 @@ const TitleWrapper = styled.div`
     height: 100vh;
     flex-direction: column;
     position: relative;
+    background: #00000090;
+    @media (min-width: 768px) {
+        background: transparent;
+    }
 `
 
 const Title = styled.h1`
     text-transform: uppercase;
     position: relative;
-    color: var(--dark-grey);
     text-align: center;
     margin: 0;
+    color: var(--custom-white);
+    @media (min-width: 768px) {
+        color: var(--dark-grey);
+    }
 `;
 
 const SubTitle = styled.h2`
@@ -148,10 +158,12 @@ const SubTitle = styled.h2`
     color: var(--dark-grey);
     text-align: center;
     line-height: 50px;
+    color: var(--custom-white);
     @media (min-width: 768px) {
         font-size: 2rem;
         line-height: 2rem;
         margin: 1.25rem 0 2.75rem 0;
+        color: var(--dark-grey);
     }
 `;
 

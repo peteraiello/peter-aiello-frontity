@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useRef } from "react";
 import { connect, css, styled, keyframes, Global } from "frontity";
 import Placeholder from "../../assets/background-images/buildings-dark.jpg";
 import LogoBackground from "../Paths/LogoBackground";
 import ArrowIcon from "../ArrowIcon";
 import ContentCss from "../../library/content.css";
+import Link from "@frontity/components/link";
 
 const Background = ({ state, title, id, postContent, libraries }) => {
 
@@ -57,29 +58,37 @@ const Background = ({ state, title, id, postContent, libraries }) => {
         }
     `
 
+    const mainRef = useRef();
+
+    const scrollMethod = () => {
+        mainRef.current.scrollIntoView({ behavior: 'smooth'})
+    }
+
     return (
         <>
         <Global styles={css(ContentCss)} />
-        <BackgroundImage>
-            <IconWrapper>
-                <BackgroundClip>
-                    <LogoBackground />
-                    <ClipIcon src={ BackgroundUrl } alt="branding-icon"/>
-                </BackgroundClip>
-                <TitleWrapper>
-                    <Title>{ title }</Title>
-                </TitleWrapper>
-                <ArrowWrapper>
-                    <ArrowIcon MyClass={ MyArrow } MyFill={ ArrowFill }></ArrowIcon>
-                </ArrowWrapper>
-            </IconWrapper>
-            {/* the markup for page content */}
-            <ContentWrapper>
-                <Content className="main-content">
-                    <Html2React html={ postContent } />
-                </Content>
-            </ContentWrapper>
-        </BackgroundImage>
+            <BackgroundImage>
+                <IconWrapper>
+                    <BackgroundClip>
+                        <LogoBackground />
+                        <ClipIcon src={ BackgroundUrl } alt="branding-icon"/>
+                    </BackgroundClip>
+                    <TitleWrapper>
+                        <Title>{ title }</Title>
+                    </TitleWrapper>
+                    <ArrowWrapper>
+                    <Link link={ state.router.link } onClick={ scrollMethod }>anchor link
+                        <ArrowIcon MyClass={ MyArrow } MyFill={ ArrowFill }></ArrowIcon>
+                    </Link>
+                    </ArrowWrapper>
+                </IconWrapper>
+                {/* the markup for page content */}
+                <ContentWrapper ref={mainRef}>
+                    <Content className="main-content">
+                        <Html2React html={ postContent } />
+                    </Content>
+                </ContentWrapper>
+            </BackgroundImage>
         </>
     )
 }
@@ -139,6 +148,11 @@ const IconWrapper = styled.div`
     align-items: center;
     height: 100vh;
     overflow: hidden;
+    a {
+        color: transparent;
+        font-size: 0;
+        line-height: 0;
+    }
 `
 
 const myTransition = keyframes`
