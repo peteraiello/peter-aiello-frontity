@@ -5,6 +5,7 @@ const Link = ({
   state,
   actions,
   link,
+  target,
   className,
   children,
   "aria-current": ariaCurrent,
@@ -29,6 +30,7 @@ const Link = ({
   return (
     <a
       href={link}
+      target={target}
       onClick={onClick}
       className={className}
       aria-current={ariaCurrent}

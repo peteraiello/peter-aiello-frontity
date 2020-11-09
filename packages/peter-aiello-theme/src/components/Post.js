@@ -21,9 +21,9 @@ const Post = ({ state }) => {
     const date = new Date(post.date);
 
     /* get the head tags object */
-    // const headTags = state.headTags.get(post.link);
+    const headTags = state.headTags.get(post.link);
     /* get the canonical link */
-    // const canonicalRef = headTags[6].attributes.content;
+    const canonicalRef = headTags[6].attributes.content;
 
     const BackgroundImage = styled.div`
         min-height: 100vh;
