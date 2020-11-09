@@ -6,6 +6,7 @@ const Link = ({
   actions,
   link,
   target,
+  rel,
   className,
   children,
   "aria-current": ariaCurrent,
@@ -34,6 +35,7 @@ const Link = ({
       onClick={onClick}
       className={className}
       aria-current={ariaCurrent}
+      rel={rel}
     >
       {children}
     </a>

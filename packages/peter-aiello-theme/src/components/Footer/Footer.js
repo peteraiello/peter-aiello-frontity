@@ -16,6 +16,7 @@ const Footer = () => {
                     <Anchor 
                         link="https://frontity.org/" 
                         target="_blank"
+                        rel="noreferrer noopener"
                     >
                         made using Frontity
                     </Anchor>
