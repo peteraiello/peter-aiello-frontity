@@ -4,7 +4,7 @@ import Placeholder from "../../assets/background-images/buildings-dark.jpg";
 import LogoBackground from "../Paths/LogoBackground";
 import ArrowIcon from "../ArrowIcon";
 import ContentCss from "../../library/content.css";
-import Link from "@frontity/components/link";
+import Link from "../Link";
 
 
 const Background = ({ state, title, id, postContent, libraries }) => {
@@ -39,13 +39,11 @@ const Background = ({ state, title, id, postContent, libraries }) => {
 
     const BackgroundClip = styled.div`
         -webkit-clip-path: url(#path-2);
-        position: fixed;
-        top: 50%;
         clip-path: url(#path-2);
+        position: fixed;
         background-image: url(${BackgroundUrl});
         width: 800px;
         height: 800px;
-        margin-top: -400px;
         background-size: cover;
         background-position: 50% 50%;
         animation: ${myTransition};
@@ -65,7 +63,6 @@ const Background = ({ state, title, id, postContent, libraries }) => {
         mainRef.current.scrollIntoView({ behavior: 'smooth'})
     }
 
-
     return (
         <>
         <Global styles={css(ContentCss)} />
@@ -84,7 +81,7 @@ const Background = ({ state, title, id, postContent, libraries }) => {
                 </ArrowWrapper>
             </IconWrapper>
             {/* the markup for page content */}
-            <ContentWrapper ref={mainRef}>
+            <ContentWrapper ref={mainRef} id="content-wrapper">
                 <Content className="main-content">
                     <Html2React html={ postContent } />
                 </Content>
@@ -162,15 +159,6 @@ const myTransition = keyframes`
     }
     100% {
         background-position: 100% 50%;
-    }
-`;
-
-const Rotate = keyframes`
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
     }
 `;
 

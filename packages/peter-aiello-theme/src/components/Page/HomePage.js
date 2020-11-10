@@ -1,7 +1,8 @@
 import React from "react";
 import { connect, styled, keyframes } from "frontity";
 import BackgroundDefault from "../../assets/background-images/buildings-dark.jpg";
-import Link from "../Link";
+// import Link from "../Link";
+import Link from '@frontity/components/link';
 
 const BackgroundHome = ({ state, title, id }) => {
 
@@ -71,10 +72,10 @@ const BackgroundHome = ({ state, title, id }) => {
             <BackgroundClip2 />
             <TitleWrapper>
                 <Title>Peter Aiello</Title>
-                    <SubTitle>Front-End Developer</SubTitle>
+                    <SubTitle>Full-Stack Developer</SubTitle>
                 <ButtonWrapper>
-                    <Button link='/about'>about</Button>
-                    <Button link='/contact'>contact</Button>
+                    <Button link='/about'>learn more</Button>
+                    <Button scroll="false" link='/contact/#content-wrapper'>work together</Button>
                 </ButtonWrapper>
             </TitleWrapper>
         </ Background>

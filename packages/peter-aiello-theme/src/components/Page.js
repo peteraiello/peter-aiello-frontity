@@ -5,7 +5,7 @@ import InternalPage from "./Page/InternalPage";
 import Contact from "./Page/ContactPage";
 import NoHeader from "./Page/NoHeader";
 
-const Page = ({ state }) => {
+const Page = ({ state, actions }) => {
 
     const data = state.source.get(state.router.link);
     const post = state.source[data.type][data.id];
@@ -13,8 +13,18 @@ const Page = ({ state }) => {
     const postID = post.id;
     //    console.log(postID);
 
+    // Without the context
+{
+    beforeSSR: ({ state, libraries }) => {
+      console.log('Gonna SSR this page');
+    }
+  }
+
     return data.isReady ? (
             <>
+
+                {actions.theme.closeMenu()}
+
                 <Head>
                     <title>{post.title.rendered}</title>
                     <link rel="canonical" href={state.router.link} />                    

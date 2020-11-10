@@ -38,14 +38,12 @@ const Background = ({ state, title, id, postContent, libraries }) => {
 
     const BackgroundClip = styled.div`
         -webkit-clip-path: url(#path-2);
-        position: fixed;
-        top: 50%;
         clip-path: url(#path-2);
+        position: fixed;
         background-image: url(${BackgroundUrl});
-        width: 800px;
-        height: 800px;
-        margin-top: -400px;
-        background-size: cover;
+        width: auto;
+        height: auto;
+        background-size: auto;
         background-position: 50% 50%;
         animation: ${myTransition};
         animation-duration: 12s;
