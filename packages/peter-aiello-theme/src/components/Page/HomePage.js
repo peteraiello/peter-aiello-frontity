@@ -163,19 +163,32 @@ const ContentWrapper = styled.div`
 
 const Content = styled.div`    
     h1 {
+        font-size: 1.5rem;
+        margin: 1rem;
         @media (min-width: 768px) { 
-            font-size: 4rem;
+            font-size: 3.5rem;
             line-height: 4rem;
             margin: 1.25rem 0;
         }
     }
     h2 {
+        font-size: 1.15rem;
+        margin: 1rem;
         @media (min-width: 768px) { 
             font-size: 2em;
             line-height: 2rem;
-            margin: 1.25rem 0;
+            margin: 2.15rem 0;
         }
     }
+    .button-primary a {
+        padding: 12px 24px;
+        font-size: 1rem;
+        @media (min-width: 768px) { 
+            padding: 1rem 3rem;
+            font-size: 1.25rem;
+        }
+    }
+
 `
 
 export default connect(BackgroundHome);
