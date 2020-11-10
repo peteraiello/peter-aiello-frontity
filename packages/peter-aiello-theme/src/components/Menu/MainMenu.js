@@ -1,6 +1,6 @@
 import React from "react";
 import Nav from "./Nav";
-import Link from "../Link";
+import Link from "@frontity/components/link";
 import { connect, styled } from "frontity";
 import Logo from "../../assets/logo-light-name-side.svg";
 import Image from "@frontity/components/image";
@@ -19,7 +19,7 @@ const MainMenu = ({ logoSize, state, actions }) => {
         <>
         <MenuBar>
             <LogoContainer> 
-                <Link link="/">
+                <Link link="/" onClick={() => actions.theme.closeMenu()}> 
                     <LogoClass
                         loading="lazy" 
                         src={ Logo } 

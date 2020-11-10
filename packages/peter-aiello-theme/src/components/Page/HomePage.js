@@ -38,11 +38,18 @@ const BackgroundHome = ({ state, title, id, postContent, libraries }) => {
         width: 100%;
         height: 100%;
         overflow: hidden;
-        animation: ${myTransition};
-        animation-duration: 15s;
+        animation: ${myTransitionMob};
+        animation-duration: 5s;
         animation-timing-function: ease-in-out;
         animation-delay: 0s;
         animation-iteration-count: infinite;
+        @media (min-width: 768px) {
+            animation: ${myTransition};
+            animation-duration: 15s;
+            animation-timing-function: ease-in-out;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+        }
         @media (min-width: 1200px) {
             background-size: 110%;
         }
@@ -59,11 +66,18 @@ const BackgroundHome = ({ state, title, id, postContent, libraries }) => {
         width: 100%;
         height: 100%;
         overflow: hidden;
-        animation: ${myTransitionAlt};
-        animation-duration: 15s;
+        animation: ${myTransitionMobAlt};
+        animation-duration: 5s;
         animation-timing-function: ease-in-out;
         animation-delay: 0s;
         animation-iteration-count: infinite;
+        @media (min-width: 768px) {
+            animation: ${myTransitionAlt};
+            animation-duration: 15s;
+            animation-timing-function: ease-in-out;
+            animation-delay: 0s;
+            animation-iteration-count: infinite;
+        }
         @media (min-width: 1200px) {
             background-size: 110%;
         }
@@ -84,6 +98,30 @@ const BackgroundHome = ({ state, title, id, postContent, libraries }) => {
         </>
     )
 }
+
+const myTransitionMob = keyframes`
+    0% {
+        background-position: 50% 50%;
+    }
+    40%, 60% {
+        background-position: 55% 50%;
+    }
+    80%, 100% {
+        background-position: 50% 50%;
+    }
+`;
+
+const myTransitionMobAlt = keyframes`
+    0% {
+        background-position: 50% 50%;
+    }
+    40%, 60% {
+        background-position: 45% 50%;
+    }
+    80%, 100% {
+        background-position: 50% 50%;
+    }
+`;
 
 const myTransition = keyframes`
     0% {

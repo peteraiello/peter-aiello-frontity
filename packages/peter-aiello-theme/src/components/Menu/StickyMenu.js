@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "../Link";
+import Link from "@frontity/components/link";
 import { connect, styled } from "frontity";
 import ScrollLogo from "../../assets/A-logo-lt.svg";
 import Image from "@frontity/components/image";
@@ -17,7 +17,7 @@ const MainMenu = ({ logoSize, state, actions }) => {
         <>
         <MenuBar>
             <LogoContainer> 
-                <Link link="/">
+                <Link link="/" onClick={() => actions.theme.closeMenu()}>
                     <LogoClass
                         loading="lazy" 
                         src={ ScrollLogo } 
