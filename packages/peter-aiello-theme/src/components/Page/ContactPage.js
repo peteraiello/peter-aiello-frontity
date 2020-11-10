@@ -4,8 +4,7 @@ import Placeholder from "../../assets/background-images/buildings-dark.jpg";
 import LogoBackground from "../Paths/LogoBackground";
 import ArrowIcon from "../ArrowIcon";
 import ContentCss from "../../library/content.css";
-import Link from "../Link";
-
+import Link from "@frontity/components/link";
 
 const Background = ({ state, title, id, postContent, libraries }) => {
 
@@ -19,7 +18,7 @@ const Background = ({ state, title, id, postContent, libraries }) => {
     
     const BackgroundUrl = (!FeaturedMedia ? Placeholder : FeaturedMedia.source_url);
     
-    const BackgroundImage = styled.div`
+    const Background = styled.div`
         position: relative;
         background: var(--light-blue);
         background-size: auto;
@@ -40,10 +39,10 @@ const Background = ({ state, title, id, postContent, libraries }) => {
     const BackgroundClip = styled.div`
         -webkit-clip-path: url(#path-2);
         clip-path: url(#path-2);
-        position: fixed;
-        background-image: url(${BackgroundUrl});
         width: 800px;
         height: 800px;
+        position: fixed;
+        background-image: url(${BackgroundUrl});
         background-size: cover;
         background-position: 50% 50%;
         animation: ${myTransition};
@@ -60,33 +59,34 @@ const Background = ({ state, title, id, postContent, libraries }) => {
     const mainRef = useRef();
 
     const scrollMethod = () => {
+        console.log('scroll clicked!');
         mainRef.current.scrollIntoView({ behavior: 'smooth'})
     }
 
     return (
         <>
         <Global styles={css(ContentCss)} />
-        <BackgroundImage>
-            <IconWrapper>
-                <BackgroundClip>
-                    <LogoBackground />
-                </BackgroundClip>
-                <TitleWrapper>
-                    <Title>{ title }</Title>
-                </TitleWrapper>
-                <ArrowWrapper>
-                <Link link={ state.router.link } onClick={ scrollMethod }>anchor link
-                    <ArrowIcon MyClass={ MyArrow } MyFill={ ArrowFill }></ArrowIcon>
-                </Link>
-                </ArrowWrapper>
-            </IconWrapper>
-            {/* the markup for page content */}
-            <ContentWrapper ref={mainRef} id="content-wrapper">
-                <Content className="main-content">
-                    <Html2React html={ postContent } />
-                </Content>
-            </ContentWrapper>
-        </BackgroundImage>
+            <Background>
+                <IconWrapper>
+                    <BackgroundClip>
+                        <LogoBackground />
+                    </BackgroundClip>
+                    <TitleWrapper>
+                        <Title>{ title }</Title>
+                    </TitleWrapper>
+                    <ArrowWrapper>
+                        <Link link={ state.router.link } onClick={ scrollMethod }>anchor link
+                            <ArrowIcon MyClass={ MyArrow } MyFill={ ArrowFill }></ArrowIcon>
+                        </Link>
+                    </ArrowWrapper>
+                </IconWrapper>
+                {/* the markup for page content */}
+                <ContentWrapper ref={mainRef} id="main-ref">
+                    <Content className="main-content">
+                        <Html2React html={ postContent } />
+                    </Content>
+                </ContentWrapper>
+            </Background>
         </>
     )
 }
@@ -162,6 +162,36 @@ const myTransition = keyframes`
     }
 `;
 
+const Rotate = keyframes`
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+`;
+
+const RotateAlt = keyframes`
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(-360deg);
+    }
+`;
+
+const ClipIcon = styled.img`
+    -webkit-clip-path: url(#path-1);
+    clip-path: url(#path-1);
+    width: 796px;
+    height: 796px;
+    animation: ${Rotate};
+    animation-duration: 8s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: infinite;
+`
+
 const TitleWrapper = styled.div`
     display: flex;
     flex-direction: column;
@@ -173,7 +203,7 @@ const TitleWrapper = styled.div`
 const Title = styled.h1`
     text-transform: uppercase;
     position: relative;
-    color: var(--custom-white);
+    color: var(--dark-grey);
     text-align: center;
 `;
 
@@ -183,7 +213,7 @@ const ContentWrapper = styled.div`
 `
 
 const Content = styled.div`    
-   
+    
 `
 
 export default connect(Background);

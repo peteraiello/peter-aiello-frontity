@@ -1,5 +1,5 @@
 import React from "react";
-import { connect, styled, Head } from "frontity";
+import { connect, styled } from "frontity";
 import BgImage from "../assets/background-images/buildings-dark.jpg";
 import BgClip from "./Paths/BlogCutout";
 import List from "./List";
@@ -7,9 +7,6 @@ import List from "./List";
 const Archive = ({ state }) => {
     return (
         <>
-            <Head>
-                <title>Blog</title>
-            </Head>
             <BackgroundImage>
                 <BgClip />        
             </BackgroundImage>

@@ -59,6 +59,7 @@ const Background = ({ state, title, id, postContent, libraries }) => {
     const mainRef = useRef();
 
     const scrollMethod = () => {
+        console.log('scroll clicked!');
         mainRef.current.scrollIntoView({ behavior: 'smooth'})
     }
 

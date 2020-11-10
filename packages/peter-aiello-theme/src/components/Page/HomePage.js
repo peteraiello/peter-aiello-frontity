@@ -1,10 +1,13 @@
 import React from "react";
-import { connect, styled, keyframes } from "frontity";
+import { connect, styled, keyframes, Global, css } from "frontity";
 import BackgroundDefault from "../../assets/background-images/buildings-dark.jpg";
-// import Link from "../Link";
 import Link from '@frontity/components/link';
+import ContentCss from "../../library/content.css";
 
-const BackgroundHome = ({ state, title, id }) => {
+
+const BackgroundHome = ({ state, title, id, postContent, libraries }) => {
+
+    const Html2React = libraries.html2react.Component;
 
     const FeaturedMedia = state.source.attachment[id];
     const BackgroundUrl = (!FeaturedMedia ? BackgroundDefault : FeaturedMedia.source_url);
@@ -67,49 +70,20 @@ const BackgroundHome = ({ state, title, id }) => {
     `
 
     return (
-        <Background>
-            <BackgroundClip />
-            <BackgroundClip2 />
-            <TitleWrapper>
-                <Title>Peter Aiello</Title>
-                    <SubTitle>Full-Stack Developer</SubTitle>
-                <ButtonWrapper>
-                    <Button link='/about'>learn more</Button>
-                    <Button scroll="false" link='/contact/#content-wrapper'>work together</Button>
-                </ButtonWrapper>
-            </TitleWrapper>
-        </ Background>
+        <>
+        <Global styles={css(ContentCss)} />
+            <Background>
+                <BackgroundClip />
+                <BackgroundClip2 />
+                <ContentWrapper>
+                    <Content className="main-content">
+                        <Html2React html={ postContent } />
+                    </Content>
+                </ContentWrapper>
+            </ Background>
+        </>
     )
 }
-
-const ButtonWrapper = styled.div`
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    @media (min-width: 768px) {
-        flex-direction: row;
-    }
-`
-
-const Button = styled(Link)`
-    min-width: 200px;
-    text-align: center;
-    color: var(--custom-white);
-    margin: 0.25rem;
-    border: 1px solid var(--custom-white);
-    padding: 1rem;
-    text-decoration: none;
-    font-size: 1.25rem;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: Bold;
-    @media (min-width: 1024px){
-        font-size: 1.5rem;
-        color: var(--dark-grey);
-        border: 1px solid var(--dark-grey);
-        margin: 0 0.5rem;
-    }
-`
 
 const myTransition = keyframes`
     0% {
@@ -135,47 +109,35 @@ const myTransitionAlt = keyframes`
     }
 `;
 
-const TitleWrapper = styled.div`
+const ContentWrapper = styled.div`
+    background: var(--dark-grey);
+    position: absolute;
+    background: transparent;
+    width: 100%;
+    height: 100%;
+    top: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
     flex-direction: column;
-    position: relative;
-    background: #00000090;
-    @media (min-width: 1024px) {
-        background: transparent;
-    }
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 `
 
-const Title = styled.h1`
-    text-transform: uppercase;
-    position: relative;
-    text-align: center;
-    margin: 0;
-    color: var(--custom-white);
-    @media (min-width: 1024px) {
-        color: var(--dark-grey);
+const Content = styled.div`    
+    h1 {
+        @media (min-width: 768px) { 
+            font-size: 4rem;
+            line-height: 4rem;
+            margin: 1.25rem 0;
+        }
     }
-`;
-
-const SubTitle = styled.h2`
-    text-transform: uppercase;
-    position: relative;
-    font-size: 1.75rem;
-    line-height: 1.75rem;
-    margin: 1.25rem 0 0.75rem 0;
-    color: var(--dark-grey);
-    text-align: center;
-    line-height: 50px;
-    color: var(--custom-white);
-    @media (min-width: 1024px) {
-        font-size: 2rem;
-        line-height: 2rem;
-        margin: 1.25rem 0 2.75rem 0;
-        color: var(--dark-grey);
+    h2 {
+        @media (min-width: 768px) { 
+            font-size: 2em;
+            line-height: 2rem;
+            margin: 1.25rem 0;
+        }
     }
-`;
-
+`
 
 export default connect(BackgroundHome);

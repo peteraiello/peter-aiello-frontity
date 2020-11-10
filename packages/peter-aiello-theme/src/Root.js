@@ -1,5 +1,5 @@
 import React from "react";
-import { Global, css, connect, Head, styled } from "frontity";
+import { Global, css, connect, styled } from "frontity";
 import Nav from "./components/Menu/Nav";
 import Archive from "./components/Archive";
 import Post from "./components/Post";
@@ -37,12 +37,6 @@ const Root = ({ state }) => {
 
     return (
         <>
-            <Head>
-                <title>{ state.frontity.title }</title>
-                <meta name="description" content={ state.frontity.description }/>
-                <html lang="en" />
-                <link rel="canonical" href='/' />
-            </Head>
             {/* color style variables */}
             <Global styles={css(colorsCss)} />
             {/* typography defaults for css */}

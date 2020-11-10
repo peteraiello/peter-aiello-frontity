@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { connect, Head } from "frontity";
+import { connect } from "frontity";
 import Home from "./Page/HomePage";
 import InternalPage from "./Page/InternalPage";
 import Contact from "./Page/ContactPage";
@@ -12,7 +12,6 @@ const Page = ({ state, actions }) => {
     const FeaturedMediaID = post.featured_media; 
     const postID = post.id;
     //    console.log(postID);
-
     /**
      * preload all the essential pages and blogs
      * so that when the user is on the homepage 
@@ -27,12 +26,8 @@ const Page = ({ state, actions }) => {
 
     return data.isReady ? (
             <>
-                <Head>
-                    <title>{post.title.rendered}</title>
-                    <link rel="canonical" href={state.router.link} />                    
-                </Head>
                 {/* page is home? */}
-                { data.isHome && <Home title={post.title.rendered} id={ FeaturedMediaID }/>}
+                { data.isHome && <Home title={post.title.rendered} id={ FeaturedMediaID } postContent={ post.content.rendered } /> }
                 {/* post id equal to about */}
                 { postID === 10 && <InternalPage title={post.title.rendered} id={ FeaturedMediaID } postContent={ post.content.rendered } /> }
                 {/* post id equal to contact */}

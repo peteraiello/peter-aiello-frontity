@@ -23,7 +23,7 @@ const Post = ({ state, actions }) => {
     /* get the head tags object */
     const headTags = state.headTags.get(post.link);
     /* get the canonical link */
-    const canonicalRef = headTags[6].attributes.content;
+    const canonicalRef = headTags[6].attributes.content ? headTags[6].attributes.content : null;
 
     /**
      * preload all the essential pages and blogs
@@ -59,7 +59,7 @@ const Post = ({ state, actions }) => {
 
             <Head>
                 <title>{ post.title.rendered }</title>
-                <link rel="canonical" href={canonicalRef} />
+                <link rel="canonical" href={ canonicalRef } />
             </Head>
 
             <BackgroundImage>
