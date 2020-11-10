@@ -16,23 +16,9 @@ import FontCss from "../src/library/fonts.css";
 import TypographyCss from "../src/library/typography.css";
 import OverridesCSS from "../src/library/overrides.css";
 import Switch from "@frontity/components/switch";
-import { useInView } from 'react-intersection-observer';
 
 
 const Root = ({ state }) => {
-
-    const [ref, inView] = useInView({threshold: 0,});
-
-    // create a prop for the menu view to 
-    // pass down to components
-    let menuView = false;
-    inView ? ( 
-         menuView = false
-         // actions.theme.menuShow = false
-    ) : ( 
-        menuView = true
-        // actions.theme.menuShow = true
-    );
     const data = state.source.get(state.router.link);
 
     return (
@@ -54,9 +40,9 @@ const Root = ({ state }) => {
             {
                 // console.log(menuInView); 
             }
-            <Header menuView={menuView} />
+            <Header />
                         
-            <NavWrapper ref={ref}>
+            <NavWrapper>
                 <Nav />  
             </NavWrapper>
             

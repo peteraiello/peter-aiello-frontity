@@ -3,27 +3,31 @@ import { connect, keyframes } from "frontity";
 import MainMenu from "./Menu/MainMenu";
 import StickyMenu from "./Menu/StickyMenu";
 import { styled } from "frontity";
+import { useInView } from 'react-intersection-observer';
 
-const Header = ({ state, actions, menuView }) => {
+
+const Header = ({ state, actions }) => {
 
         // menu in view? update the 'menuIsHidden'
         // state to false using an action' 
         // menu not in view?  update 'menuIsHidden'
         // state to true
 
-        menuView ? ( 
+        const [ref, inView] = useInView({threshold: 0,});
+
+        inView ? ( 
             actions.theme.menuShown()
             ) : ( 
             actions.theme.menuHidden()
         );
+
         return(
             <>
-                    <MenuDefault>
+                    <MenuDefault ref={ref}>
                         <MainMenu logoSize="120px" />
                     </MenuDefault>
-                
                 {
-                    !state.theme.menuIsHidden &&
+                    state.theme.menuIsHidden &&
                     <MenuScroll>
                         <StickyMenu logoSize="80px" />
                     </MenuScroll>

@@ -37,7 +37,10 @@ const BackgroundImage = styled.div`
 
 const Container = styled.div`
     width: 100%;
-    margin: 12rem auto 0;
+    margin: 6rem auto 0;
+    @media (min-width: 768px) {
+        margin: 12rem auto 0;
+    }
 `
 
 const ContainerInner = styled.div`
