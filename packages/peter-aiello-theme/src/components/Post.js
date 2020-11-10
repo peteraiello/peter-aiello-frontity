@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { styled, connect, Head } from "frontity";
 import Placeholder from "../assets/background-images/buildings-dark.jpg";
 import BgClip from "./Paths/BlogCutout";
 import Tags from "./Post/Tags";
 
-const Post = ({ state }) => {
+const Post = ({ state, actions }) => {
 
     const data = state.source.get(state.router.link);
     const post = state.source[data.type][data.id];
@@ -24,6 +24,18 @@ const Post = ({ state }) => {
     const headTags = state.headTags.get(post.link);
     /* get the canonical link */
     const canonicalRef = headTags[6].attributes.content;
+
+    /**
+     * preload all the essential pages and blogs
+     * so that when the user is on the homepage 
+     * and clicks on another page, it's already loaded
+     */
+    useEffect(() => {
+        actions.source.fetch("/");
+        actions.source.fetch("/about");
+        actions.source.fetch("/blog");
+        actions.source.fetch("/contact");
+    }, []);
 
     const BackgroundImage = styled.div`
         min-height: 100vh;

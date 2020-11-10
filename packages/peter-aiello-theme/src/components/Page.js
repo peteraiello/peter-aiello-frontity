@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { connect, Head } from "frontity";
 import Home from "./Page/HomePage";
 import InternalPage from "./Page/InternalPage";
@@ -13,18 +13,20 @@ const Page = ({ state, actions }) => {
     const postID = post.id;
     //    console.log(postID);
 
-    // Without the context
-{
-    beforeSSR: ({ state, libraries }) => {
-      console.log('Gonna SSR this page');
-    }
-  }
+    /**
+     * preload all the essential pages and blogs
+     * so that when the user is on the homepage 
+     * and clicks on another page, it's already loaded
+     */
+    useEffect(() => {
+        actions.source.fetch("/");
+        actions.source.fetch("/about");
+        actions.source.fetch("/blog");
+        actions.source.fetch("/contact");
+    }, []);
 
     return data.isReady ? (
             <>
-
-                {actions.theme.closeMenu()}
-
                 <Head>
                     <title>{post.title.rendered}</title>
                     <link rel="canonical" href={state.router.link} />                    
