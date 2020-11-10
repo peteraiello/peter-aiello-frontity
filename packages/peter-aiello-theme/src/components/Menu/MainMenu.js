@@ -2,7 +2,7 @@ import React from "react";
 import Nav from "./Nav";
 import Link from "../Link";
 import { connect, styled } from "frontity";
-import Logo from "../../assets/logo-light-vers.svg";
+import Logo from "../../assets/logo-light-name-side.svg";
 import Image from "@frontity/components/image";
 import MenuIcon from "../../assets/mobile-menu.svg";
  
