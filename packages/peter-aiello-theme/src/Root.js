@@ -1,5 +1,5 @@
 import React from "react";
-import { Global, css, connect, styled } from "frontity";
+import { Global, css, connect, styled, Head } from "frontity";
 import Nav from "./components/Menu/Nav";
 import Archive from "./components/Archive";
 import Post from "./components/Post";
@@ -17,12 +17,14 @@ import TypographyCss from "../src/library/typography.css";
 import OverridesCSS from "../src/library/overrides.css";
 import Switch from "@frontity/components/switch";
 
-
 const Root = ({ state }) => {
     const data = state.source.get(state.router.link);
 
     return (
         <>
+            <Head>
+                <html lang="en" />
+            </Head>
             {/* color style variables */}
             <Global styles={css(colorsCss)} />
             {/* typography defaults for css */}

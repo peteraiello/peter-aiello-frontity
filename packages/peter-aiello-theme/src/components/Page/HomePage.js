@@ -173,19 +173,8 @@ const ContentWrapper = styled.div`
 const Content = styled.div`    
     h1,
     p {
-        color: var(--custom-white);
+        color: var(--custom-white) !important;
     }
-    .button-primary a {
-        color: var(--custom-white);
-        border: 1px solid var(--custom-white);
-        padding: 12px 24px;
-        font-size: 1rem;
-        @media (min-width: 768px) { 
-            padding: 1rem 3rem;
-            font-size: 1.25rem;
-        }
-    }
-
 `
 
 export default connect(BackgroundHome);

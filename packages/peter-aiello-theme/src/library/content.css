@@ -61,6 +61,21 @@
     background-color: transparent;
 }
 
+.main-content .button-light a {
+    display: block;
+    width: auto;
+    text-align: center;
+    color: var(--custom-white);
+    border: 1px solid var(--custom-white);
+    padding: 1rem 3rem;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    font-family: 'Open Sans',sans-serif;
+    font-weight: Bold;
+    border-radius: 0;
+    background-color: transparent;
+}
+
 .main-content .button-dark a {
     display: block;
     width: auto;
