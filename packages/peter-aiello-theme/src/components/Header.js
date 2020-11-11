@@ -5,7 +5,6 @@ import StickyMenu from "./Menu/StickyMenu";
 import { styled } from "frontity";
 import { useInView } from 'react-intersection-observer';
 
-
 const Header = ({ state, actions }) => {
 
         // menu in view? update the 'menuIsHidden'
@@ -27,20 +26,38 @@ const Header = ({ state, actions }) => {
                         <MainMenu logoSize="120px" />
                     </MenuDefault>
                 {
+                    !state.theme.menuIsHidden &&
+                        <MenuScrollOut>
+                            <StickyMenu logoSize="80px" />
+                        </MenuScrollOut>
+                }
+                {
                     state.theme.menuIsHidden &&
-                    <MenuScroll>
-                        <StickyMenu logoSize="80px" />
-                    </MenuScroll>
+                        <MenuScrollIn>
+                            <StickyMenu logoSize="80px" />
+                        </MenuScrollIn>
                 }
             </>
         )
 }
-
-const myTransition = keyframes`
+const FadeOut = keyframes`
     from {
-        opacity: 0; 
+        display: block;
+        opacity: 1; 
     }
     to {
+        opacity: 0;  
+        display: none;
+    }
+`;
+
+const FadeIn = keyframes`
+    0% {
+        display: none;
+        opacity: 0; 
+    }
+    100% {
+        display: block;
         opacity: 1;  
     }
 `;
@@ -51,8 +68,6 @@ const MenuDefault = styled.div`
     width: 100%; 
     top: 0; 
     z-index: 9999;
-    animation: ${myTransition};
-    animation-duration: 1s;
     box-sizing: border-box;
     @media (min-width: 1024px){
         background: transparent;
@@ -60,15 +75,32 @@ const MenuDefault = styled.div`
     }
 `
 
-const MenuScroll = styled.div`
+const MenuScrollOut = styled.div`
+    display: none;
+    background: #00000080; 
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 9998;
+    animation: ${FadeOut};
+    animation-duration: 500ms;
+    animation-fill-mode: both;
+    box-sizing: border-box;
+    @media (min-width: 1024px){
+        display: block;
+    }
+`
+
+const MenuScrollIn = styled.div`
     display: none;
     background: #00000080; 
     position: fixed; 
     width: 100%; 
     top: 0; 
     z-index: 9999;
-    animation: ${myTransition};
+    animation: ${FadeIn};
     animation-duration: 1s;
+    animation-fill-mode: both;
     box-sizing: border-box;
     @media (min-width: 1024px){
         display: block;

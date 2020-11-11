@@ -1,6 +1,6 @@
 /* gutenberg overrides */
 .main-content a {
-    color: var(--orange-highlight);
+    color: var(--dark-orange);
     text-decoration: none;
 }
 

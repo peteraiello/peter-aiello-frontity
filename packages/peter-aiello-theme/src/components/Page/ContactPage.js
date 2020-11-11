@@ -45,6 +45,9 @@ const Background = ({ state, title, id, postContent, libraries }) => {
         background-image: url(${BackgroundUrl});
         background-size: cover;
         background-position: 50% 50%;
+        /* add tint */
+        background-color: rgba(0,0,0,0.20);
+        background-blend-mode: overlay;
         animation: ${myTransition};
         animation-duration: 12s;
         animation-timing-function: linear;
@@ -203,7 +206,7 @@ const TitleWrapper = styled.div`
 const Title = styled.h1`
     text-transform: uppercase;
     position: relative;
-    color: var(--dark-grey);
+    color: var(--custom-white);
     text-align: center;
 `;
 

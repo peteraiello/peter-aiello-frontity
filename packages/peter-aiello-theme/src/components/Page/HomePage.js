@@ -19,6 +19,9 @@ const BackgroundHome = ({ state, title, id, postContent, libraries }) => {
         background-position: 50% 50%;
         background-attachment: fixed;
         background-repeat: no-repeat;
+        /* add tint */
+        background-color: rgba(0,0,0,0.20);
+        background-blend-mode: overlay;
         width: 100%;
         height: 100vh;
         overflow: hidden;
@@ -35,6 +38,9 @@ const BackgroundHome = ({ state, title, id, postContent, libraries }) => {
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: 50% -150%;
+        /* add tint */
+        background-color: rgba(0,0,0,0.20);
+        background-blend-mode: overlay;
         width: 100%;
         height: 100%;
         overflow: hidden;
@@ -63,6 +69,9 @@ const BackgroundHome = ({ state, title, id, postContent, libraries }) => {
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-position: 50% -150%;
+        /* add tint */
+        background-color: rgba(0,0,0,0.20);
+        background-blend-mode: overlay;
         width: 100%;
         height: 100%;
         overflow: hidden;
@@ -162,7 +171,13 @@ const ContentWrapper = styled.div`
 `
 
 const Content = styled.div`    
+    h1,
+    p {
+        color: var(--custom-white);
+    }
     .button-primary a {
+        color: var(--custom-white);
+        border: 1px solid var(--custom-white);
         padding: 12px 24px;
         font-size: 1rem;
         @media (min-width: 768px) { 
