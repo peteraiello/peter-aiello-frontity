@@ -17,9 +17,11 @@ const Header = ({ state, actions }) => {
             opacity: 1; 
             height: auto;
         }
+        1% {
+            height: 0;
+        }
         100% {
             opacity: 0;
-            height: 0;  
         }
         `;
 
@@ -28,8 +30,10 @@ const Header = ({ state, actions }) => {
                 height: 0;
                 opacity: 0; 
             }
-            100% {
+            1% {
                 height: auto;
+            }
+            100% {
                 opacity: 1;  
             }
         `;
