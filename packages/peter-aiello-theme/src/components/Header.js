@@ -12,25 +12,24 @@ const Header = ({ state, actions }) => {
         // menu not in view?  update 'menuIsHidden'
         // state to true
 
-
         const FadeOut = keyframes`
         0% {
-            display: block;
             opacity: 1; 
+            height: auto;
         }
         100% {
-            display: none;
-            opacity: 0;  
+            opacity: 0;
+            height: 0;  
         }
         `;
 
         const FadeIn = keyframes`
             0% {
-                display: none;
+                height: 0;
                 opacity: 0; 
             }
             100% {
-                display: block;
+                height: auto;
                 opacity: 1;  
             }
         `;
@@ -51,12 +50,12 @@ const Header = ({ state, actions }) => {
                     .sticky-menu {
                         position: fixed;
                         top: 0;
-                        z-index: 999;
                         width: 100%;
+                        z-index: 9998;
+                        overflow: hidden;
                         animation: ${FadeIn};
                         animation-duration: 1s;
                         background: var(--dark-grey);
-                        z-index: 9999;
                     }}
                 `} />
                 }
@@ -65,6 +64,8 @@ const Header = ({ state, actions }) => {
                     <Global styles={css`
                     .sticky-menu {
                         background: var(--dark-grey);
+                        z-index: 9998;
+                        overflow: hidden;
                         animation: ${FadeOut};
                         animation-duration: 1s;
                         animation-fill-mode: both;
@@ -74,7 +75,7 @@ const Header = ({ state, actions }) => {
                 <MenuDefault ref={ref}>
                     <MainMenu logoSize="120px" />
                 </MenuDefault>
-                <div class="sticky-menu">
+                <div className="sticky-menu">
                     <StickyMenu logoSize="80px" />
                 </div>
             </>
