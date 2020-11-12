@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { connect, css, styled, keyframes, Global } from "frontity";
 import Placeholder from "../../assets/background-images/buildings-dark.jpg";
 import LogoBackground from "../Paths/LogoBackground";
-import ArrowIcon from "../ArrowIcon";
 import ContentCss from "../../library/content.css";
 import Link from "@frontity/components/link";
 
@@ -81,12 +80,10 @@ const Background = ({ state, title, id, postContent, libraries }) => {
                     <TitleWrapper>
                         <Title>{ title }</Title>
                     </TitleWrapper>
-                    <ArrowWrapper>
-                    <Link link={ state.router.link } onClick={ scrollMethod }>anchor link
-                        <ArrowIcon MyClass={ MyArrow } MyFill={ ArrowFill }></ArrowIcon>
-                    </Link>
-                    </ArrowWrapper>
                 </IconWrapper>
+                <ArrowWrapper>
+                    <Link link={ state.router.link } onClick={ scrollMethod }>scroll</Link>
+                </ArrowWrapper>
                 {/* the markup for page content */}
                 <ContentWrapper ref={mainRef}>
                     <Content className="main-content">
@@ -98,45 +95,43 @@ const Background = ({ state, title, id, postContent, libraries }) => {
     )
 }
 
-const MyArrow = "my-arrow";
-
-const ArrowFill = 'var(--dark-grey)';
-
 const ArrowAnimation = keyframes`
     0% {
-        fill: var(--light-grey);
-        transform: translate(0px, 0px);
-    }
-    10% {
-        transform: translate(0px, 5px);
-    }
-    20% {
-        transform: translate(0px, 0px);
-    }
-    30% {
-        transform: translate(0px, 5px);
-    }
-    40% {
-        transform: translate(0px, 0px);
+        color: var(--light-grey);
     }
     50% {
-        fill: var(--dark-grey);
+        color: var(--custom-white);
     }
     100% {
-        fill: var(--light-grey);
+        color: var(--light-grey);
     }
 `;
 
-const ArrowWrapper = styled.div`
+const ArrowWrapper = styled.div` 
     position: fixed;
-    height: 75px;
-    width: 32px;
-    left: 50%;
-    margin-left: calc(-32px / 2);
-    bottom: 5%;
-    margin-top: calc(-75px / 2);    
+    bottom: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100vh;
+    width: 100%;
     .my-arrow {
-        width: 32px;
+        width: 46px;
+        height: 46px;
+        margin: 2rem;
+        animation: ${ArrowAnimation};
+        animation-duration: 4s;
+        animation-timing-function: linear;
+        animation-delay: 0s;
+        animation-iteration-count: infinite;
+        /* background: rgba(0,0,0,0.5); */
+        border-radius: 0.25rem;
+    }
+    a {
+        text-decoration: none;
+        margin: 2rem;
         animation: ${ArrowAnimation};
         animation-duration: 4s;
         animation-timing-function: linear;
@@ -153,11 +148,6 @@ const IconWrapper = styled.div`
     align-items: center;
     height: 100vh;
     overflow: hidden;
-    a {
-        color: transparent;
-        font-size: 0;
-        line-height: 0;
-    }
 `
 
 const myTransition = keyframes`

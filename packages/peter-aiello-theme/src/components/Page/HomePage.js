@@ -168,6 +168,9 @@ const ContentWrapper = styled.div`
     justify-content: center;
     align-items: center;
     text-align: center;
+    .main-content {
+        width: 100%;
+    }
 `
 
 const Content = styled.div`    

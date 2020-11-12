@@ -71,7 +71,7 @@ const NavWrapper = styled.nav`
     top: 50%;
     right: 0;
     transform: translate(-50%, -50%);
-    z-index: 9999;
+    z-index: 9997;
     display: none;
     @media (min-width: 1024px) {
         display: flex;
@@ -85,6 +85,12 @@ const NavWrapper = styled.nav`
         text-transform: lowercase; 
         margin-bottom: 2rem;
         display: block;
+        background: var(--dark-grey);
+        color: var(--custom-white);
+        padding: 0.25rem 0.25rem;
+        &:last-of-type {
+            margin-bottom: 0;
+        }
     }
 `
 

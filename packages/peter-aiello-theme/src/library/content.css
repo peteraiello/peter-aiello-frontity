@@ -1,9 +1,4 @@
 /* gutenberg overrides */
-.main-content a {
-    color: var(--dark-orange);
-    text-decoration: none;
-}
-
 .main-content .section-padding {
     padding: 3.75rem 30px;
     @media (min-width: 768px) {
@@ -21,13 +16,27 @@
     color: var(--dark-grey);
 }
 
-.main-content .background-blue h1, 
-.main-content .background-blue h2, 
-.main-content .background-blue h3,
-.main-content .background-blue h4,
-.main-content .background-blue h5,
-.main-content .background-blue h6,
-.main-content .background-blue p {
+.main-content .background-light-grey {
+    background-color: var(--light-grey);
+    color: var(--dark-grey);
+}
+
+.main-content .background-light-grey a {
+    color: var(--dark-orange);
+}
+
+.main-content .background-dark a {
+    color: var(--orange-highlight);
+}
+
+
+.main-content .background-grey h1, 
+.main-content .background-grey h2, 
+.main-content .background-grey h3,
+.main-content .background-grey h4,
+.main-content .background-grey h5,
+.main-content .background-grey h6,
+.main-content .background-grey p {
     color: var(--dark-grey);
 }
 
@@ -41,6 +50,11 @@
     color: var(--light-grey);
 }
 
+.main-content .background-dark h3,
+.main-content .background-light-grey h3 {
+    font-size: 3.5rem;
+    margin-top: 1.30rem;
+}
 
 .main-content .section-1 img.portrait {
     border-radius: 50%;
@@ -59,6 +73,15 @@
     font-weight: Bold;
     border-radius: 0;
     background-color: transparent;
+}
+
+.main-content .home-button {
+    width: 100%;
+    max-width: 250px;
+    margin-right: 0;
+    @media(min-width: 768px) {
+        margin-right: 8px;
+    }
 }
 
 .main-content .button-light a {
