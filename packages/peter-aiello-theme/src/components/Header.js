@@ -13,16 +13,14 @@ const Header = ({ state, actions }) => {
         // state to true
 
         const FadeOut = keyframes`
-        0% {
-            opacity: 1; 
-            height: auto;
-        }
-        1% {
-            height: 0;
-        }
-        100% {
-            opacity: 0;
-        }
+            0% {
+                opacity: 1; 
+                height: auto;
+            }
+            100% {
+                height: 0;
+                opacity: 0;
+            }
         `;
 
         const FadeIn = keyframes`
