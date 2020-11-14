@@ -42,12 +42,10 @@ const Root = ({ state }) => {
             {
                 // console.log(menuInView); 
             }
-            <Header />
-                        
+            <Header />  
             <NavWrapper>
                 <Nav />  
             </NavWrapper>
-            
             <main>
             <Switch>
                 <Loading when={data.isFetching} />
@@ -57,9 +55,7 @@ const Root = ({ state }) => {
                 {data.isError && <Page404 />}
             </Switch>
             </main>
-
-            <Footer />
-
+            { !data.isHome ? <Footer /> : undefined }
         </>
     )
 }
@@ -67,7 +63,7 @@ const Root = ({ state }) => {
 const NavWrapper = styled.nav`
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     top: 50%;
     right: 0;
     transform: translate(-50%, -50%);
@@ -85,7 +81,7 @@ const NavWrapper = styled.nav`
         text-transform: lowercase; 
         margin-bottom: 2rem;
         display: block;
-        background: var(--dark-grey);
+        background: rgba(0,0,0,0.25);
         color: var(--custom-white);
         padding: 0.25rem 0.25rem;
         &:last-of-type {

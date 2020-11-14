@@ -92,7 +92,7 @@ const MenuDefault = styled.div`
     top: 0; 
     z-index: 9999;
     box-sizing: border-box;
-    @media (min-width: 1024px){
+    @media (min-width: 1200px){
         background: transparent;
         position: absolute;
     }

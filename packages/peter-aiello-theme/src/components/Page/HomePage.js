@@ -1,7 +1,7 @@
 import React from "react";
 import { connect, styled, keyframes, Global, css } from "frontity";
 import BackgroundDefault from "../../assets/background-images/buildings-dark.jpg";
-import Link from '@frontity/components/link';
+import FooterCopyright from "../Footer/FooterCopyright";
 import ContentCss from "../../library/content.css";
 
 
@@ -103,6 +103,9 @@ const BackgroundHome = ({ state, title, id, postContent, libraries }) => {
                         <Html2React html={ postContent } />
                     </Content>
                 </ContentWrapper>
+                <CopyrightWrapper>
+                    <FooterCopyright />
+                </CopyrightWrapper>
             </ Background>
         </>
     )
@@ -156,6 +159,16 @@ const myTransitionAlt = keyframes`
     }
 `;
 
+const CopyrightWrapper = styled.div` 
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+`
+
 const ContentWrapper = styled.div`
     background: var(--dark-grey);
     position: absolute;
@@ -177,6 +190,16 @@ const Content = styled.div`
     h1,
     p {
         color: var(--custom-white) !important;
+    }
+    h1 {
+        font-size: 4.25rem;
+        line-height: 4.25rem;
+        margin: 0rem 0px 1rem;
+    }
+    p {
+        font-size: 1.25rem;
+        line-height: 2rem;
+        margin: 0rem 0px 1rem;
     }
 `
 

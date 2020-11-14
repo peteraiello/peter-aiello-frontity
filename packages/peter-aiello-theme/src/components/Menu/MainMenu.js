@@ -72,7 +72,7 @@ const MobileWrapper = styled.div`
         padding: 1rem 0;
         display: block;
     }
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
         display: none;
     }
 `
@@ -99,7 +99,7 @@ const Button = styled.button`
     background-color: transparent;
     border: none;
     display: block;
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
         display: none;
     }
 `

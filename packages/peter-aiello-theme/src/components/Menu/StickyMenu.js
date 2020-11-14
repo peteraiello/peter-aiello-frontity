@@ -24,9 +24,6 @@ const MainMenu = ({ logoSize, state, actions }) => {
                         alt="Peter Aiello - Coding Experience"
                     />
                 </Link>
-                <NavWrapper>
-                    <Nav />
-                </NavWrapper>
             </LogoContainer>
         </MenuBar>        
         </>
@@ -43,11 +40,11 @@ const LogoContainer = styled.div`
     box-sizing: border-box;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;  
     @media (min-width: 1200px){
-        padding: 1rem 0;
-        max-width: 1200px;
+        padding: 1.2rem;
+        justify-content: end;  
     }
 `
 
