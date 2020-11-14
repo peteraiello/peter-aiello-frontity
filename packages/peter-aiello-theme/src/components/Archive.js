@@ -3,6 +3,7 @@ import { connect, styled } from "frontity";
 import BgImage from "../assets/background-images/buildings-dark.jpg";
 import BgClip from "./Paths/BlogCutout";
 import List from "./List";
+import Pagination from "./Pagination";
 
 const Archive = ({ state }) => {
     return (
@@ -13,6 +14,7 @@ const Archive = ({ state }) => {
             <Container>
                 <ContainerInner>
                     <List />
+                    <Pagination/>
                 </ContainerInner>
             </Container>
         </>

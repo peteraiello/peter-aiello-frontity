@@ -2,8 +2,7 @@ import React from "react";
 import { styled, connect } from "frontity";
 import Link from "./Link";
 import Tags from "./Post/Tags";
-
-const MyMargin = "0 0 1rem 0";
+const PostMargin = "0 0 1rem 0";
 
 const List = ({ state, libraries }) => {
     const data = state.source.get(state.router.link);
@@ -43,7 +42,7 @@ const PostDate = styled.span`
     text-transform: uppercase;
     color: var(--light-grey);
     font-size: 1.5rem;
-    margin: ${MyMargin};
+    margin: ${PostMargin};
     @media (min-width: 768px) {
         font-size: 2rem;
     }
@@ -53,11 +52,11 @@ const Title = styled.h1`
     font-weight: bold;
     text-transform: uppercase;
     color: var(--light-grey);
-    margin: ${MyMargin};
+    margin: ${PostMargin};
 `
 
 const Excerpt = styled.div`
-    margin: ${MyMargin};
+    margin: ${PostMargin};
     p {
         color: var(--light-grey);
         font-size: 1.25rem;

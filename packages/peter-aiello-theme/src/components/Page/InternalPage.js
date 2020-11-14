@@ -76,7 +76,7 @@ const Background = ({ state, title, id, postContent, libraries }) => {
                     <BackgroundClip>
                         <LogoBackground />
                         <ClipIcon src={ BackgroundUrl } alt="branding-icon"/>
-                    </BackgroundClip>
+                        </BackgroundClip>
                     <TitleWrapper>
                         <Title>{ title }</Title>
                     </TitleWrapper>
@@ -165,15 +165,6 @@ const Rotate = keyframes`
     }
     to {
         transform: rotate(360deg);
-    }
-`;
-
-const RotateAlt = keyframes`
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(-360deg);
     }
 `;
 

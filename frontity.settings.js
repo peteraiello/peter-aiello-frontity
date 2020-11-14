@@ -18,6 +18,9 @@ const settings = {
           "api": "https://wordpress.peteraiello.co.uk/wp-json",
           "homepage": "home",
           "postsPage": "blog",
+          "params": {
+            "per_page": 10
+          }
         }
       }
     },
