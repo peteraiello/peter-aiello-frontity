@@ -1,4 +1,8 @@
 /* gutenberg overrides */
+.main-content a {
+    color: var(--dark-orange);
+}
+
 .main-content .section-padding {
     padding: 3.75rem 30px;
     @media (min-width: 768px) {
