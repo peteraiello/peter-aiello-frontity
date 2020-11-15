@@ -3,7 +3,7 @@ import Nav from "./Nav";
 import Link from "@frontity/components/link";
 import { connect, styled } from "frontity";
 import Logo from "../../assets/logo-light-name-side.svg";
-import LogoMobile from "../../assets/a-logo-lt.svg";
+import LogoMobile from "../../assets/logo-no-name-light.svg";
 import Image from "@frontity/components/image";
 import MenuIcon from "../../assets/mobile-menu.svg";
  

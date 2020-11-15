@@ -1,6 +1,6 @@
 import React from "react";
 import { styled, keyframes, css} from "frontity";
-import Logo from "../assets/a-logo-lt.svg";
+import Logo from "../assets/logo-no-name-light.svg";
 import Image from "@frontity/components/image";
 
 
