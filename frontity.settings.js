@@ -2,7 +2,7 @@ const settings = {
   "name": "my-app",
   "state": {
     "frontity": {
-      "url": "https://peteraiello.co.uk",
+      "url": "https://peteraiello.dev",
       "title": "Peter Aiello | Coding Experience",
       "description": "Freelance Full-Stack Developer"
     }
