@@ -1,10 +1,14 @@
 import React, { useEffect } from "react";
-import { styled, connect, Head } from "frontity";
+import { styled, connect, Head, Global, css } from "frontity";
 import Placeholder from "../assets/background-images/buildings-dark.jpg";
 import BgClip from "./Paths/BlogCutout";
 import Tags from "./Post/Tags";
+import ContentCss from "../library/content.css";
 
-const Post = ({ state, actions }) => {
+
+const Post = ({ state, actions, libraries }) => {
+
+    const Html2React = libraries.html2react.Component;
 
     const data = state.source.get(state.router.link);
     const post = state.source[data.type][data.id];
@@ -56,12 +60,11 @@ const Post = ({ state, actions }) => {
 
     return data.isReady ? (
         <>  
-
+        <Global styles={css(ContentCss)} />
             <Head>
                 <title>{ post.title.rendered }</title>
                 <link rel="canonical" href={ canonicalRef } />
             </Head>
-
             <BackgroundImage>
                 <BackgroundWrapper>
                     <BgClip />
@@ -75,7 +78,9 @@ const Post = ({ state, actions }) => {
                         <PostDate>{date.toDateString()}</PostDate>
                     </PostInfo>
                     <ContentContainer>
-                        <Content dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+                        <Content className="main-content">
+                            <Html2React html={ post.content.rendered }/>
+                        </Content>
                     </ContentContainer>
                 </ContainerInner>
             </Container>
@@ -114,6 +119,7 @@ const Title = styled.h1`
     font-weight: bold;
     text-transform: uppercase;
     color: var(--light-grey);
+    margin: 0 0 1rem;
 `;
 
 const Container = styled.div`

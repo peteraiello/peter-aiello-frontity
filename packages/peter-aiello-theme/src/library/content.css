@@ -144,3 +144,42 @@
 .main-content div.error-message {
     color: var(--light-grey);
 }
+
+.main-content .latest-posts h3{
+    margin-top: 0;
+}
+
+.main-content .wp-block-button {
+    margin: 1rem 0 0;
+    @media(min-width: 768px) {
+        margin: 0;
+    }
+}
+
+.main-content .lead {
+    font-size: 120%;
+}
+
+.main-content pre code {
+    display: block;
+    line-height: 1.75;
+    padding: 1rem 1.5rem;
+    overflow-x: auto;
+}
+
+.main-content code {
+    background: var(--light-grey) none repeat scroll 0% 0%;
+    border-radius: 4px;
+    font-family: "Courier New", monospace;
+    font-size: 0.9rem;
+    margin: 0px 0.25rem;
+    padding: 0.25rem 0.65rem;
+}
+
+.main-content hr {
+    border-color: var(--orange-highlight);
+    border-style: none none solid;
+    border-width: 0px 0px 1px;
+    border-image: none 100% / 1 / 0 stretch;
+    margin: 2rem 0px;
+}

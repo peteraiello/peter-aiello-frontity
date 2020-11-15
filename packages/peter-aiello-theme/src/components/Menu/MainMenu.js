@@ -3,15 +3,25 @@ import Nav from "./Nav";
 import Link from "@frontity/components/link";
 import { connect, styled } from "frontity";
 import Logo from "../../assets/logo-light-name-side.svg";
+import LogoMobile from "../../assets/a-logo-lt.svg";
 import Image from "@frontity/components/image";
 import MenuIcon from "../../assets/mobile-menu.svg";
  
 const MainMenu = ({ logoSize, state, actions }) => {
 
-    const LogoClass = styled(Image)`
-        height: 76px;
-        @media (min-width: 768px) {
+    const LogoDesktop = styled(Image)`
+        display: none;
+        @media (min-width: 1200px) {
+            display: block;
             height: ${logoSize}; 
+        }
+    `
+
+    const ResponsiveLogo = styled(Image)`
+        display: block;
+        height: 72px;
+        @media (min-width: 1200px) {
+            display: none;
         }
     `
 
@@ -20,7 +30,12 @@ const MainMenu = ({ logoSize, state, actions }) => {
         <MenuBar>
             <LogoContainer> 
                 <Link link="/" onClick={() => actions.theme.closeMenu()}> 
-                    <LogoClass
+                    <ResponsiveLogo
+                        loading="lazy" 
+                        src={ LogoMobile } 
+                        alt="Peter Aiello - Coding Experience"
+                    />
+                    <LogoDesktop
                         loading="lazy" 
                         src={ Logo } 
                         alt="Peter Aiello - Coding Experience"

@@ -24,6 +24,9 @@ const Root = ({ state }) => {
         <>
             <Head>
                 <html lang="en" />
+                {/* <!-- Fathom - beautiful, simple website analytics --> */}
+                <script src="https://cdn.usefathom.com/script.js" data-site="YDOCQBFS" defer></script>
+                {/* <!-- / Fathom --> */ }
             </Head>
             {/* color style variables */}
             <Global styles={css(colorsCss)} />
@@ -69,7 +72,7 @@ const NavWrapper = styled.nav`
     transform: translate(-50%, -50%);
     z-index: 9997;
     display: none;
-    @media (min-width: 1024px) {
+    @media (min-width: 1200px) {
         display: flex;
     }
     a {

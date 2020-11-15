@@ -27,3 +27,15 @@
 .wp-block-image img {
     height: auto;
 }
+
+.wp-block-table table tbody tr:nth-of-type(odd) {
+    background: var(--dark-grey);
+}
+
+.wp-block-table table tbody tr:nth-of-type(odd) td {
+    color: var(--light-grey);
+}
+
+.wp-block-table table tbody tr td {
+    border: 0;
+}

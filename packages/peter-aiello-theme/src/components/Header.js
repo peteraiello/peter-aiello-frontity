@@ -11,7 +11,6 @@ const Header = ({ state, actions }) => {
         // state to false using an action' 
         // menu not in view?  update 'menuIsHidden'
         // state to true
-
         const FadeOut = keyframes`
             0% {
                 opacity: 1; 
