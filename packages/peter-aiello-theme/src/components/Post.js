@@ -149,68 +149,7 @@ const ContentContainer = styled.div`
 `
 
 const Content = styled.div`
-    p,
-    ul,
-    li
-    {
-        font-size: 1.25rem;
-        line-height: 2rem;
-    }
-
-    ul {
-        list-style: none;
-        padding: 0px;
-    }
-
-    ul li :before {
-        content: '>';
-        margin-right: 1rem;
-        font-weight: bold;
-    }
-
-    a {
-        color: var(--orange-highlight)
-    }
-
-    .lead {
-        font-size: 120%;
-    }
-
-    pre code {
-        display: block;
-        line-height: 1.75;
-        padding: 1rem 1.5rem;
-        overflow-x: auto;
-    }
-
-    code {
-        background: var(--light-grey) none repeat scroll 0% 0%;
-        border-radius: 4px;
-        font-family: "Courier New", monospace;
-        font-size: 0.9rem;
-        margin: 0px 0.25rem;
-        padding: 0.25rem 0.65rem;
-    }
-
-    hr {
-        border-color: var(--orange-highlight);
-        border-style: none none solid;
-        border-width: 0px 0px 1px;
-        border-image: none 100% / 1 / 0 stretch;
-        margin: 2rem 0px;
-    }
-
-    .wp-block-table table tbody tr:nth-of-type(odd) {
-        background: var(--dark-grey);
-    }
-
-    .wp-block-table table tbody tr:nth-of-type(odd) td {
-        color: var(--light-grey);
-    }
-
-    .wp-block-table table tbody tr td {
-        border: 0;
-    }
+  
 `
 
 export default connect(Post);
