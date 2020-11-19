@@ -4,7 +4,7 @@ const settings = {
     "frontity": {
       "url": "https://peteraiello.dev",
       "title": "Peter Aiello | Coding Experience",
-      "description": "Freelance Full-Stack Developer"
+      "description": "London and Surrey based Freelance Full-Stack Web Developer available for hire with focus on design and UX."
     }
   },
   "packages": [
