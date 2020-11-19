@@ -1,5 +1,5 @@
 import React from "react";
-import { connect, styled } from "frontity";
+import { connect, styled, Head } from "frontity";
 import BgImage from "../assets/background-images/buildings-dark.jpg";
 import BgClip from "./Paths/BlogCutout";
 import List from "./List";
@@ -8,6 +8,11 @@ import Pagination from "./Pagination";
 const Archive = ({ state }) => {
     return (
         <>
+            <Head>
+                <title>Blog</title>
+                <meta name="description" content="Keep up to date with my latest posts." />
+                <link rel="canonical" href={state.frontity.url + '/blog/'} />
+            </Head>
             <BackgroundImage>
                 <BgClip />        
             </BackgroundImage>
