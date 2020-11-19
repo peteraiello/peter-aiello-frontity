@@ -1,5 +1,5 @@
 import React from "react";
-import { connect, styled, keyframes, Global, css } from "frontity";
+import { connect, styled, keyframes, Global, css, Head } from "frontity";
 import BackgroundDefault from "../../assets/background-images/buildings-dark.jpg";
 import FooterCopyright from "../Footer/FooterCopyright";
 import ContentCss from "../../library/content.css";
@@ -94,6 +94,12 @@ const BackgroundHome = ({ state, title, id, postContent, libraries }) => {
 
     return (
         <>
+        <Head>
+            <title>{state.frontity.title}</title>
+            <meta name="description" content={state.frontity.description} />
+            <link rel="canonical" href={state.frontity.url} />
+        </Head>
+
         <Global styles={css(ContentCss)} />
             <Background>
                 <BackgroundClip />
