@@ -54,9 +54,7 @@ const Page404 = () => {
                     <TitleWrapper>
                         <Title>Lost...</Title>
                     </TitleWrapper>
-                  
                 </IconWrapper>
-                        
             </BackgroundImage>
         </>
     )
