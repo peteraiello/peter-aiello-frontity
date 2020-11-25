@@ -61,6 +61,23 @@ const Background = ({ state, title, id, postContent, libraries }) => {
         }
     `
 
+    const Rotate = keyframes`
+        100% {
+            transform: rotate(360deg);
+            -webkit-transform: rotate(360deg);
+        }
+    `;
+
+    const ClipIcon = styled.div`
+        clip-path: url(#path-1);
+        background-image: url(${BackgroundUrl});
+        background-position: 50% 50%;
+        width: 796px;
+        height: 796px;
+        animation: ${Rotate} 8s linear infinite;
+        -webkit-animation: ${Rotate} 8s linear infinite;
+        -moz-animation: ${Rotate} 8s linear infinite;
+    `
     const mainRef = useRef();
 
     const scrollMethod = () => {
@@ -75,7 +92,7 @@ const Background = ({ state, title, id, postContent, libraries }) => {
                 <IconWrapper>
                     <BackgroundClip>
                         <LogoBackground />
-                        <ClipIcon src={ BackgroundUrl } alt="branding-icon"/>
+                            <ClipIcon src={ BackgroundUrl } alt="branding-icon" width="800"/>
                         </BackgroundClip>
                     <TitleWrapper>
                         <Title>{ title }</Title>
@@ -94,6 +111,7 @@ const Background = ({ state, title, id, postContent, libraries }) => {
         </>
     )
 }
+
 
 const ArrowAnimation = keyframes`
     0% {
@@ -158,27 +176,6 @@ const myTransition = keyframes`
         background-position: 100% 50%;
     }
 `;
-
-const Rotate = keyframes`
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-`;
-
-const ClipIcon = styled.img`
-    -webkit-clip-path: url(#path-1);
-    clip-path: url(#path-1);
-    width: 796px;
-    height: 796px;
-    animation: ${Rotate};
-    animation-duration: 8s;
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-`
 
 const TitleWrapper = styled.div`
     display: flex;
