@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "@frontity/components/link";
 import { connect, styled } from "frontity";
-import ScrollLogo from "../../assets/logo-light-name-bottom.svg";
+import ScrollLogo from "../../assets/logo-light-name-bottom-2.svg";
 import Image from "@frontity/components/image";
 import Nav from "./Nav";
 

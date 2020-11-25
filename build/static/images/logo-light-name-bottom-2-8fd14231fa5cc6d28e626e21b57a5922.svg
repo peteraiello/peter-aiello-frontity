@@ -10,9 +10,9 @@
       <path id="Path_1" data-name="Path 1" d="M100.05,241.734,161.183,102.52h14.2l69.39,139.214H223.184L169.44,128.451,121.924,241.735Z" transform="translate(-20.661 -19.258)" fill="#fff"/>
     </g>
     <rect id="Rectangle_1" data-name="Rectangle 1" width="306" height="306" transform="translate(47 5)" fill="none"/>
-    <text id="Peter" transform="translate(-5 376)" fill="#fff" font-size="60" font-family="OpenSans, Open Sans" letter-spacing="0.025em"><tspan x="0" y="0">PETER</tspan></text>
+    <path id="Path_6" data-name="Path 6" d="M33.047-30.352q0,6.5-4.438,10t-12.7,3.5H10.869V0H5.889V-42.832h11.1Q33.047-42.832,33.047-30.352ZM10.869-21.123h4.482q6.621,0,9.58-2.139t2.959-6.855q0-4.248-2.783-6.328t-8.672-2.08H10.869ZM67.389,0H43.512V-42.832H67.389v4.424h-18.9v13.8H66.246v4.395H48.492V-4.453h18.9ZM91.564,0h-4.98V-38.408H73.02v-4.424h32.109v4.424H91.564Zm45.387,0H113.074V-42.832h23.877v4.424h-18.9v13.8h17.754v4.395H118.055V-4.453h18.9Zm15.973-17.812V0h-4.98V-42.832h11.748q7.881,0,11.646,3.018t3.765,9.082q0,8.5-8.613,11.484L178.119,0H172.23L161.859-17.812Zm0-4.277h6.826q5.273,0,7.734-2.095t2.461-6.284q0-4.248-2.5-6.123T159.4-38.467h-6.475Z" transform="translate(-5 376)" fill="#fff"/>
     <g id="Group_3" data-name="Group 3" transform="translate(191.225 312.28)">
-      <text id="Iello" transform="translate(47.775 63.72)" fill="#fff" font-size="60" font-family="OpenSans, Open Sans" letter-spacing="0.025em"><tspan x="0" y="0">IELLO</tspan></text>
+      <path id="Path_7" data-name="Path 7" d="M5.889,0V-42.832h4.98V0ZM47.994,0H24.117V-42.832H47.994v4.424H29.1v13.8H46.852v4.395H29.1V-4.453h18.9ZM58.986,0V-42.832h4.98v38.32h18.9V0ZM91.629,0V-42.832h4.98v38.32h18.9V0Zm68.619-21.475q0,10.283-5.2,16.172T140.59.586q-9.463,0-14.6-5.786t-5.142-16.333q0-10.459,5.156-16.216t14.648-5.757q9.229,0,14.414,5.859T160.248-21.475Zm-34.131,0q0,8.7,3.706,13.2t10.767,4.5q7.119,0,10.752-4.482t3.633-13.213q0-8.643-3.618-13.11t-10.708-4.468q-7.119,0-10.825,4.5T126.117-21.475Z" transform="translate(47.775 63.72)" fill="#fff"/>
       <path id="Path_1-2" data-name="Path 1" d="M100.05,144.97l18.641-42.45h4.329l21.159,42.45H137.6l-16.388-34.543L106.72,144.97Z" transform="translate(-100.05 -81.189)" fill="#fff"/>
     </g>
   </g>
