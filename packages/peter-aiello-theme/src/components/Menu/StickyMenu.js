@@ -7,21 +7,16 @@ import Nav from "./Nav";
 
 const MainMenu = ({ logoSize, state, actions }) => {
 
-    const LogoClass = styled(Image)`
-        height: 76px;
-        @media (min-width: 768px) {
-            height: ${logoSize}; 
-        }
-    `
     return (
         <>
             <MenuBar>
                 <LogoContainer> 
                     <Link link="/" onClick={() => actions.theme.closeMenu()}>
-                        <LogoClass
+                        <Image
                             loading="lazy" 
                             src={ ScrollLogo } 
                             alt="Peter Aiello - Coding Experience"
+                            height="76"
                         />
                     </Link>
                 </LogoContainer>
