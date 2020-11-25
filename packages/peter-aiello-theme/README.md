@@ -1,8 +1,11 @@
-# Notes on frontity
 
-(helpful blog)[https://frontity.org/blog/how-to-create-a-react-theme-in-30-minutes/]
+# Notes on Working with Frontity 
 
-Frontity uses ES2015 Proxies. You can inspect state in the console: 
+(Starting point)[https://frontity.org/blog/how-to-create-a-react-theme-in-30-minutes/]
+
+Frontity uses (ES2015 Proxies). 
+
+You can inspect state in the console: 
 
 `frontity.state` 
 
