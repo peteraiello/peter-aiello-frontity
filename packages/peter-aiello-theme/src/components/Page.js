@@ -24,7 +24,7 @@ const Page = ({ state, actions }) => {
         actions.source.fetch("/contact");
     }, []);
 
-    return data.isReady ? (
+    return (
             <>
                 {/* page is home? */}
                 { data.isHome && <Home title={post.title.rendered} id={ FeaturedMediaID } postContent={ post.content.rendered } /> }
@@ -37,7 +37,7 @@ const Page = ({ state, actions }) => {
                 {/* post id equal to privacy */}
                 { postID === 3 && <NoHeader title={post.title.rendered} id={ FeaturedMediaID } postContent={ post.content.rendered } /> }
             </>
-        ) : null;
+        );
 
 };
 
