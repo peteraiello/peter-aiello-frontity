@@ -182,18 +182,6 @@ const RotateAlt = keyframes`
     }
 `;
 
-const ClipIcon = styled.img`
-    -webkit-clip-path: url(#path-1);
-    clip-path: url(#path-1);
-    width: 796px;
-    height: 796px;
-    animation: ${Rotate};
-    animation-duration: 8s;
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-`
-
 const TitleWrapper = styled.div`
     display: flex;
     flex-direction: column;

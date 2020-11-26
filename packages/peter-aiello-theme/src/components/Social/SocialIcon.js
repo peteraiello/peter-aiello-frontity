@@ -7,7 +7,7 @@ const SocialIcon = ({name, src, url}) => {
     return (
         <>  
             <Anchor link={ url } target="_blank" rel={ "noreferrer noopener" }> { name }
-                <Icon src={ src } alt={ name.toLowerCase() + '-icon'} /> 
+                <Icon src={ src } alt={ name.toLowerCase() + '-icon'} loading="lazy" /> 
             </Anchor>
         </>
     )

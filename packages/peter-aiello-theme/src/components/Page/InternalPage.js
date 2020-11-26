@@ -92,7 +92,7 @@ const Background = ({ state, title, id, postContent, libraries }) => {
                 <IconWrapper>
                     <BackgroundClip>
                         <LogoBackground />
-                            <ClipIcon src={ BackgroundUrl } alt="branding-icon" width="800"/>
+                            <ClipIcon src={ BackgroundUrl }/>
                         </BackgroundClip>
                     <TitleWrapper>
                         <Title>{ title }</Title>

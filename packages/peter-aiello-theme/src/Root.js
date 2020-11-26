@@ -23,10 +23,10 @@ const Root = ({ state }) => {
     return (
         <>
             <Head>
-                <html lang="en" />
-                {/* <!-- Fathom - beautiful, simple website analytics --> */}
-                <script src="https://cdn.usefathom.com/script.js" data-site="YDOCQBFS" defer></script>
-                {/* <!-- / Fathom --> */ }
+            <html lang="en" />
+            {/* Fathom - beautiful, simple website analytics */}
+            <script src="https://cdn.usefathom.com/script.js" data-site="YDOCQBFS" defer></script>
+            {/* / Fathom  */ }
             </Head>
             {/* color style variables */}
             <Global styles={css(colorsCss)} />
