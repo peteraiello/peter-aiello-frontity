@@ -89,7 +89,6 @@ const Post = ({ state, actions, libraries }) => {
 };
 
 const BackgroundWrapper = styled.div`
-    background-color: #00000080;
     position: absolute;
     top: 0;
     width: 100%;
@@ -125,6 +124,8 @@ const Title = styled.h1`
 const Container = styled.div`
     width: 100%;
     margin: 12rem 0 2rem 0;
+    overflow: hidden;
+    overflow-wrap: anywhere;
 `
 
 const ContainerInner = styled.div`

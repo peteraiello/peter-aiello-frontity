@@ -4,11 +4,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 2.75rem;
+    font-size: 2rem;
 }
 
 h2 {
-    font-size: 2.25rem;
+    font-size: 1.75rem;
 }
 
 h3 {
@@ -30,8 +30,8 @@ h6 {
 p,
 ul,
 li { 
-    font-size: 1.25rem;
-    line-height: 2rem;
+    font-size: 1rem;
+    line-height: 1.75rem;
 }
 
 .lead {
@@ -62,4 +62,12 @@ li {
     h6 {
         font-size: 2rem;
     }
+
+    p,
+    ul,
+    li { 
+        font-size: 1.25rem;
+        line-height: 2rem;
+    }
+
 }
