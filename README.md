@@ -1,4 +1,4 @@
-# Project: New personal site built using the Frontity framework. 
+# Project: New personal Site Built Using the Frontity Framework :rocket:
 
 [Frontity](https://frontity.org/) is a new React based framework for WordPress, similar to Gatsby and Next.Js. Whereas other frameworks feature integration with many different kinds of CMS's, Frontity is a dedicated WordPress framework.
 
@@ -6,11 +6,11 @@ Read more about the project [here](https://peteraiello.dev/designing-and-develop
 
 There's a discussion happening in the forums [here](https://community.frontity.org/t/developing-my-new-personal-website-using-frontity/3417/13).
 
-# Project overview
+# Project Overview :pencil2:
 
 The development of the project took place over a few weeks. The project code is from scratch with a few exceptions, including the pagination component (borrowed from the demo theme, [mars](https://docs.frontity.org/guides/understanding-mars-theme-1)). 
 
-# JavaScript Proxies, React UI and Managing State using Hooks
+# JavaScript Proxies, React UI and Managing State using Hooks :computer:
 
 The Frontity framework drastically differs from WordPress and React integrations. Instead of using React as UI framework within PHP templates, Frontity uses [JavaScript Proxies](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Proxy) to work with WordPress data from the REST API.
 
@@ -18,7 +18,7 @@ Interestingly, the data used in the React theme is publically viewable on the pr
 
 The Frontity framework also comes with Global State already implemented in the form of [actions](https://docs.frontity.org/learning-frontity/actions). For example, to implement the UI for the mobile menu (open or closed), a boolean for the mobile menu state is added to the theme settings in `index.js`. Then conditional React code is used to decide to display the menu as opened or closed. 
 
-# Styling and SVG Animations.
+# Styling and SVG Animations :tada:
 
 The project included a bespoke design for a landing page which required the custom CSS clip-path property, as well as keyframes to produce panning effects. The internal pages also use the `clip-path` property with SVGs. 
 
@@ -26,29 +26,30 @@ The build for the site uses mobile-first techniques, where concepts are designed
 
 Instead of using responsive frameworks (Bootstrap, Foundation, Bulma or TailwindCSS), the styles for the project use CSS in JS (with some exception being the ones used for Gutenberg compatibility). Flex-box handles responsive elements (Nav, Footer, Containers). 
 
-# Cross-browser Testing, Debugging and Site Performance.
+# Cross-browser Testing, Debugging and Site Performance :ok_hand:
 
 As with all projects, browser testing was crucial for ensuring a high-quality user experience across all devices. 
 
-**Devices include**
+**Devices Include**
 * Mobile (iPhone 8)
 * Tablet (iPad)
 * Desktop
 
-**Browsers include**
+**Browsers Include**
 * Firefox
 * Chrome 
 * Safari
 
 In terms of performance, the site currently achieves A-Grade status using pingdom. The site also has a good score (green) from testing Google Lighthouse for the categories of accessibility, performance and SEO. The site speed score differs from time to time (assumingly based on the level of cache), and optimisation is ongoing.
 
-# Future Features for the site
+# Roadmap (Future Features) :rocket:
 
-Ideas for future functionality that may be helpful include: 
+A few ideas for future functionality include:
 * Social media share buttons for the posts
 * An estimated read time for the posts 
+* Filtering the posts using tags (once I've written enough of them)
 * A case studies section for projects
 
-# Thank you
+# Thank You :heart:
 
 Thank you to the team over at Frontity for making such a well-documented framework. Also thanks to my friends and family who provided essential feedback on the project: Anthony, Russell, Daniel, Tim, Lawrence, Clive and Sophie. 
