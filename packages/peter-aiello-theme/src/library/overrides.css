@@ -29,11 +29,11 @@
 }
 
 .wp-block-table table tbody tr:nth-of-type(odd) {
-    background: var(--dark-grey);
+    background: var(--light-grey);
 }
 
 .wp-block-table table tbody tr:nth-of-type(odd) td {
-    color: var(--light-grey);
+    color: var(--dark-grey);
 }
 
 .wp-block-table table tbody tr td {
