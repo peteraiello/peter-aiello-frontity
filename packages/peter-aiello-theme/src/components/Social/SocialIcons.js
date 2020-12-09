@@ -6,7 +6,7 @@ import Medium from '../../assets/social/medium.svg';
 import GitHub from '../../assets/social/github.svg';
 import LinkedIn from '../../assets/social/linkedin.svg';
 
-const SocialIcons = ({ state }) => {
+const SocialIcons = () => {
     const Icons = [
         {name: 'Medium', src: Medium, url: 'https://medium.com/@peter_aiello'},
         {name: 'GitHub', src: GitHub, url: 'https://github.com/peteraiello'},

@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { styled, connect, Head, Global, css } from "frontity";
-import Placeholder from "../assets/background-images/buildings-dark.jpg";
-import BgClip from "./Paths/BlogCutout";
-import Tags from "./Post/Tags";
-import ContentCss from "../library/content.css";
+import Placeholder from "../../assets/background-images/buildings-dark.jpg";
+import BgClip from "../Paths/BlogCutout";
+import Tags from "./Tags";
+import ContentCss from "../../library/content.css";
 
 
 const Post = ({ state, actions, libraries }) => {
@@ -150,7 +150,6 @@ const ContentContainer = styled.div`
 `
 
 const Content = styled.div`
-  
 `
 
 export default connect(Post);

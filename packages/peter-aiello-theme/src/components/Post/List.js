@@ -1,7 +1,7 @@
 import React from "react";
 import { styled, connect } from "frontity";
-import Link from "./Link";
-import Tags from "./Post/Tags";
+import Link from "../Link";
+import Tags from "./Tags";
 const PostMargin = "0 0 1rem 0";
 
 const List = ({ state, libraries }) => {
@@ -15,8 +15,6 @@ const List = ({ state, libraries }) => {
                     const date = new Date(post.date);
 
                     const PostTags = post.tags; 
-                    // console.log(PostTags); // returns array
-
                     return (
                         <PostItem key={id}>
                             <Title>

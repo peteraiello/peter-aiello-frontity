@@ -1,5 +1,5 @@
 import React from "react";
-import { connect, css, styled, keyframes } from "frontity";
+import { connect, styled, keyframes } from "frontity";
 
 import Placeholder from "../assets/background-images/buildings-dark.jpg";
 import LogoBackground from "./Paths/LogoBackground";

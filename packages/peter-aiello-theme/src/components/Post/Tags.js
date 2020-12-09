@@ -3,11 +3,7 @@ import Tag from "./Tag";
 import { styled, connect} from "frontity";
 
 const Tags = ({state, tags}) => {
-
     if (!tags) return null;
-
-    // console.log(tags);
-
     return (
         <MarginWrapper>
             { tags.map(

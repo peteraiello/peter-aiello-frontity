@@ -5,7 +5,7 @@ import FooterCopyright from "../Footer/FooterCopyright";
 import ContentCss from "../../library/content.css";
 
 
-const BackgroundHome = ({ state, title, id, postContent, libraries }) => {
+const BackgroundHome = ({ state, id, postContent, libraries }) => {
 
     const Html2React = libraries.html2react.Component;
 

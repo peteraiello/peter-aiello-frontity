@@ -1,8 +1,8 @@
 import React from "react";
 import { Global, css, connect, styled, Head } from "frontity";
 import Nav from "./components/Menu/Nav";
-import Archive from "./components/Archive";
-import Post from "./components/Post";
+import Archive from "./components/Post/Archive";
+import Post from "./components/Post/Post";
 import Page from "./components/Page";
 import Page404 from "./components/Page404";
 import Footer from "./components/Footer/Footer";

@@ -11,7 +11,7 @@ const Page = ({ state, actions }) => {
     const post = state.source[data.type][data.id];
     const FeaturedMediaID = post.featured_media; 
     const postID = post.id;
-    //    console.log(postID);
+    
     /**
      * preload all the essential pages and blogs
      * so that when the user is on the homepage 
