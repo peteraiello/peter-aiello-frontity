@@ -24,7 +24,7 @@ The project included a bespoke design for a landing page which required the cust
 
 The build for the site uses mobile-first techniques, where concepts are designed both for mobile and desktop, and developers work from the mobile view outwards. 
 
-Instead of using responsive frameworks (Bootstrap, Foundation, Bulma or TailwindCSS), the styles for the project use CSS in JS (with some exception being the ones used for Gutenberg compatibility). Flex-box handles responsive elements (Nav, Footer, Containers). 
+Instead of using responsive frameworks (Bootstrap, Foundation, Bulma or TailwindCSS), the styles for the project use [EmotionCSS](https://emotion.sh/docs/introduction) (with some exception being the ones used for Gutenberg compatibility). Flex-box handles responsive elements (Nav, Footer, Containers). 
 
 # Cross-browser Testing, Debugging and Site Performance :ok_hand:
 
