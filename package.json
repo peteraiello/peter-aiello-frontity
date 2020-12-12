@@ -11,6 +11,7 @@
     "npm": ">=6.0.0"
   },
   "scripts": {
+    "start": "frontity serve", 
     "dev": "frontity dev",
     "build": "frontity build",
     "serve": "frontity serve"
