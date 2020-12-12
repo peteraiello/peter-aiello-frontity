@@ -3,6 +3,7 @@ import Link from "@frontity/components/link";
 import { connect, styled } from "frontity";
 import ScrollLogo from "../../assets/logo-light-name-bottom-2.svg";
 import Image from "@frontity/components/image";
+import Nav from "./Nav";
 
 const MainMenu = ({ actions }) => {
 
@@ -18,6 +19,9 @@ const MainMenu = ({ actions }) => {
                             height="76"
                         />
                     </Link>
+                    <LaptopWrapper>
+                        <Nav />
+                    </LaptopWrapper>
                 </LogoContainer>
             </MenuBar>        
         </>
@@ -29,33 +33,43 @@ const MenuBar = styled.div`
 `
 
 const LogoContainer = styled.div`
-    padding: 1rem;
+    padding: 1rem 0;
     width: 100%;
+    max-width: 1200px;
     box-sizing: border-box;
     margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-between;  
-    @media (min-width: 1200px){
+    @media (min-width: 1600px){
         padding: 1.2rem;
         justify-content: flex-end;  
+        max-width: 100%;
     }
 `
-
-const NavWrapper = styled.div`
-    display: flex;
-    align-items: center;
+const LaptopWrapper = styled.nav`
+    display: none;
+    @media (min-width: 1200px) {
+        display: flex;
+        height: auto;
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    @media (min-width: 1600px) {
+        display: none;
+    }
     a {
-        color: white;
+        display: flex;
+        justify-content: center;
         text-decoration: none;
         text-align: center;
-        width: 100%;
         border-radius: 0.25rem;
         text-transform: lowercase; 
-        margin-right: 2rem;
-        display: block;
+        color: var(--custom-white);
+        margin-right: 1rem;
     }
 `
-
 export default connect(MainMenu);
 

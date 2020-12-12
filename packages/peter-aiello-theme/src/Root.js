@@ -64,16 +64,15 @@ const Root = ({ state }) => {
 }
 
 const NavWrapper = styled.nav`
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 50%;
-    right: 0;
-    transform: translate(-50%, -50%);
-    z-index: 9997;
     display: none;
-    @media (min-width: 1200px) {
+    @media (min-width: 1600px) {
         display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 50%;
+        right: 0;
+        transform: translate(-50%, -50%);
+        z-index: 9997;
     }
     a {
         color: white;

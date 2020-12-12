@@ -31,6 +31,7 @@ const Header = ({ state, actions }) => {
                 height: auto;
             }
             100% {
+                height: auto;
                 opacity: 1;  
             }
         `;
@@ -68,7 +69,7 @@ const Header = ({ state, actions }) => {
                         z-index: 9998;
                         overflow: hidden;
                         animation: ${FadeOut};
-                        animation-duration: 1s;
+                        animation-duration: 0.25s;
                         animation-fill-mode: both;
                     }}
                 ` } />

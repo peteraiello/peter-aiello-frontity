@@ -41,6 +41,10 @@ const MainMenu = ({ logoSize, state, actions }) => {
                         alt="Peter Aiello - Coding Experience"
                     />
                 </Link>
+
+                <LaptopWrapper>
+                    <Nav />
+                </LaptopWrapper>
         
                 {
                     state.theme.isMenuOpen &&
@@ -65,6 +69,31 @@ const MainMenu = ({ logoSize, state, actions }) => {
         </>
     )
 }
+
+const LaptopWrapper = styled.nav`
+    display: none;
+    @media (min-width: 1200px) {
+        display: flex;
+        height: auto;
+        width: 100%;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    @media (min-width: 1600px) {
+        display: none;
+    }
+    a {
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        text-align: center;
+        border-radius: 0.25rem;
+        text-transform: lowercase; 
+        color: var(--custom-white);
+        margin-right: 1rem;
+    }
+`
 
 const MobileWrapper = styled.div`
     width: 100%;
