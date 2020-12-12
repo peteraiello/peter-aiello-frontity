@@ -75,7 +75,7 @@ const BackgroundHome = ({ state, id, postContent, libraries }) => {
         width: 100%;
         height: 100%;
         overflow: hidden;
-        animation: ${myTransitionMobAlt};
+        animation: ${myTransitionMob};
         animation-duration: 5s;
         animation-timing-function: ease-in-out;
         animation-delay: 0s;
@@ -119,25 +119,10 @@ const BackgroundHome = ({ state, id, postContent, libraries }) => {
 
 const myTransitionMob = keyframes`
     0% {
-        background-position: 50% 50%;
+        background-position: 40% 50%;
     }
-    40%, 60% {
-        background-position: 55% 50%;
-    }
-    80%, 100% {
-        background-position: 50% 50%;
-    }
-`;
-
-const myTransitionMobAlt = keyframes`
-    0% {
-        background-position: 50% 50%;
-    }
-    40%, 60% {
-        background-position: 45% 50%;
-    }
-    80%, 100% {
-        background-position: 50% 50%;
+    100% {
+        background-position: 40% 50%;
     }
 `;
 
@@ -198,9 +183,12 @@ const Content = styled.div`
         color: var(--custom-white) !important;
     }
     h1 {
-        font-size: 4.25rem;
-        line-height: 4.25rem;
-        margin: 0rem 0px 1rem;
+        font-size: 2.25rem
+        @media (min-width: 768px){
+            font-size: 4.25rem;
+            line-height: 4.25rem;
+            margin: 0rem 0px 1rem;
+        }
     }
     p {
         font-size: 1.25rem;
