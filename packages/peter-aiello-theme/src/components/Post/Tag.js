@@ -16,19 +16,13 @@ const Tag = styled.span`
     color: var(--dark-grey);
     border: 1px solid var(--orange-highlight);
     padding: 0.5rem 1rem;
-    margin-right: 0.5rem;
+    margin: 0 1rem 1rem 0;
     -webkit-text-decoration: none;
     text-decoration: none;
     font-family: 'Open Sans', sans-serif;
     font-weight: Bold;
     border-radius: 0.25rem;
     background-color: var(--orange-highlight);
-    &:last-of-type {
-        margin-right: 0;
-    }
-    @media (min-width: 768px){
-
-    }
 `
 
 export default connect(Tags);

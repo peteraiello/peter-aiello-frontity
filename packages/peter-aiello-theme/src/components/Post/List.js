@@ -2,6 +2,9 @@ import React from "react";
 import { styled, connect } from "frontity";
 import Link from "../Link";
 import Tags from "./Tags";
+import Image from "@frontity/components/image";
+
+
 const PostMargin = "0 0 1rem 0";
 
 const List = ({ state, libraries }) => {
@@ -13,37 +16,71 @@ const List = ({ state, libraries }) => {
                     const post = state.source.post[id];
                     const Html2React=libraries.html2react.Component;
                     const date = new Date(post.date);
-
                     const PostTags = post.tags; 
+                    /* returns the data for the id for featured media */
+                    const FeauturedMediaId = post.featured_media; 
+                    /* returns the featured media object */
+                    const FeaturedMedia = state.source.attachment[FeauturedMediaId];  
+                    
                     return (
-                        <PostItem key={id}>
-                            <Title>
-                                <Html2React html={ post.title.rendered } />
-                            </Title>
-                                { PostTags ? <Tags tags={PostTags}/> : null }
-                                <PostDate>{date.toDateString()}</PostDate>
-                            <Excerpt>  
-                                <Html2React html={ post.excerpt.rendered} />
-                            </Excerpt>
-                            <ButtonWrapper>
-                                <Button link={post.link}>read now</Button>
-                            </ButtonWrapper>
-                        </PostItem>
+                        <PostLink link={post.link}>
+                            <PostItem key={id}>
+                                <ThumbnailWrapper>
+                                    <Thumbnail 
+                                        src={ FeaturedMedia.source_url }
+                                        alt={ FeaturedMedia.alt_text }
+                                        loading="lazy" 
+                                    />
+                                </ThumbnailWrapper>
+                        
+                                <PostDescWrapper>
+                                    <Title>
+                                        <Html2React html={ post.title.rendered } />
+                                    </Title>
+
+                                    <PostMeta>                                
+                                        { PostTags ? <Tags tags={PostTags}/> : null }
+                                        <PostDate>
+                                            {date.toDateString()}
+                                        </PostDate>
+                                    </PostMeta>
+
+                                    <ButtonWrapper>
+                                        <Button link={post.link}>read now</Button>
+                                    </ButtonWrapper>
+
+                                </PostDescWrapper>
+                            </PostItem>
+                        </PostLink>
                     )
                 }) }
         </>
     )
 }
 
+const PostMeta = styled.div`
+    display: flex;
+`
+
+const ThumbnailWrapper = styled.div`
+    width: 100%;
+    padding: 0 1rem 0 0;
+    @media (min-width: 768px) {
+        flex-direction: column;
+        width: 35%
+    }
+`
+
+const Thumbnail = styled(Image)`
+    width: 100%;
+`
+
 const PostDate = styled.span`
-    display: block;
+    display: inline-block;
     text-transform: uppercase;
     color: var(--light-grey);
     font-size: 1.5rem;
     margin: ${PostMargin};
-    @media (min-width: 768px) {
-        font-size: 2rem;
-    }
 `
 
 const Title = styled.h1`
@@ -69,11 +106,22 @@ const Excerpt = styled.div`
     }
 `
 
+const PostDescWrapper = styled.div`
+    display: block;
+    width: 100%;
+    @media (min-width: 768px) {
+        flex-direction: column;
+        width: 65%;
+        margin: -1.3rem 0 0 0;
+    }
+`
+
 const PostItem = styled.div`
-    border-bottom: 2px solid var(--orange-highlight);
     padding: 3rem 0;
-    &:last-of-type {
-        border: none;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 768px) {
+        flex-direction: row;
     }
 `
 
@@ -98,6 +146,15 @@ const ButtonWrapper = styled.div`
     margin-bottom: 8px;
     :last-of-type {
         margin-bottom: 0px;
+    }
+`
+
+const PostLink = styled(Link)`
+    text-decoration: none;
+    border-bottom: 1px solid var(--orange-highlight);
+    display: block;
+    &:last-of-type {
+        border: none;
     }
 `
 
