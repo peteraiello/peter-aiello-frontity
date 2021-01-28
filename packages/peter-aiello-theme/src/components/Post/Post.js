@@ -19,7 +19,7 @@ const Post = ({ state, actions, libraries }) => {
     const FeauturedMediaId = post.featured_media; 
     const FeaturedMedia = state.source.attachment[FeauturedMediaId];    
     /* returns the source url OR a placeholder if empty */
-    const BgImage = (!FeaturedMedia ? Placeholder : FeaturedMedia.source_url);
+    const BgImage = Placeholder;
 
     /* post id */
     const date = new Date(post.date);
