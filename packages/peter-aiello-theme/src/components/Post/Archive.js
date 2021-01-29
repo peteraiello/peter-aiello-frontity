@@ -18,13 +18,25 @@ const Archive = ({ state }) => {
             </BackgroundImage>
             <Container>
                 <ContainerInner>
-                    <List />
-                    <Pagination/>
+                    <FlexWrapper>
+                        <List />
+                        <Pagination/>   
+                    </FlexWrapper>
                 </ContainerInner>
             </Container>
         </>
     )
 };
+
+const FlexWrapper = styled.div`
+    display: block;
+    @media (min-width: 768px) {
+        display: flex;
+    }
+    @media (min-width: 1200px) {
+        display: block;
+    }
+`
 
 const BackgroundImage = styled.div`
     -webkit-clip-path: url(#path-1);

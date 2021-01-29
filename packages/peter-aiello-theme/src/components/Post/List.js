@@ -25,15 +25,17 @@ const List = ({ state, libraries }) => {
 
                     
                     return (
-                        <PostLink link={post.link}>
-                            <PostItem key={id}>
+                        <PostLink key={id} link={post.link} >
+                            <PostItem>
+
                                 <Thumbnail className="post-thumbnail"
                                     src={ FeaturedMedia.source_url }
                                     alt={ FeaturedMedia.alt_text }
                                     loading="lazy" 
                                 />
-                        
+                            
                                 <PostDescWrapper>
+
                                     <Title>
                                         <Html2React html={ post.title.rendered } />
                                     </Title>
@@ -50,20 +52,24 @@ const List = ({ state, libraries }) => {
                                     </Excerpt>
 
                                     <ButtonWrapper>
-                                        <Button link={post.link}>read now</Button>
+                                        <Button>read now</Button>
                                     </ButtonWrapper>
 
                                 </PostDescWrapper>
                             </PostItem>
                         </PostLink>
                     )
-                }) }
+                })}
         </>
     )
 }
 
+
 const PostMeta = styled.div`
     display: flex;
+    @media (min-width: 1200px) {
+        display: block;
+    }
 `
 
 const Thumbnail = styled(Image)`
@@ -71,9 +77,12 @@ const Thumbnail = styled(Image)`
     object-fit: cover;
     margin-right: 2rem;
     transition: clip-path 1s;
-    @media (min-width: 768px) {
+    @media (min-width: 1200px) {
+        flex-direction: column;
         width: 35%;
-        clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
+        height: 100%;
+        min-height: 440px;
+        clip-path: polygon(0 0,100% 0%,50% 100%,0% 100%);
     }
 `
 
@@ -110,31 +119,14 @@ const Excerpt = styled.div`
 const PostDescWrapper = styled.div`
     display: block;
     width: 100%;
-    padding: 2rem 1rem;
     box-sizing: border-box;
+    padding: 1rem;
     @media (min-width: 768px) {
         flex-direction: column;
+    }
+    @media (min-width: 1200px) {
+        flex-direction: column;
         width: 65%;
-        padding: 2rem 0;
-    }
-`
-
-const PostItem = styled.div`
-    border-radius: 1.25rem;
-    margin: 0 0 2rem 0;
-    display: flex;
-    flex-direction: column;
-    background: var(--dark-blue);
-    overflow: hidden;
-    @media (min-width: 768px) {
-        &:hover {
-            .post-thumbnail {
-                clip-path: polygon(0 0,90% 0%,60% 100%,0% 100%);
-            }
-        }
-    }
-    @media (min-width: 768px) {
-        flex-direction: row;
     }
 `
 
@@ -162,9 +154,28 @@ const ButtonWrapper = styled.div`
     }
 `
 
+const PostItem = styled.div`
+    text-decoration: none;
+    border-radius: 1.25rem;
+    margin: 0 0.5rem 2rem 0.5rem;
+    display: flex;
+    flex-direction: column;
+    background: var(--dark-blue);
+    overflow: hidden;
+    @media (min-width: 1200px) {
+        &:hover {
+            .post-thumbnail {
+                clip-path: polygon(0 0,90% 0%,60% 100%,0% 100%);
+            }
+        }
+    }
+    @media (min-width: 1200px) {
+        flex-direction: row;
+    }
+`
+
 const PostLink = styled(Link)`
     text-decoration: none;
-    display: block;
 `
 
 export default connect(List);
