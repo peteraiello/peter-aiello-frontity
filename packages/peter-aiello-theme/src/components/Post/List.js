@@ -20,18 +20,18 @@ const List = ({ state, libraries }) => {
                     /* returns the data for the id for featured media */
                     const FeauturedMediaId = post.featured_media; 
                     /* returns the featured media object */
-                    const FeaturedMedia = state.source.attachment[FeauturedMediaId];  
+                    const FeaturedMedia = state.source.attachment[FeauturedMediaId];
+
+
                     
                     return (
                         <PostLink link={post.link}>
                             <PostItem key={id}>
-                                <ThumbnailWrapper>
-                                    <Thumbnail 
-                                        src={ FeaturedMedia.source_url }
-                                        alt={ FeaturedMedia.alt_text }
-                                        loading="lazy" 
-                                    />
-                                </ThumbnailWrapper>
+                                <Thumbnail className="post-thumbnail"
+                                    src={ FeaturedMedia.source_url }
+                                    alt={ FeaturedMedia.alt_text }
+                                    loading="lazy" 
+                                />
                         
                                 <PostDescWrapper>
                                     <Title>
@@ -44,6 +44,10 @@ const List = ({ state, libraries }) => {
                                             {date.toDateString()}
                                         </PostDate>
                                     </PostMeta>
+
+                                    <Excerpt>
+                                        <Html2React html={ post.excerpt.rendered } />
+                                    </Excerpt>
 
                                     <ButtonWrapper>
                                         <Button link={post.link}>read now</Button>
@@ -62,17 +66,15 @@ const PostMeta = styled.div`
     display: flex;
 `
 
-const ThumbnailWrapper = styled.div`
-    width: 100%;
-    padding: 0 1rem 0 0;
-    @media (min-width: 768px) {
-        flex-direction: column;
-        width: 35%
-    }
-`
-
 const Thumbnail = styled(Image)`
     width: 100%;
+    object-fit: cover;
+    margin-right: 2rem;
+    transition: clip-path 1s;
+    @media (min-width: 768px) {
+        width: 35%;
+        clip-path: polygon(0 0, 100% 0%, 50% 100%, 0% 100%);
+    }
 `
 
 const PostDate = styled.span`
@@ -83,9 +85,8 @@ const PostDate = styled.span`
     margin: ${PostMargin};
 `
 
-const Title = styled.h1`
+const Title = styled.h4`
     font-weight: bold;
-    text-transform: uppercase;
     color: var(--light-grey);
     margin: ${PostMargin};
 `
@@ -109,17 +110,29 @@ const Excerpt = styled.div`
 const PostDescWrapper = styled.div`
     display: block;
     width: 100%;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
     @media (min-width: 768px) {
         flex-direction: column;
         width: 65%;
-        margin: -1.3rem 0 0 0;
+        padding: 2rem 0;
     }
 `
 
 const PostItem = styled.div`
-    padding: 3rem 0;
+    border-radius: 1.25rem;
+    margin: 0 0 2rem 0;
     display: flex;
     flex-direction: column;
+    background: var(--dark-blue);
+    overflow: hidden;
+    @media (min-width: 768px) {
+        &:hover {
+            .post-thumbnail {
+                clip-path: polygon(0 0,90% 0%,60% 100%,0% 100%);
+            }
+        }
+    }
     @media (min-width: 768px) {
         flex-direction: row;
     }
@@ -151,11 +164,7 @@ const ButtonWrapper = styled.div`
 
 const PostLink = styled(Link)`
     text-decoration: none;
-    border-bottom: 1px solid var(--orange-highlight);
     display: block;
-    &:last-of-type {
-        border: none;
-    }
 `
 
 export default connect(List);
