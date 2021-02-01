@@ -1,5 +1,7 @@
 # Project: New personal Site Built Using the Frontity Framework :rocket:
 
+![Screenshot](Screenshot_peteraiello-dev.jpg)
+
 [Frontity](https://frontity.org/) is a new React based framework for WordPress, similar to Gatsby and Next.Js. Whereas other frameworks feature integration with many different kinds of CMS's, Frontity is a dedicated WordPress framework.
 
 Read more about the project [here](https://peteraiello.dev/designing-and-developing-my-new-personal-website/).
