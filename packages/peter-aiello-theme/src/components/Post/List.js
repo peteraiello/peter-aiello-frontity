@@ -21,8 +21,6 @@ const List = ({ state, libraries }) => {
                     const FeauturedMediaId = post.featured_media; 
                     /* returns the featured media object */
                     const FeaturedMedia = state.source.attachment[FeauturedMediaId];
-
-
                     
                     return (
                         <PostLink key={id} link={post.link} >
@@ -81,7 +79,7 @@ const Thumbnail = styled(Image)`
         flex-direction: column;
         width: 35%;
         height: 100%;
-        min-height: 440px;
+        min-height: 445px;
         clip-path: polygon(0 0,100% 0%,50% 100%,0% 100%);
     }
 `
@@ -122,7 +120,10 @@ const PostDescWrapper = styled.div`
     box-sizing: border-box;
     padding: 1rem;
     @media (min-width: 768px) {
+        display: flex;
         flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
     }
     @media (min-width: 1200px) {
         flex-direction: column;
@@ -147,7 +148,7 @@ const Button = styled(Link)`
 `
 
 const ButtonWrapper = styled.div`
-    display: inline-block;
+    display: flex;
     margin-bottom: 8px;
     :last-of-type {
         margin-bottom: 0px;
@@ -162,6 +163,7 @@ const PostItem = styled.div`
     flex-direction: column;
     background: var(--dark-blue);
     overflow: hidden;
+    height: 100%;
     @media (min-width: 1200px) {
         &:hover {
             .post-thumbnail {
