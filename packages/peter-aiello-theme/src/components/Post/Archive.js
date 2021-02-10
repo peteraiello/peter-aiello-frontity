@@ -32,9 +32,13 @@ const FlexWrapper = styled.div`
     display: block;
     @media (min-width: 768px) {
         display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-basis: 100%;
     }
     @media (min-width: 1200px) {
-        display: block;
+        display: flex;
+        flex-direction: column;
     }
 `
 

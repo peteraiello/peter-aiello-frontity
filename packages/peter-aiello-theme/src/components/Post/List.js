@@ -3,6 +3,7 @@ import { styled, connect } from "frontity";
 import Link from "../Link";
 import Tags from "./Tags";
 import Image from "@frontity/components/image";
+import Placeholder from "../../assets/placeholder-thumbnail.png";
 
 
 const PostMargin = "0 0 1rem 0";
@@ -27,8 +28,8 @@ const List = ({ state, libraries }) => {
                             <PostItem>
 
                                 <Thumbnail className="post-thumbnail"
-                                    src={ FeaturedMedia.source_url }
-                                    alt={ FeaturedMedia.alt_text }
+                                    src={ FeaturedMedia ? FeaturedMedia.source_url : Placeholder }
+                                    alt={ FeaturedMedia ? FeaturedMedia.alt_text : 'thumbnail placeholder'}
                                     loading="lazy" 
                                 />
                             
@@ -50,7 +51,9 @@ const List = ({ state, libraries }) => {
                                     </Excerpt>
 
                                     <ButtonWrapper>
-                                        <Button>read now</Button>
+                                        <Button>
+                                            read now
+                                        </Button>
                                     </ButtonWrapper>
 
                                 </PostDescWrapper>
@@ -131,7 +134,7 @@ const PostDescWrapper = styled.div`
     }
 `
 
-const Button = styled(Link)`
+const Button = styled.div`
     display: block;
     width: auto;
     text-align: center;
@@ -178,6 +181,12 @@ const PostItem = styled.div`
 
 const PostLink = styled(Link)`
     text-decoration: none;
+    @media (min-width: 768px) {
+        flex: 1;
+    }
+    @media (min-width: 1200px) {
+        flex: 2;
+    }
 `
 
 export default connect(List);
