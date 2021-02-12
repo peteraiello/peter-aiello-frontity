@@ -163,6 +163,7 @@ const PostItem = styled.div`
     border-radius: 1.25rem;
     margin: 0 0.5rem 2rem 0.5rem;
     display: flex;
+    justify-content: center;
     flex-direction: column;
     background: var(--dark-blue);
     overflow: hidden;
@@ -182,10 +183,16 @@ const PostItem = styled.div`
 const PostLink = styled(Link)`
     text-decoration: none;
     @media (min-width: 768px) {
-        flex: 1;
+        display: block;
+        max-width: 50%;
+        &:last-of-type {
+            margin-top: 1rem;
+        }
     }
     @media (min-width: 1200px) {
-        flex: 2;
+        display: flex;
+        flex: 1;
+        max-width: 100%;
     }
 `
 
