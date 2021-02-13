@@ -68,9 +68,7 @@ const List = ({ state, libraries }) => {
 
 const PostMeta = styled.div`
     display: flex;
-    @media (min-width: 1200px) {
-        display: block;
-    }
+    flex-direction: column;
 `
 
 const Thumbnail = styled(Image)`
@@ -80,8 +78,7 @@ const Thumbnail = styled(Image)`
     transition: clip-path 1s;
     @media (min-width: 1200px) {
         flex-direction: column;
-        width: 35%;
-        height: 100%;
+        width: 42%;
         min-height: 445px;
         clip-path: polygon(0 0,100% 0%,50% 100%,0% 100%);
     }
@@ -163,7 +160,6 @@ const PostItem = styled.div`
     border-radius: 1.25rem;
     margin: 0 0.5rem 2rem 0.5rem;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     background: var(--dark-blue);
     overflow: hidden;
@@ -193,6 +189,9 @@ const PostLink = styled(Link)`
         display: flex;
         flex: 1;
         max-width: 100%;
+        &:last-of-type {
+            margin-top: 0;
+        }
     }
 `
 
