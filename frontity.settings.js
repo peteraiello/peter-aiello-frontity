@@ -26,8 +26,7 @@ const settings = {
     },
     "@frontity/tiny-router",
     "@frontity/html2react",
-    "@frontity/head-tags",
-    "frontity-contact-form-7"
+    "@frontity/head-tags"
   ]
 };
 
