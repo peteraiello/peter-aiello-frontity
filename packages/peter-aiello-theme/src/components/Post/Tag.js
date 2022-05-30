@@ -10,10 +10,11 @@ const Tags = ({name}) => {
 }
 
 const Tag = styled.span`
+    font-size: 1rem;
     display: inline-block;
     width: auto;
     text-align: center;
-    color: var(--custom-white);
+    color: var(--dark-grey);
     border: 1px solid var(--orange-highlight);
     padding: 0.5rem 1rem;
     margin: 0 1rem 1rem 0;
