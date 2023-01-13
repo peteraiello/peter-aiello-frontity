@@ -97,6 +97,7 @@ const BackgroundHome = ({ state, id, postContent, libraries }) => {
         <Head>
             <title>{state.frontity.title}</title>
             <meta name="description" content={state.frontity.description} />
+            <meta name="cf-2fa-verify" content="2b687dfb06a4fda" />
             <link rel="canonical" href={state.frontity.url} />
         </Head>
 
